@@ -1,19 +1,17 @@
 #!/usr/bin/env python3
 """
 日本株高配当株トラッカー - データ取得スクリプト
-yfinance を使って257銘柄の株価・配当利回りを取得し、data/stocks.json に保存する
+Yahoo Finance APIで日本語銘柄名・日本語セクターを取得
 """
 
 import yfinance as yf
 import json
 import os
 import time
+import requests
 from datetime import datetime
 import pytz
 
-# ============================================================
-# 監視銘柄リスト（257銘柄）
-# ============================================================
 STOCK_CODES = [
     9986, 3076, 8130, 2659, 3333, 4008, 4042, 4097, 8309, 8725,
     8593, 8584, 6785, 7723, 3231, 3003, 2169, 9757, 9769, 4641,
@@ -44,14 +42,67 @@ STOCK_CODES = [
 ]
 
 JST = pytz.timezone('Asia/Tokyo')
+HEADERS = {'User-Agent': 'Mozilla/5.0 (compatible; StockTracker/1.0)'}
 
-def fetch_single_stock(code: int) -> dict:
-    """1銘柄の株価データを取得する"""
+# 英語セクター → 日本語変換
+SECTOR_JA = {
+    'Technology': 'テクノロジー',
+    'Financial Services': '金融',
+    'Financials': '金融',
+    'Industrials': '産業',
+    'Consumer Cyclical': '一般消費財',
+    'Consumer Defensive': '生活必需品',
+    'Healthcare': 'ヘルスケア',
+    'Basic Materials': '素材',
+    'Energy': 'エネルギー',
+    'Utilities': '公益事業',
+    'Real Estate': '不動産',
+    'Communication Services': '通信',
+    'Consumer Staples': '生活必需品',
+    'Information Technology': 'テクノロジー',
+    'Materials': '素材',
+    'Telecommunication Services': '通信',
+}
+
+
+def translate_sector(sector_en: str) -> str:
+    if not sector_en or sector_en == '不明':
+        return '不明'
+    return SECTOR_JA.get(sector_en, sector_en)
+
+
+def get_japanese_names_bulk(codes: list) -> dict:
+    """Yahoo Finance APIで日本語銘柄名を一括取得（50件ずつ）"""
+    name_map = {}
+    batch_size = 50
+    for i in range(0, len(codes), batch_size):
+        batch = codes[i:i + batch_size]
+        symbols = ','.join(f"{c}.T" for c in batch)
+        try:
+            url = (
+                "https://query1.finance.yahoo.com/v7/finance/quote"
+                f"?symbols={symbols}&lang=ja&region=JP"
+            )
+            resp = requests.get(url, headers=HEADERS, timeout=15)
+            data = resp.json()
+            results = data.get('quoteResponse', {}).get('result', [])
+            for r in results:
+                sym = r.get('symbol', '').replace('.T', '')
+                name = r.get('longName') or r.get('shortName') or sym
+                name_map[sym] = name
+        except Exception as e:
+            print(f"  [WARN] 日本語名取得失敗 (batch {i}): {e}")
+        time.sleep(0.5)
+    return name_map
+
+
+def fetch_single_stock(code: int, name_map: dict) -> dict:
     ticker_symbol = f"{code}.T"
+    code_str = str(code)
     base = {
-        'code': str(code),
+        'code': code_str,
         'ticker': ticker_symbol,
-        'name': str(code),
+        'name': name_map.get(code_str, code_str),
         'current_price': None,
         'previous_close': None,
         'price_change': None,
@@ -69,74 +120,64 @@ def fetch_single_stock(code: int) -> dict:
         ticker = yf.Ticker(ticker_symbol)
         info = ticker.info
 
-        # 株価
         current_price = (
             info.get('currentPrice')
             or info.get('regularMarketPrice')
             or info.get('navPrice')
         )
-        previous_close = info.get('previousClose') or info.get('regularMarketPreviousClose')
+        previous_close = (
+            info.get('previousClose')
+            or info.get('regularMarketPreviousClose')
+        )
 
         price_change = None
         price_change_pct = None
-        if current_price is not None and previous_close:
+        if current_price and previous_close:
             price_change = round(current_price - previous_close, 2)
             price_change_pct = round(price_change / previous_close * 100, 2)
 
-        # 配当利回り（yfinance は小数で返す場合がある）
-        raw_yield = info.get('dividendYield') or info.get('trailingAnnualDividendYield')
+        raw_yield = (
+            info.get('dividendYield')
+            or info.get('trailingAnnualDividendYield')
+        )
         dividend_yield = None
         if raw_yield is not None:
-            # 0〜1 の小数なら %変換、すでに % なら そのまま
-            dividend_yield = round(raw_yield * 100 if raw_yield < 1 else raw_yield, 2)
+            dividend_yield = round(
+                raw_yield * 100 if raw_yield < 1 else raw_yield, 2
+            )
 
-        annual_dividend = info.get('dividendRate') or info.get('trailingAnnualDividendRate')
-
-        # リアルタイム配当利回り計算（株価÷年間配当）
+        annual_dividend = (
+            info.get('dividendRate')
+            or info.get('trailingAnnualDividendRate')
+        )
         if dividend_yield is None and annual_dividend and current_price:
             dividend_yield = round(annual_dividend / current_price * 100, 2)
 
+        sector_en = info.get('sector') or ''
+        sector_ja = translate_sector(sector_en) if sector_en else '不明'
+
+        industry_en = info.get('industry') or ''
+        industry_ja = translate_sector(industry_en) if industry_en else '不明'
+
+        final_name = name_map.get(code_str) or info.get('longName') or info.get('shortName') or code_str
+
         base.update({
-            'name': info.get('longName') or info.get('shortName') or str(code),
+            'name': final_name,
             'current_price': current_price,
             'previous_close': previous_close,
             'price_change': price_change,
             'price_change_pct': price_change_pct,
             'dividend_yield': dividend_yield,
             'annual_dividend': annual_dividend,
-            'sector': info.get('sector') or '不明',
-            'industry': info.get('industry') or '不明',
+            'sector': sector_ja,
+            'industry': industry_ja,
             'market_cap': info.get('marketCap'),
-            'last_updated': datetime.now(JST).isoformat(),
         })
     except Exception as e:
         base['error'] = str(e)
         print(f"  [ERROR] {code}: {e}")
 
     return base
-
-
-def fetch_all_stocks(batch_size: int = 20, sleep_sec: float = 1.0) -> list:
-    """全銘柄を取得する（レート制限回避のためバッチ処理）"""
-    results = []
-    total = len(STOCK_CODES)
-
-    for i, code in enumerate(STOCK_CODES, 1):
-        print(f"[{i:3d}/{total}] {code}.T ...", end=' ', flush=True)
-        stock = fetch_single_stock(code)
-        results.append(stock)
-
-        dy = stock['dividend_yield']
-        price = stock['current_price']
-        label = f"¥{price:,.0f}" if price else "N/A"
-        yield_label = f"{dy:.2f}%" if dy else "N/A"
-        print(f"{stock['name'][:20]:20s}  {label:>10s}  利回り:{yield_label}")
-
-        # バッチごとにスリープ
-        if i % batch_size == 0:
-            time.sleep(sleep_sec)
-
-    return results
 
 
 def main():
@@ -146,28 +187,45 @@ def main():
     print(f"対象銘柄数: {len(STOCK_CODES)}")
     print("=" * 60)
 
-    stocks = fetch_all_stocks()
+    print("\n📝 日本語銘柄名を取得中...")
+    name_map = get_japanese_names_bulk(STOCK_CODES)
+    print(f"✓ {len(name_map)} 銘柄の日本語名を取得")
 
-    # 集計
-    valid = [s for s in stocks if s['dividend_yield'] is not None]
+    print("\n📈 株価データを取得中...")
+    results = []
+    total = len(STOCK_CODES)
+
+    for i, code in enumerate(STOCK_CODES, 1):
+        print(f"[{i:3d}/{total}] {code}.T ...", end=' ', flush=True)
+        stock = fetch_single_stock(code, name_map)
+        results.append(stock)
+
+        dy = stock['dividend_yield']
+        price = stock['current_price']
+        label = f"¥{price:,.0f}" if price else "N/A"
+        yield_label = f"{dy:.2f}%" if dy else "N/A"
+        print(f"{stock['name'][:18]:18s}  {label:>10s}  利回り:{yield_label}")
+
+        if i % 30 == 0:
+            time.sleep(1)
+
+    valid = [s for s in results if s['dividend_yield'] is not None]
     alert_40 = [s for s in valid if s['dividend_yield'] >= 4.0]
     alert_37 = [s for s in valid if 3.7 <= s['dividend_yield'] < 4.0]
 
     print("\n" + "=" * 60)
-    print(f"取得完了: {len(stocks)} 銘柄 / エラー: {sum(1 for s in stocks if s['error'])}")
-    print(f"配当利回り 4.0%以上: {len(alert_40)} 銘柄")
-    print(f"配当利回り 3.7〜4.0%: {len(alert_37)} 銘柄")
+    print(f"取得完了: {len(results)} 銘柄 / エラー: {sum(1 for s in results if s['error'])}")
+    print(f"4.0%以上: {len(alert_40)} 銘柄 / 3.7〜4.0%: {len(alert_37)} 銘柄")
     print("=" * 60)
 
-    # JSON 保存
     os.makedirs('data', exist_ok=True)
     output = {
         'last_updated': datetime.now(JST).isoformat(),
-        'fetch_count': len(stocks),
+        'fetch_count': len(results),
         'valid_count': len(valid),
         'alert_40_count': len(alert_40),
         'alert_37_count': len(alert_37),
-        'stocks': stocks
+        'stocks': results
     }
 
     with open('data/stocks.json', 'w', encoding='utf-8') as f:
