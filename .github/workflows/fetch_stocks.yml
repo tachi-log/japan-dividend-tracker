@@ -22,10 +22,13 @@ jobs:
           python-version: '3.11'
 
       - name: install-deps
-        run: pip install yfinance pytz
+        run: pip install yfinance pytz requests
 
       - name: fetch-data
         run: python scripts/fetch_stocks.py
+
+      - name: translate-to-japanese
+        run: python scripts/translate_names.py
 
       - name: commit-push
         run: |
