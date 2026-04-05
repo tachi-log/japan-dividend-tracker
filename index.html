@@ -1,0 +1,680 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>📈 日本株 高配当トラッカー</title>
+  <style>
+    /* ===== リセット & 基本 ===== */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { font-size: 14px; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Hiragino Sans', 'Hiragino Kaku Gothic ProN',
+                   'Noto Sans JP', sans-serif;
+      background: #0f1117;
+      color: #e0e0e0;
+      min-height: 100vh;
+    }
+
+    /* ===== ヘッダー ===== */
+    header {
+      background: linear-gradient(135deg, #1a1d2e 0%, #16213e 100%);
+      border-bottom: 1px solid #2a2d3e;
+      padding: 12px 16px;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+    .header-inner {
+      max-width: 900px;
+      margin: 0 auto;
+    }
+    .header-title {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 1.1rem;
+      font-weight: 700;
+      color: #fff;
+    }
+    .header-meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 8px;
+      font-size: 0.78rem;
+      color: #8892a4;
+    }
+    .meta-item { display: flex; align-items: center; gap: 4px; }
+    .badge {
+      display: inline-block;
+      padding: 2px 7px;
+      border-radius: 10px;
+      font-size: 0.75rem;
+      font-weight: 600;
+    }
+    .badge-alert { background: #ff3b3b22; color: #ff6b6b; border: 1px solid #ff6b6b44; }
+    .badge-high  { background: #ff8c0022; color: #ffb347; border: 1px solid #ffb34744; }
+    .badge-ok    { background: #00c85322; color: #4cd964; border: 1px solid #4cd96444; }
+
+    /* ===== コントロールバー ===== */
+    .controls {
+      max-width: 900px;
+      margin: 12px auto;
+      padding: 0 12px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      align-items: center;
+    }
+    .search-wrap {
+      flex: 1;
+      min-width: 180px;
+    }
+    input[type="search"] {
+      width: 100%;
+      padding: 8px 12px;
+      background: #1e2130;
+      border: 1px solid #2a2d3e;
+      border-radius: 8px;
+      color: #e0e0e0;
+      font-size: 0.85rem;
+      outline: none;
+    }
+    input[type="search"]:focus { border-color: #4a9eff; }
+    input[type="search"]::placeholder { color: #4a4f60; }
+
+    select {
+      padding: 8px 10px;
+      background: #1e2130;
+      border: 1px solid #2a2d3e;
+      border-radius: 8px;
+      color: #e0e0e0;
+      font-size: 0.82rem;
+      outline: none;
+      cursor: pointer;
+    }
+    select:focus { border-color: #4a9eff; }
+
+    .btn {
+      padding: 8px 14px;
+      border-radius: 8px;
+      border: none;
+      font-size: 0.82rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: opacity 0.15s;
+    }
+    .btn:hover { opacity: 0.8; }
+    .btn-primary { background: #4a9eff; color: #fff; }
+    .btn-outline { background: transparent; border: 1px solid #2a2d3e; color: #8892a4; }
+    .btn-outline.active { border-color: #ffb347; color: #ffb347; }
+
+    /* ===== フィルタータブ ===== */
+    .filter-tabs {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 0 12px 8px;
+      display: flex;
+      gap: 6px;
+      flex-wrap: wrap;
+    }
+    .tab-btn {
+      padding: 5px 12px;
+      border-radius: 20px;
+      border: 1px solid #2a2d3e;
+      background: transparent;
+      color: #8892a4;
+      font-size: 0.78rem;
+      cursor: pointer;
+      transition: all 0.15s;
+    }
+    .tab-btn:hover { border-color: #4a9eff; color: #4a9eff; }
+    .tab-btn.active { background: #4a9eff; border-color: #4a9eff; color: #fff; font-weight: 600; }
+    .tab-btn.alert-tab.active { background: #ff6b6b; border-color: #ff6b6b; }
+    .tab-btn.high-tab.active  { background: #ffb347; border-color: #ffb347; color: #000; }
+
+    /* ===== カード ===== */
+    .cards {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 0 12px 80px;
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      gap: 10px;
+    }
+
+    .card {
+      background: #1a1d2e;
+      border: 1px solid #2a2d3e;
+      border-radius: 12px;
+      padding: 14px;
+      cursor: pointer;
+      transition: border-color 0.15s, transform 0.1s;
+      position: relative;
+      overflow: hidden;
+    }
+    .card:hover { border-color: #4a9eff44; transform: translateY(-1px); }
+
+    /* 配当利回り別ボーダー */
+    .card.yield-alert {
+      border-left: 3px solid #ff6b6b;
+      background: linear-gradient(135deg, #ff6b6b08 0%, #1a1d2e 40%);
+    }
+    .card.yield-high {
+      border-left: 3px solid #ffb347;
+      background: linear-gradient(135deg, #ffb34708 0%, #1a1d2e 40%);
+    }
+
+    /* カード上部 */
+    .card-top {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      gap: 8px;
+    }
+    .card-code {
+      font-size: 0.75rem;
+      color: #5a6070;
+      font-weight: 600;
+      letter-spacing: 0.05em;
+    }
+    .card-name {
+      font-size: 0.9rem;
+      font-weight: 700;
+      color: #e8eaf0;
+      line-height: 1.3;
+      margin-top: 2px;
+      word-break: break-all;
+    }
+
+    /* 配当利回りバッジ */
+    .yield-badge {
+      flex-shrink: 0;
+      padding: 4px 9px;
+      border-radius: 8px;
+      font-size: 0.88rem;
+      font-weight: 800;
+      white-space: nowrap;
+    }
+    .yield-badge.alert { background: #ff3b3b33; color: #ff6b6b; }
+    .yield-badge.high  { background: #ff8c0033; color: #ffb347; }
+    .yield-badge.ok    { background: #1e2130;   color: #6a7288; }
+    .yield-badge.none  { background: #1e2130;   color: #3a3f50; }
+
+    /* カード中段：価格 */
+    .card-price-row {
+      display: flex;
+      align-items: baseline;
+      gap: 8px;
+      margin-top: 10px;
+    }
+    .price-current {
+      font-size: 1.25rem;
+      font-weight: 800;
+      color: #fff;
+    }
+    .price-change {
+      font-size: 0.82rem;
+      font-weight: 600;
+    }
+    .price-change.up   { color: #ff6b6b; }
+    .price-change.down { color: #4cd9a0; }
+    .price-change.flat { color: #6a7288; }
+
+    /* カード下段：詳細 */
+    .card-details {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+      margin-top: 8px;
+    }
+    .detail-chip {
+      display: flex;
+      align-items: center;
+      gap: 4px;
+      padding: 3px 8px;
+      background: #12141f;
+      border-radius: 6px;
+      font-size: 0.73rem;
+      color: #6a7288;
+    }
+    .detail-chip .label { color: #454a5a; }
+
+    /* アラートバナー（カード最上部） */
+    .alert-banner {
+      position: absolute;
+      top: 0; right: 0;
+      padding: 2px 8px;
+      font-size: 0.65rem;
+      font-weight: 700;
+      border-radius: 0 12px 0 8px;
+    }
+    .alert-banner.alert { background: #ff6b6b; color: #fff; }
+    .alert-banner.high  { background: #ffb347; color: #000; }
+
+    /* ===== ローディング / エラー ===== */
+    .status-box {
+      max-width: 900px;
+      margin: 40px auto;
+      padding: 40px 20px;
+      text-align: center;
+      color: #5a6070;
+    }
+    .spinner {
+      width: 36px; height: 36px;
+      border: 3px solid #2a2d3e;
+      border-top-color: #4a9eff;
+      border-radius: 50%;
+      animation: spin 0.8s linear infinite;
+      margin: 0 auto 16px;
+    }
+    @keyframes spin { to { transform: rotate(360deg); } }
+
+    /* ===== 統計バー ===== */
+    .stats-bar {
+      max-width: 900px;
+      margin: 8px auto;
+      padding: 0 12px;
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap;
+    }
+    .stat-card {
+      flex: 1;
+      min-width: 80px;
+      background: #1a1d2e;
+      border: 1px solid #2a2d3e;
+      border-radius: 10px;
+      padding: 10px 12px;
+      text-align: center;
+    }
+    .stat-value { font-size: 1.3rem; font-weight: 800; color: #fff; }
+    .stat-label { font-size: 0.7rem; color: #5a6070; margin-top: 2px; }
+    .stat-card.alert .stat-value { color: #ff6b6b; }
+    .stat-card.high  .stat-value { color: #ffb347; }
+
+    /* ===== ソートボタン ===== */
+    .sort-btn {
+      display: flex;
+      align-items: center;
+      gap: 4px;
+      padding: 6px 10px;
+      background: #1e2130;
+      border: 1px solid #2a2d3e;
+      border-radius: 7px;
+      color: #8892a4;
+      font-size: 0.78rem;
+      cursor: pointer;
+    }
+    .sort-btn.active { border-color: #4a9eff; color: #4a9eff; }
+
+    /* ===== レスポンシブ ===== */
+    @media (max-width: 480px) {
+      .cards { grid-template-columns: 1fr; }
+      .price-current { font-size: 1.1rem; }
+      .stats-bar { gap: 6px; }
+      .stat-value { font-size: 1.1rem; }
+    }
+
+    /* ===== フッター更新時刻 ===== */
+    .footer {
+      position: fixed;
+      bottom: 0; left: 0; right: 0;
+      background: #0f1117ee;
+      border-top: 1px solid #1e2130;
+      padding: 6px 16px;
+      display: flex;
+      justify-content: center;
+      font-size: 0.72rem;
+      color: #3a3f50;
+      backdrop-filter: blur(8px);
+    }
+
+    /* ===== 件数 ===== */
+    .result-count {
+      max-width: 900px;
+      margin: 4px auto;
+      padding: 0 14px;
+      font-size: 0.75rem;
+      color: #454a5a;
+    }
+  </style>
+</head>
+<body>
+
+<!-- ヘッダー -->
+<header>
+  <div class="header-inner">
+    <div class="header-title">
+      📈 日本株 高配当トラッカー
+    </div>
+    <div class="header-meta">
+      <span class="meta-item">🕐 更新: <span id="lastUpdated">読み込み中...</span></span>
+      <span class="meta-item">
+        <span class="badge badge-alert" id="cnt40">-</span> 4.0%以上
+      </span>
+      <span class="meta-item">
+        <span class="badge badge-high" id="cnt37">-</span> 3.7%以上
+      </span>
+      <span class="meta-item">
+        <span class="badge badge-ok" id="cntTotal">-</span> 全銘柄
+      </span>
+    </div>
+  </div>
+</header>
+
+<!-- 統計 -->
+<div class="stats-bar" id="statsBar" style="display:none">
+  <div class="stat-card alert">
+    <div class="stat-value" id="stat40">-</div>
+    <div class="stat-label">🔴 4.0%以上</div>
+  </div>
+  <div class="stat-card high">
+    <div class="stat-value" id="stat37">-</div>
+    <div class="stat-label">🟠 3.7〜4.0%</div>
+  </div>
+  <div class="stat-card">
+    <div class="stat-value" id="statAvg">-</div>
+    <div class="stat-label">平均利回り</div>
+  </div>
+  <div class="stat-card">
+    <div class="stat-value" id="statTotal">-</div>
+    <div class="stat-label">取得銘柄数</div>
+  </div>
+</div>
+
+<!-- コントロール -->
+<div class="controls">
+  <div class="search-wrap">
+    <input type="search" id="searchInput" placeholder="🔍 銘柄名・コード・セクターで検索" oninput="applyFilters()">
+  </div>
+  <select id="sectorFilter" onchange="applyFilters()">
+    <option value="">全セクター</option>
+  </select>
+  <button class="sort-btn active" id="sortYield" onclick="setSort('yield')">利回り↓</button>
+  <button class="sort-btn" id="sortCode"  onclick="setSort('code')">コード↑</button>
+  <button class="sort-btn" id="sortPrice" onclick="setSort('price')">株価↓</button>
+</div>
+
+<!-- フィルタータブ -->
+<div class="filter-tabs">
+  <button class="tab-btn active"     onclick="setTab('all')"    id="tab-all">全銘柄</button>
+  <button class="tab-btn alert-tab"  onclick="setTab('alert')"  id="tab-alert">🔴 4.0%以上</button>
+  <button class="tab-btn high-tab"   onclick="setTab('high')"   id="tab-high">🟠 3.7%以上</button>
+  <button class="tab-btn"            onclick="setTab('err')"    id="tab-err">⚠ エラー</button>
+</div>
+
+<!-- 件数 -->
+<div class="result-count" id="resultCount"></div>
+
+<!-- カード -->
+<main>
+  <div class="cards" id="cards">
+    <div class="status-box">
+      <div class="spinner"></div>
+      <p>データを読み込んでいます...</p>
+    </div>
+  </div>
+</main>
+
+<!-- フッター -->
+<div class="footer" id="footer">最終更新: 読み込み中...</div>
+
+<script>
+// ============================================================
+// データ読み込み
+// ============================================================
+const DATA_URL = './data/stocks.json';
+
+let allStocks = [];
+let currentTab   = 'all';
+let currentSort  = 'yield';
+let currentSortDir = -1; // -1: 降順, 1: 昇順
+
+async function loadData() {
+  try {
+    // キャッシュバスター付きで取得
+    const res = await fetch(DATA_URL + '?t=' + Date.now());
+    if (!res.ok) throw new Error(`HTTP ${res.status}`);
+    const json = await res.json();
+
+    allStocks = json.stocks || [];
+
+    // ヘッダー情報更新
+    const lastUpd = json.last_updated
+      ? new Date(json.last_updated).toLocaleString('ja-JP', { timeZone: 'Asia/Tokyo' })
+      : '不明';
+    document.getElementById('lastUpdated').textContent = lastUpd;
+    document.getElementById('footer').textContent = '最終更新: ' + lastUpd;
+
+    const valid    = allStocks.filter(s => s.dividend_yield != null);
+    const cnt40    = valid.filter(s => s.dividend_yield >= 4.0).length;
+    const cnt37    = valid.filter(s => s.dividend_yield >= 3.7 && s.dividend_yield < 4.0).length;
+    const avgYield = valid.length
+      ? (valid.reduce((a, s) => a + s.dividend_yield, 0) / valid.length).toFixed(2)
+      : '-';
+
+    document.getElementById('cnt40').textContent    = cnt40;
+    document.getElementById('cnt37').textContent    = cnt37;
+    document.getElementById('cntTotal').textContent = allStocks.length;
+
+    // 統計バー
+    document.getElementById('stat40').textContent    = cnt40;
+    document.getElementById('stat37').textContent    = cnt37;
+    document.getElementById('statAvg').textContent   = avgYield + '%';
+    document.getElementById('statTotal').textContent = allStocks.length;
+    document.getElementById('statsBar').style.display = '';
+
+    // セクターフィルター構築
+    buildSectorFilter();
+
+    applyFilters();
+  } catch (e) {
+    document.getElementById('cards').innerHTML = `
+      <div class="status-box">
+        <p>⚠ データを読み込めませんでした</p>
+        <p style="margin-top:8px; font-size:0.8rem">${e.message}</p>
+        <p style="margin-top:8px; font-size:0.75rem; color:#3a3f50">
+          GitHub Actions でデータを取得後、<br>data/stocks.json が生成されます
+        </p>
+      </div>`;
+  }
+}
+
+function buildSectorFilter() {
+  const sectors = [...new Set(allStocks.map(s => s.sector || '不明'))].sort();
+  const sel = document.getElementById('sectorFilter');
+  sel.innerHTML = '<option value="">全セクター</option>';
+  sectors.forEach(sec => {
+    const opt = document.createElement('option');
+    opt.value = sec;
+    opt.textContent = sec;
+    sel.appendChild(opt);
+  });
+}
+
+// ============================================================
+// フィルタ & ソート
+// ============================================================
+function setTab(tab) {
+  currentTab = tab;
+  document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+  document.getElementById('tab-' + tab).classList.add('active');
+  applyFilters();
+}
+
+function setSort(key) {
+  if (currentSort === key) {
+    currentSortDir *= -1;
+  } else {
+    currentSort = key;
+    currentSortDir = key === 'code' ? 1 : -1;
+  }
+  document.querySelectorAll('.sort-btn').forEach(b => b.classList.remove('active'));
+  document.getElementById('sort' + key.charAt(0).toUpperCase() + key.slice(1))
+          .classList.add('active');
+  applyFilters();
+}
+
+function applyFilters() {
+  const q      = document.getElementById('searchInput').value.trim().toLowerCase();
+  const sector = document.getElementById('sectorFilter').value;
+
+  let stocks = [...allStocks];
+
+  // タブフィルタ
+  if (currentTab === 'alert') {
+    stocks = stocks.filter(s => s.dividend_yield != null && s.dividend_yield >= 4.0);
+  } else if (currentTab === 'high') {
+    stocks = stocks.filter(s => s.dividend_yield != null && s.dividend_yield >= 3.7);
+  } else if (currentTab === 'err') {
+    stocks = stocks.filter(s => s.error);
+  }
+
+  // セクターフィルタ
+  if (sector) {
+    stocks = stocks.filter(s => (s.sector || '不明') === sector);
+  }
+
+  // テキスト検索
+  if (q) {
+    stocks = stocks.filter(s =>
+      s.code.includes(q) ||
+      (s.name || '').toLowerCase().includes(q) ||
+      (s.sector || '').toLowerCase().includes(q) ||
+      (s.industry || '').toLowerCase().includes(q)
+    );
+  }
+
+  // ソート
+  stocks.sort((a, b) => {
+    let av, bv;
+    if (currentSort === 'yield') {
+      av = a.dividend_yield ?? -999;
+      bv = b.dividend_yield ?? -999;
+    } else if (currentSort === 'code') {
+      av = parseInt(a.code);
+      bv = parseInt(b.code);
+    } else if (currentSort === 'price') {
+      av = a.current_price ?? -999;
+      bv = b.current_price ?? -999;
+    }
+    return (av - bv) * currentSortDir;
+  });
+
+  document.getElementById('resultCount').textContent =
+    `${stocks.length} 件表示 / 全 ${allStocks.length} 銘柄`;
+
+  renderCards(stocks);
+}
+
+// ============================================================
+// カードレンダリング
+// ============================================================
+function renderCards(stocks) {
+  const container = document.getElementById('cards');
+  if (stocks.length === 0) {
+    container.innerHTML = '<div class="status-box"><p>該当する銘柄がありません</p></div>';
+    return;
+  }
+
+  container.innerHTML = stocks.map(s => cardHTML(s)).join('');
+}
+
+function cardHTML(s) {
+  const dy = s.dividend_yield;
+  const price = s.current_price;
+
+  // 利回り分類
+  let yieldClass = 'none';
+  let yieldLabel = '-';
+  let cardClass  = '';
+  let banner     = '';
+
+  if (dy != null) {
+    yieldLabel = dy.toFixed(2) + '%';
+    if (dy >= 4.0) {
+      yieldClass = 'alert';
+      cardClass  = 'yield-alert';
+      banner     = '<div class="alert-banner alert">🔴 高配当</div>';
+    } else if (dy >= 3.7) {
+      yieldClass = 'high';
+      cardClass  = 'yield-high';
+      banner     = '<div class="alert-banner high">🟠 注目</div>';
+    } else {
+      yieldClass = 'ok';
+    }
+  }
+
+  // 株価
+  const priceStr = price != null ? '¥' + price.toLocaleString('ja-JP') : '-';
+
+  // 前日比
+  let changeHTML = '<span class="price-change flat">-</span>';
+  if (s.price_change != null && s.price_change_pct != null) {
+    const dir = s.price_change > 0 ? 'up' : s.price_change < 0 ? 'down' : 'flat';
+    const sign = s.price_change > 0 ? '+' : '';
+    changeHTML = `<span class="price-change ${dir}">
+      ${sign}${s.price_change.toFixed(0)} (${sign}${s.price_change_pct.toFixed(2)}%)
+    </span>`;
+  }
+
+  // 時価総額
+  let mcapStr = '-';
+  if (s.market_cap) {
+    const oku = s.market_cap / 1e8;
+    mcapStr = oku >= 10000
+      ? (oku / 10000).toFixed(1) + '兆'
+      : oku.toFixed(0) + '億';
+  }
+
+  // エラー
+  const errHTML = s.error
+    ? `<div style="margin-top:8px; font-size:0.7rem; color:#ff6b6b44">⚠ ${s.error.substring(0, 50)}</div>`
+    : '';
+
+  return `
+  <div class="card ${cardClass}" onclick="openStockPage('${s.code}')">
+    ${banner}
+    <div class="card-top">
+      <div>
+        <div class="card-code">${s.code}</div>
+        <div class="card-name">${escHtml(s.name)}</div>
+      </div>
+      <div class="yield-badge ${yieldClass}">${yieldLabel}</div>
+    </div>
+    <div class="card-price-row">
+      <span class="price-current">${priceStr}</span>
+      ${changeHTML}
+    </div>
+    <div class="card-details">
+      <span class="detail-chip"><span class="label">セクター</span>${escHtml(s.sector || '不明')}</span>
+      <span class="detail-chip"><span class="label">時価総額</span>${mcapStr}</span>
+      ${s.annual_dividend ? `<span class="detail-chip"><span class="label">年配当</span>¥${s.annual_dividend}</span>` : ''}
+    </div>
+    ${errHTML}
+  </div>`;
+}
+
+function escHtml(str) {
+  return String(str)
+    .replace(/&/g,'&amp;')
+    .replace(/</g,'&lt;')
+    .replace(/>/g,'&gt;');
+}
+
+function openStockPage(code) {
+  window.open(`https://finance.yahoo.co.jp/quote/${code}.T`, '_blank');
+}
+
+// ============================================================
+// 起動
+// ============================================================
+loadData();
+
+// 5分ごとに自動リロード
+setInterval(loadData, 5 * 60 * 1000);
+</script>
+</body>
+</html>

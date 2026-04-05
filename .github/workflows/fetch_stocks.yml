@@ -1,0 +1,43 @@
+name: 株価データ自動取得
+
+on:
+  schedule:
+    # JST = UTC+9 なので UTC で指定
+    - cron: '35 2 * * 1-5'   # 11:35 JST 前場終了後（平日）
+    - cron: '35 6 * * 1-5'   # 15:35 JST 後場終了後（平日）
+    - cron: '0 9 * * 1-5'    # 18:00 JST 夕方（平日）
+  workflow_dispatch:          # 手動実行ボタン
+
+jobs:
+  fetch-stocks:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write          # JSON を push するために必要
+
+    steps:
+      - name: リポジトリをチェックアウト
+        uses: actions/checkout@v4
+
+      - name: Python 3.11 をセットアップ
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+          cache: 'pip'
+
+      - name: 依存パッケージをインストール
+        run: |
+          pip install --upgrade pip
+          pip install yfinance pytz
+
+      - name: 株価データを取得
+        run: python scripts/fetch_stocks.py
+
+      - name: data/stocks.json をコミット & プッシュ
+        run: |
+          git config --local user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git config --local user.name "github-actions[bot]"
+          git add data/stocks.json
+          # 変更がある場合のみコミット
+          git diff --staged --quiet || \
+            git commit -m "📈 株価データ更新 $(TZ='Asia/Tokyo' date '+%Y-%m-%d %H:%M') JST"
+          git push
