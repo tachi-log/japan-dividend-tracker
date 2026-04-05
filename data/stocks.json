@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-04-05T20:37:46.683866+09:00",
+  "last_updated": "2026-04-05T20:48:25.732206+09:00",
   "fetch_count": 257,
   "valid_count": 256,
   "alert_40_count": 93,
@@ -7,7 +7,7 @@
   "stocks": [
     {
       "code": "9986",
-      "name": "ZAOH Company, Ltd.",
+      "name": "ヤマダホールディングス",
       "current_price": 2658.0,
       "previous_close": 2666.0,
       "price_change": -8.0,
@@ -15,12 +15,12 @@
       "dividend_yield": 3.75,
       "sector": "産業",
       "market_cap": 14454849536,
-      "last_updated": "2026-04-05T20:36:53.203170+09:00",
+      "last_updated": "2026-04-05T20:47:13.915391+09:00",
       "error": null
     },
     {
       "code": "3076",
-      "name": "Ai Holdings Corporation",
+      "name": "カネ美食品",
       "current_price": 2756.0,
       "previous_close": 2730.0,
       "price_change": 26.0,
@@ -28,12 +28,12 @@
       "dividend_yield": 4.03,
       "sector": "産業",
       "market_cap": 146821791744,
-      "last_updated": "2026-04-05T20:36:53.598998+09:00",
+      "last_updated": "2026-04-05T20:47:14.604940+09:00",
       "error": null
     },
     {
       "code": "8130",
-      "name": "Sangetsu Corporation",
+      "name": "サンゲツ",
       "current_price": 3075.0,
       "previous_close": 3095.0,
       "price_change": -20.0,
@@ -41,12 +41,12 @@
       "dividend_yield": 5.01,
       "sector": "一般消費財",
       "market_cap": 180717780992,
-      "last_updated": "2026-04-05T20:36:53.735504+09:00",
+      "last_updated": "2026-04-05T20:47:14.932811+09:00",
       "error": null
     },
     {
       "code": "2659",
-      "name": "SAN-A CO.,LTD.",
+      "name": "サンエー",
       "current_price": 3110.0,
       "previous_close": 3090.0,
       "price_change": 20.0,
@@ -54,12 +54,12 @@
       "dividend_yield": 3.24,
       "sector": "一般消費財",
       "market_cap": 192346193920,
-      "last_updated": "2026-04-05T20:36:53.888463+09:00",
+      "last_updated": "2026-04-05T20:47:15.199212+09:00",
       "error": null
     },
     {
       "code": "3333",
-      "name": "Asahi Co., Ltd.",
+      "name": "あさひ",
       "current_price": 1391.0,
       "previous_close": 1377.0,
       "price_change": 14.0,
@@ -67,12 +67,12 @@
       "dividend_yield": 3.63,
       "sector": "一般消費財",
       "market_cap": 36224311296,
-      "last_updated": "2026-04-05T20:36:54.027595+09:00",
+      "last_updated": "2026-04-05T20:47:15.460602+09:00",
       "error": null
     },
     {
       "code": "4008",
-      "name": "Sumitomo Seika Chemicals Company, Limited.",
+      "name": "住友精化",
       "current_price": 1223.0,
       "previous_close": 1205.0,
       "price_change": 18.0,
@@ -80,12 +80,12 @@
       "dividend_yield": 3.65,
       "sector": "素材",
       "market_cap": 79295995904,
-      "last_updated": "2026-04-05T20:36:54.242601+09:00",
+      "last_updated": "2026-04-05T20:47:15.698243+09:00",
       "error": null
     },
     {
       "code": "4042",
-      "name": "Tosoh Corporation",
+      "name": "東ソー",
       "current_price": 2338.5,
       "previous_close": 2325.5,
       "price_change": 13.0,
@@ -93,12 +93,12 @@
       "dividend_yield": 4.3,
       "sector": "素材",
       "market_cap": 721748557824,
-      "last_updated": "2026-04-05T20:36:54.424278+09:00",
+      "last_updated": "2026-04-05T20:47:15.936592+09:00",
       "error": null
     },
     {
       "code": "4097",
-      "name": "Koatsu Gas Kogyo Co., Ltd.",
+      "name": "コーアガスホールディングス",
       "current_price": 1114.0,
       "previous_close": 1101.0,
       "price_change": 13.0,
@@ -106,12 +106,12 @@
       "dividend_yield": 3.63,
       "sector": "素材",
       "market_cap": 61496602624,
-      "last_updated": "2026-04-05T20:36:54.576848+09:00",
+      "last_updated": "2026-04-05T20:47:16.178107+09:00",
       "error": null
     },
     {
       "code": "8309",
-      "name": "Sumitomo Mitsui Trust Group, Inc.",
+      "name": "三井住友トラスト・ホールディングス",
       "current_price": 5123.0,
       "previous_close": 5104.0,
       "price_change": 19.0,
@@ -119,12 +119,12 @@
       "dividend_yield": 3.33,
       "sector": "金融",
       "market_cap": 3570655821824,
-      "last_updated": "2026-04-05T20:36:54.727754+09:00",
+      "last_updated": "2026-04-05T20:47:16.413746+09:00",
       "error": null
     },
     {
       "code": "8725",
-      "name": "MS&AD Insurance Group Holdings, Inc.",
+      "name": "MS&ADインシュアランスグループHD",
       "current_price": 4136.0,
       "previous_close": 4097.0,
       "price_change": 39.0,
@@ -132,12 +132,12 @@
       "dividend_yield": 2.93,
       "sector": "金融",
       "market_cap": 6037338324992,
-      "last_updated": "2026-04-05T20:36:54.864850+09:00",
+      "last_updated": "2026-04-05T20:47:16.649820+09:00",
       "error": null
     },
     {
       "code": "8593",
-      "name": "Mitsubishi HC Capital Inc.",
+      "name": "三菱HCキャピタル",
       "current_price": 1469.5,
       "previous_close": 1462.5,
       "price_change": 7.0,
@@ -145,12 +145,12 @@
       "dividend_yield": 3.15,
       "sector": "金融",
       "market_cap": 2109618126848,
-      "last_updated": "2026-04-05T20:36:54.999280+09:00",
+      "last_updated": "2026-04-05T20:47:16.892228+09:00",
       "error": null
     },
     {
       "code": "8584",
-      "name": "JACCS Co., Ltd.",
+      "name": "ジャックス",
       "current_price": 4130.0,
       "previous_close": 4085.0,
       "price_change": 45.0,
@@ -158,12 +158,12 @@
       "dividend_yield": 4.9,
       "sector": "金融",
       "market_cap": 184868569088,
-      "last_updated": "2026-04-05T20:36:55.174783+09:00",
+      "last_updated": "2026-04-05T20:47:17.129345+09:00",
       "error": null
     },
     {
       "code": "6785",
-      "name": "Suzuki Co.,Ltd.",
+      "name": "鈴木",
       "current_price": 2755.0,
       "previous_close": 2708.0,
       "price_change": 47.0,
@@ -171,12 +171,12 @@
       "dividend_yield": 3.51,
       "sector": "テクノロジー",
       "market_cap": 39559823360,
-      "last_updated": "2026-04-05T20:36:55.310040+09:00",
+      "last_updated": "2026-04-05T20:47:17.366068+09:00",
       "error": null
     },
     {
       "code": "7723",
-      "name": "Aichi Tokei Denki Co., Ltd.",
+      "name": "愛知時計電機",
       "current_price": 2973.0,
       "previous_close": 2983.0,
       "price_change": -10.0,
@@ -184,12 +184,12 @@
       "dividend_yield": 3.79,
       "sector": "テクノロジー",
       "market_cap": 45610733568,
-      "last_updated": "2026-04-05T20:36:55.443134+09:00",
+      "last_updated": "2026-04-05T20:47:17.599419+09:00",
       "error": null
     },
     {
       "code": "3231",
-      "name": "Nomura Real Estate Holdings, Inc.",
+      "name": "野村不動産ホールディングス",
       "current_price": 1043.0,
       "previous_close": 1035.5,
       "price_change": 7.5,
@@ -197,12 +197,12 @@
       "dividend_yield": 3.86,
       "sector": "不動産",
       "market_cap": 894329946112,
-      "last_updated": "2026-04-05T20:36:55.602057+09:00",
+      "last_updated": "2026-04-05T20:47:17.837586+09:00",
       "error": null
     },
     {
       "code": "3003",
-      "name": "Hulic Co., Ltd.",
+      "name": "ヒューリック",
       "current_price": 1878.0,
       "previous_close": 1872.0,
       "price_change": 6.0,
@@ -210,12 +210,12 @@
       "dividend_yield": 3.58,
       "sector": "不動産",
       "market_cap": 1426002542592,
-      "last_updated": "2026-04-05T20:36:55.801777+09:00",
+      "last_updated": "2026-04-05T20:47:18.074075+09:00",
       "error": null
     },
     {
       "code": "2169",
-      "name": "CDS Co.,Ltd.",
+      "name": "CDS",
       "current_price": 1835.0,
       "previous_close": 1832.0,
       "price_change": 3.0,
@@ -223,12 +223,12 @@
       "dividend_yield": 4.04,
       "sector": "テクノロジー",
       "market_cap": 12514037760,
-      "last_updated": "2026-04-05T20:36:55.938691+09:00",
+      "last_updated": "2026-04-05T20:47:18.310428+09:00",
       "error": null
     },
     {
       "code": "9757",
-      "name": "Funai Soken Holdings Incorporated",
+      "name": "船井総研ホールディングス",
       "current_price": 1164.0,
       "previous_close": 1144.0,
       "price_change": 20.0,
@@ -236,12 +236,12 @@
       "dividend_yield": 4.2,
       "sector": "産業",
       "market_cap": 105789816832,
-      "last_updated": "2026-04-05T20:36:56.095700+09:00",
+      "last_updated": "2026-04-05T20:47:18.549648+09:00",
       "error": null
     },
     {
       "code": "9769",
-      "name": "Gakkyusha Co.,Ltd.",
+      "name": "学究社",
       "current_price": 2386.0,
       "previous_close": 2381.0,
       "price_change": 5.0,
@@ -249,12 +249,12 @@
       "dividend_yield": 4.45,
       "sector": "生活必需品",
       "market_cap": 25931517952,
-      "last_updated": "2026-04-05T20:36:56.234879+09:00",
+      "last_updated": "2026-04-05T20:47:18.784777+09:00",
       "error": null
     },
     {
       "code": "4641",
-      "name": "Altech Corporation",
+      "name": "アルプス技研",
       "current_price": 2598.0,
       "previous_close": 2578.0,
       "price_change": 20.0,
@@ -262,12 +262,12 @@
       "dividend_yield": 4.19,
       "sector": "産業",
       "market_cap": 50964779008,
-      "last_updated": "2026-04-05T20:36:56.370062+09:00",
+      "last_updated": "2026-04-05T20:47:19.023576+09:00",
       "error": null
     },
     {
       "code": "3817",
-      "name": "SRA Holdings, Inc.",
+      "name": "SRAホールディングス",
       "current_price": 4795.0,
       "previous_close": 4745.0,
       "price_change": 50.0,
@@ -275,12 +275,12 @@
       "dividend_yield": 4.21,
       "sector": "テクノロジー",
       "market_cap": 60579495936,
-      "last_updated": "2026-04-05T20:36:56.578529+09:00",
+      "last_updated": "2026-04-05T20:47:19.291275+09:00",
       "error": null
     },
     {
       "code": "3901",
-      "name": "MarkLines Co., Ltd.",
+      "name": "マークラインズ",
       "current_price": 1532.0,
       "previous_close": 1539.0,
       "price_change": -7.0,
@@ -288,12 +288,12 @@
       "dividend_yield": 3.38,
       "sector": "通信",
       "market_cap": 19527667712,
-      "last_updated": "2026-04-05T20:36:56.783523+09:00",
+      "last_updated": "2026-04-05T20:47:19.592116+09:00",
       "error": null
     },
     {
       "code": "4674",
-      "name": "Cresco Ltd.",
+      "name": "クレスコ",
       "current_price": 1446.0,
       "previous_close": 1448.0,
       "price_change": -2.0,
@@ -301,12 +301,12 @@
       "dividend_yield": 4.01,
       "sector": "テクノロジー",
       "market_cap": 58365505536,
-      "last_updated": "2026-04-05T20:36:56.920455+09:00",
+      "last_updated": "2026-04-05T20:47:19.836530+09:00",
       "error": null
     },
     {
       "code": "2003",
-      "name": "Nitto Fuji Flour Milling Co.,Ltd.",
+      "name": "日東富士製粉",
       "current_price": 1820.0,
       "previous_close": 1814.0,
       "price_change": 6.0,
@@ -314,12 +314,12 @@
       "dividend_yield": 3.86,
       "sector": "生活必需品",
       "market_cap": 66284421120,
-      "last_updated": "2026-04-05T20:36:57.095000+09:00",
+      "last_updated": "2026-04-05T20:47:20.072428+09:00",
       "error": null
     },
     {
       "code": "1414",
-      "name": "SHO-BOND Holdings Co.,Ltd.",
+      "name": "ショーボンドホールディングス",
       "current_price": 1444.5,
       "previous_close": 1435.0,
       "price_change": 9.5,
@@ -327,12 +327,12 @@
       "dividend_yield": 3.17,
       "sector": "産業",
       "market_cap": 291925262336,
-      "last_updated": "2026-04-05T20:36:57.243552+09:00",
+      "last_updated": "2026-04-05T20:47:20.311469+09:00",
       "error": null
     },
     {
       "code": "1928",
-      "name": "Sekisui House, Ltd.",
+      "name": "積水ハウス",
       "current_price": 3560.0,
       "previous_close": 3599.0,
       "price_change": -39.0,
@@ -340,12 +340,12 @@
       "dividend_yield": 4.06,
       "sector": "一般消費財",
       "market_cap": 2307725197312,
-      "last_updated": "2026-04-05T20:36:57.434398+09:00",
+      "last_updated": "2026-04-05T20:47:20.550868+09:00",
       "error": null
     },
     {
       "code": "6345",
-      "name": "Aichi Corporation",
+      "name": "旭産業",
       "current_price": 1333.0,
       "previous_close": 1320.0,
       "price_change": 13.0,
@@ -353,12 +353,12 @@
       "dividend_yield": 4.55,
       "sector": "産業",
       "market_cap": 86058278912,
-      "last_updated": "2026-04-05T20:36:57.628543+09:00",
+      "last_updated": "2026-04-05T20:47:20.792434+09:00",
       "error": null
     },
     {
       "code": "9364",
-      "name": "Kamigumi Co., Ltd.",
+      "name": "上組",
       "current_price": 5505.0,
       "previous_close": 5487.0,
       "price_change": 18.0,
@@ -366,12 +366,12 @@
       "dividend_yield": 3.37,
       "sector": "産業",
       "market_cap": 545422966784,
-      "last_updated": "2026-04-05T20:36:57.838463+09:00",
+      "last_updated": "2026-04-05T20:47:21.037556+09:00",
       "error": null
     },
     {
       "code": "9381",
-      "name": "AIT Corporation",
+      "name": "エーアイティー",
       "current_price": 2227.0,
       "previous_close": 2231.0,
       "price_change": -4.0,
@@ -379,12 +379,12 @@
       "dividend_yield": 4.93,
       "sector": "産業",
       "market_cap": 52320231424,
-      "last_updated": "2026-04-05T20:36:57.977706+09:00",
+      "last_updated": "2026-04-05T20:47:21.274847+09:00",
       "error": null
     },
     {
       "code": "5388",
-      "name": "Kunimine Industries Co., Ltd.",
+      "name": "クニミネ工業",
       "current_price": 1266.0,
       "previous_close": 1288.0,
       "price_change": -22.0,
@@ -392,12 +392,12 @@
       "dividend_yield": 3.11,
       "sector": "素材",
       "market_cap": 15417872384,
-      "last_updated": "2026-04-05T20:36:58.160102+09:00",
+      "last_updated": "2026-04-05T20:47:21.510682+09:00",
       "error": null
     },
     {
       "code": "7989",
-      "name": "Tachikawa Corporation",
+      "name": "立川ブラインド工業",
       "current_price": 2535.0,
       "previous_close": 2520.0,
       "price_change": 15.0,
@@ -405,12 +405,12 @@
       "dividend_yield": 5.56,
       "sector": "一般消費財",
       "market_cap": 50956406784,
-      "last_updated": "2026-04-05T20:36:59.367729+09:00",
+      "last_updated": "2026-04-05T20:47:22.745831+09:00",
       "error": null
     },
     {
       "code": "7820",
-      "name": "Nihon Flush Co., Ltd.",
+      "name": "日本グランデ",
       "current_price": 810.0,
       "previous_close": 804.0,
       "price_change": 6.0,
@@ -418,12 +418,12 @@
       "dividend_yield": 4.48,
       "sector": "産業",
       "market_cap": 18432974848,
-      "last_updated": "2026-04-05T20:36:59.542473+09:00",
+      "last_updated": "2026-04-05T20:47:22.987627+09:00",
       "error": null
     },
     {
       "code": "7994",
-      "name": "Okamura Corporation",
+      "name": "オカムラ",
       "current_price": 2550.0,
       "previous_close": 2542.0,
       "price_change": 8.0,
@@ -431,12 +431,12 @@
       "dividend_yield": 3.82,
       "sector": "産業",
       "market_cap": 241425334272,
-      "last_updated": "2026-04-05T20:36:59.709109+09:00",
+      "last_updated": "2026-04-05T20:47:23.223806+09:00",
       "error": null
     },
     {
       "code": "4540",
-      "name": "Tsumura & Co.",
+      "name": "ツムラ",
       "current_price": 3844.0,
       "previous_close": 3831.0,
       "price_change": 13.0,
@@ -444,12 +444,12 @@
       "dividend_yield": 3.76,
       "sector": "ヘルスケア",
       "market_cap": 285748854784,
-      "last_updated": "2026-04-05T20:36:59.876200+09:00",
+      "last_updated": "2026-04-05T20:47:23.465360+09:00",
       "error": null
     },
     {
       "code": "1343",
-      "name": "NEXT FUNDS REIT INDEX ETF",
+      "name": "NF東証REIT指数ETF",
       "current_price": 2068.5,
       "previous_close": 2033.0,
       "price_change": 35.5,
@@ -457,12 +457,12 @@
       "dividend_yield": 4.24,
       "sector": "不明",
       "market_cap": null,
-      "last_updated": "2026-04-05T20:37:00.116734+09:00",
+      "last_updated": "2026-04-05T20:47:23.703535+09:00",
       "error": null
     },
     {
       "code": "9432",
-      "name": "NTT, Inc.",
+      "name": "日本電信電話（NTT）",
       "current_price": 157.8,
       "previous_close": 157.0,
       "price_change": 0.8,
@@ -470,12 +470,12 @@
       "dividend_yield": 3.38,
       "sector": "通信",
       "market_cap": 12848647372800,
-      "last_updated": "2026-04-05T20:37:00.256048+09:00",
+      "last_updated": "2026-04-05T20:47:23.997569+09:00",
       "error": null
     },
     {
       "code": "2181",
-      "name": "Persol Holdings Co.,Ltd.",
+      "name": "パーソルホールディングス",
       "current_price": 238.1,
       "previous_close": 233.2,
       "price_change": 4.9,
@@ -483,12 +483,12 @@
       "dividend_yield": 4.72,
       "sector": "産業",
       "market_cap": 531171737600,
-      "last_updated": "2026-04-05T20:37:00.426222+09:00",
+      "last_updated": "2026-04-05T20:47:24.230285+09:00",
       "error": null
     },
     {
       "code": "2353",
-      "name": "NIPPON PARKING DEVELOPMENT Co.,Ltd.",
+      "name": "日本駐車場開発",
       "current_price": 278.0,
       "previous_close": 276.0,
       "price_change": 2.0,
@@ -496,12 +496,12 @@
       "dividend_yield": 3.26,
       "sector": "産業",
       "market_cap": 88305590272,
-      "last_updated": "2026-04-05T20:37:00.564544+09:00",
+      "last_updated": "2026-04-05T20:47:24.472294+09:00",
       "error": null
     },
     {
       "code": "8572",
-      "name": "Acom Co., Ltd.",
+      "name": "アコム",
       "current_price": 471.7,
       "previous_close": 471.3,
       "price_change": 0.4,
@@ -509,12 +509,12 @@
       "dividend_yield": 4.24,
       "sector": "金融",
       "market_cap": 738971811840,
-      "last_updated": "2026-04-05T20:37:00.703726+09:00",
+      "last_updated": "2026-04-05T20:47:24.709333+09:00",
       "error": null
     },
     {
       "code": "7593",
-      "name": "Vt Holdings Co.,Ltd.",
+      "name": "VTホールディングス",
       "current_price": 494.0,
       "previous_close": 491.0,
       "price_change": 3.0,
@@ -522,12 +522,12 @@
       "dividend_yield": 4.89,
       "sector": "一般消費財",
       "market_cap": 57430052864,
-      "last_updated": "2026-04-05T20:37:00.840952+09:00",
+      "last_updated": "2026-04-05T20:47:24.993413+09:00",
       "error": null
     },
     {
       "code": "5401",
-      "name": "Nippon Steel Corporation",
+      "name": "日本製鉄",
       "current_price": 585.0,
       "previous_close": 584.0,
       "price_change": 1.0,
@@ -535,12 +535,12 @@
       "dividend_yield": 4.11,
       "sector": "素材",
       "market_cap": 3057414569984,
-      "last_updated": "2026-04-05T20:37:00.996142+09:00",
+      "last_updated": "2026-04-05T20:47:25.258474+09:00",
       "error": null
     },
     {
       "code": "4820",
-      "name": "EM Systems Co., Ltd.",
+      "name": "イーエムシステムズ",
       "current_price": 674.0,
       "previous_close": 669.0,
       "price_change": 5.0,
@@ -548,12 +548,12 @@
       "dividend_yield": 4.78,
       "sector": "ヘルスケア",
       "market_cap": 46654959616,
-      "last_updated": "2026-04-05T20:37:01.173854+09:00",
+      "last_updated": "2026-04-05T20:47:25.569327+09:00",
       "error": null
     },
     {
       "code": "8016",
-      "name": "Onward Holdings Co., Ltd.",
+      "name": "オンワードホールディングス",
       "current_price": 737.0,
       "previous_close": 728.0,
       "price_change": 9.0,
@@ -561,12 +561,12 @@
       "dividend_yield": 7.69,
       "sector": "一般消費財",
       "market_cap": 100235902976,
-      "last_updated": "2026-04-05T20:37:01.350715+09:00",
+      "last_updated": "2026-04-05T20:47:25.806071+09:00",
       "error": null
     },
     {
       "code": "1822",
-      "name": "Daiho Corporation",
+      "name": "大林道路",
       "current_price": 778.0,
       "previous_close": 782.0,
       "price_change": -4.0,
@@ -574,12 +574,12 @@
       "dividend_yield": 4.35,
       "sector": "産業",
       "market_cap": 68663304192,
-      "last_updated": "2026-04-05T20:37:01.551471+09:00",
+      "last_updated": "2026-04-05T20:47:26.047747+09:00",
       "error": null
     },
     {
       "code": "9990",
-      "name": "Sac's Bar Holdings Inc.",
+      "name": "サックスバーホールディングス",
       "current_price": 781.0,
       "previous_close": 777.0,
       "price_change": 4.0,
@@ -587,12 +587,12 @@
       "dividend_yield": 4.5,
       "sector": "一般消費財",
       "market_cap": 22692802560,
-      "last_updated": "2026-04-05T20:37:01.722782+09:00",
+      "last_updated": "2026-04-05T20:47:26.283226+09:00",
       "error": null
     },
     {
       "code": "4318",
-      "name": "Quick Co.,Ltd.",
+      "name": "クイック",
       "current_price": 860.0,
       "previous_close": 856.0,
       "price_change": 4.0,
@@ -600,12 +600,12 @@
       "dividend_yield": 4.05,
       "sector": "産業",
       "market_cap": 48264417280,
-      "last_updated": "2026-04-05T20:37:01.892214+09:00",
+      "last_updated": "2026-04-05T20:47:26.519525+09:00",
       "error": null
     },
     {
       "code": "4246",
-      "name": "DaikyoNishikawa Corporation",
+      "name": "DIC",
       "current_price": 884.0,
       "previous_close": 863.0,
       "price_change": 21.0,
@@ -613,12 +613,12 @@
       "dividend_yield": 4.4,
       "sector": "一般消費財",
       "market_cap": 58223886336,
-      "last_updated": "2026-04-05T20:37:02.058889+09:00",
+      "last_updated": "2026-04-05T20:47:26.831593+09:00",
       "error": null
     },
     {
       "code": "6091",
-      "name": "Wesco Holdings Inc.",
+      "name": "ウエスコホールディングス",
       "current_price": 863.0,
       "previous_close": 858.0,
       "price_change": 5.0,
@@ -626,12 +626,12 @@
       "dividend_yield": 3.26,
       "sector": "産業",
       "market_cap": 11472041984,
-      "last_updated": "2026-04-05T20:37:02.260809+09:00",
+      "last_updated": "2026-04-05T20:47:27.070294+09:00",
       "error": null
     },
     {
       "code": "7246",
-      "name": "Press Kogyo Co., Ltd.",
+      "name": "プレス工業",
       "current_price": 827.0,
       "previous_close": 825.0,
       "price_change": 2.0,
@@ -639,12 +639,12 @@
       "dividend_yield": 4.61,
       "sector": "一般消費財",
       "market_cap": 82093580288,
-      "last_updated": "2026-04-05T20:37:02.424365+09:00",
+      "last_updated": "2026-04-05T20:47:27.311069+09:00",
       "error": null
     },
     {
       "code": "2296",
-      "name": "Itoham Yonekyu Holdings Inc.",
+      "name": "丸大食品",
       "current_price": 5850.0,
       "previous_close": 5890.0,
       "price_change": -40.0,
@@ -652,12 +652,12 @@
       "dividend_yield": 2.46,
       "sector": "生活必需品",
       "market_cap": 331992596480,
-      "last_updated": "2026-04-05T20:37:02.589875+09:00",
+      "last_updated": "2026-04-05T20:47:27.553207+09:00",
       "error": null
     },
     {
       "code": "4631",
-      "name": "DIC Corporation",
+      "name": "太陽ホールディングス",
       "current_price": 3681.0,
       "previous_close": 3645.0,
       "price_change": 36.0,
@@ -665,12 +665,12 @@
       "dividend_yield": 3.84,
       "sector": "素材",
       "market_cap": 348517269504,
-      "last_updated": "2026-04-05T20:37:02.790790+09:00",
+      "last_updated": "2026-04-05T20:47:27.814656+09:00",
       "error": null
     },
     {
       "code": "9107",
-      "name": "Kawasaki Kisen Kaisha, Ltd.",
+      "name": "川崎汽船",
       "current_price": 2698.0,
       "previous_close": 2735.5,
       "price_change": -37.5,
@@ -678,12 +678,12 @@
       "dividend_yield": 4.39,
       "sector": "産業",
       "market_cap": 1705390374912,
-      "last_updated": "2026-04-05T20:37:02.985479+09:00",
+      "last_updated": "2026-04-05T20:47:28.125027+09:00",
       "error": null
     },
     {
       "code": "5938",
-      "name": "LIXIL Corporation",
+      "name": "LIXIL",
       "current_price": 1640.5,
       "previous_close": 1630.0,
       "price_change": 10.5,
@@ -691,12 +691,12 @@
       "dividend_yield": 5.52,
       "sector": "産業",
       "market_cap": 471557505024,
-      "last_updated": "2026-04-05T20:37:03.147514+09:00",
+      "last_updated": "2026-04-05T20:47:28.364565+09:00",
       "error": null
     },
     {
       "code": "8125",
-      "name": "Wakita & Co.,LTD.",
+      "name": "ワキタ",
       "current_price": 1940.0,
       "previous_close": 1932.0,
       "price_change": 8.0,
@@ -704,12 +704,12 @@
       "dividend_yield": 5.18,
       "sector": "産業",
       "market_cap": 96098369536,
-      "last_updated": "2026-04-05T20:37:03.336567+09:00",
+      "last_updated": "2026-04-05T20:47:28.605482+09:00",
       "error": null
     },
     {
       "code": "7239",
-      "name": "TACHI-S Co., Ltd.",
+      "name": "タチエス",
       "current_price": 2078.0,
       "previous_close": 2067.0,
       "price_change": 11.0,
@@ -717,12 +717,12 @@
       "dividend_yield": 5.02,
       "sector": "一般消費財",
       "market_cap": 71311409152,
-      "last_updated": "2026-04-05T20:37:03.508240+09:00",
+      "last_updated": "2026-04-05T20:47:28.843950+09:00",
       "error": null
     },
     {
       "code": "6905",
-      "name": "Cosel Co., Ltd.",
+      "name": "コーセル",
       "current_price": 1177.0,
       "previous_close": 1159.0,
       "price_change": 18.0,
@@ -730,12 +730,12 @@
       "dividend_yield": 4.75,
       "sector": "産業",
       "market_cap": 48414904320,
-      "last_updated": "2026-04-05T20:37:03.686011+09:00",
+      "last_updated": "2026-04-05T20:47:29.084943+09:00",
       "error": null
     },
     {
       "code": "7177",
-      "name": "GMO Financial Holdings, Inc.",
+      "name": "GMOフィナンシャルホールディングス",
       "current_price": 928.0,
       "previous_close": 918.0,
       "price_change": 10.0,
@@ -743,12 +743,12 @@
       "dividend_yield": 4.58,
       "sector": "金融",
       "market_cap": 109494091776,
-      "last_updated": "2026-04-05T20:37:03.850231+09:00",
+      "last_updated": "2026-04-05T20:47:29.329894+09:00",
       "error": null
     },
     {
       "code": "7313",
-      "name": "TS TECH Co., Ltd.",
+      "name": "テイ・エス テック",
       "current_price": 1796.5,
       "previous_close": 1794.5,
       "price_change": 2.0,
@@ -756,12 +756,12 @@
       "dividend_yield": 5.02,
       "sector": "一般消費財",
       "market_cap": 209932664832,
-      "last_updated": "2026-04-05T20:37:04.043504+09:00",
+      "last_updated": "2026-04-05T20:47:29.570307+09:00",
       "error": null
     },
     {
       "code": "4521",
-      "name": "Kaken Pharmaceutical Co., Ltd.",
+      "name": "科研製薬",
       "current_price": 4195.0,
       "previous_close": 4205.0,
       "price_change": -10.0,
@@ -769,12 +769,12 @@
       "dividend_yield": 4.52,
       "sector": "ヘルスケア",
       "market_cap": 158857691136,
-      "last_updated": "2026-04-05T20:37:04.287580+09:00",
+      "last_updated": "2026-04-05T20:47:29.807275+09:00",
       "error": null
     },
     {
       "code": "4114",
-      "name": "Nippon Shokubai Co., Ltd.",
+      "name": "日本触媒",
       "current_price": 2253.5,
       "previous_close": 2256.0,
       "price_change": -2.5,
@@ -782,12 +782,12 @@
       "dividend_yield": 4.43,
       "sector": "素材",
       "market_cap": 332970295296,
-      "last_updated": "2026-04-05T20:37:04.472694+09:00",
+      "last_updated": "2026-04-05T20:47:30.046594+09:00",
       "error": null
     },
     {
       "code": "1878",
-      "name": "Daito Trust Construction Co.,Ltd.",
+      "name": "大東建託",
       "current_price": 3742.0,
       "previous_close": 3721.0,
       "price_change": 21.0,
@@ -795,12 +795,12 @@
       "dividend_yield": 3.84,
       "sector": "不動産",
       "market_cap": 1239939940352,
-      "last_updated": "2026-04-05T20:37:05.662743+09:00",
+      "last_updated": "2026-04-05T20:47:31.283504+09:00",
       "error": null
     },
     {
       "code": "2914",
-      "name": "Japan Tobacco Inc.",
+      "name": "日本たばこ産業（JT）",
       "current_price": 6105.0,
       "previous_close": 6005.0,
       "price_change": 100.0,
@@ -808,12 +808,12 @@
       "dividend_yield": 4.03,
       "sector": "生活必需品",
       "market_cap": 10838750527488,
-      "last_updated": "2026-04-05T20:37:05.842591+09:00",
+      "last_updated": "2026-04-05T20:47:31.520610+09:00",
       "error": null
     },
     {
       "code": "4613",
-      "name": "Kansai Paint Co., Ltd.",
+      "name": "関西ペイント",
       "current_price": 2490.0,
       "previous_close": 2463.5,
       "price_change": 26.5,
@@ -821,12 +821,12 @@
       "dividend_yield": 4.47,
       "sector": "素材",
       "market_cap": 438409265152,
-      "last_updated": "2026-04-05T20:37:06.026531+09:00",
+      "last_updated": "2026-04-05T20:47:31.777283+09:00",
       "error": null
     },
     {
       "code": "8252",
-      "name": "Marui Group Co., Ltd.",
+      "name": "丸井グループ",
       "current_price": 3121.0,
       "previous_close": 3130.0,
       "price_change": -9.0,
@@ -834,12 +834,12 @@
       "dividend_yield": 4.22,
       "sector": "金融",
       "market_cap": 560926359552,
-      "last_updated": "2026-04-05T20:37:06.199325+09:00",
+      "last_updated": "2026-04-05T20:47:32.016426+09:00",
       "error": null
     },
     {
       "code": "8750",
-      "name": "Daiichi Life Group, Inc.",
+      "name": "第一生命ホールディングス",
       "current_price": 1472.5,
       "previous_close": 1469.5,
       "price_change": 3.0,
@@ -847,12 +847,12 @@
       "dividend_yield": 3.54,
       "sector": "金融",
       "market_cap": 5321599746048,
-      "last_updated": "2026-04-05T20:37:06.373289+09:00",
+      "last_updated": "2026-04-05T20:47:32.262658+09:00",
       "error": null
     },
     {
       "code": "9076",
-      "name": "Seino Holdings Co., Ltd.",
+      "name": "セイノーホールディングス",
       "current_price": 2491.5,
       "previous_close": 2484.0,
       "price_change": 7.5,
@@ -860,12 +860,12 @@
       "dividend_yield": 4.11,
       "sector": "産業",
       "market_cap": 371949764608,
-      "last_updated": "2026-04-05T20:37:06.536208+09:00",
+      "last_updated": "2026-04-05T20:47:32.503989+09:00",
       "error": null
     },
     {
       "code": "6481",
-      "name": "THK Co., Ltd.",
+      "name": "THK",
       "current_price": 4964.0,
       "previous_close": 4844.0,
       "price_change": 120.0,
@@ -873,12 +873,12 @@
       "dividend_yield": 3.8,
       "sector": "産業",
       "market_cap": 556066209792,
-      "last_updated": "2026-04-05T20:37:06.698772+09:00",
+      "last_updated": "2026-04-05T20:47:32.745743+09:00",
       "error": null
     },
     {
       "code": "7261",
-      "name": "Mazda Motor Corporation",
+      "name": "マツダ",
       "current_price": 1035.0,
       "previous_close": 1045.5,
       "price_change": -10.5,
@@ -886,12 +886,12 @@
       "dividend_yield": 5.26,
       "sector": "一般消費財",
       "market_cap": 652857442304,
-      "last_updated": "2026-04-05T20:37:06.871244+09:00",
+      "last_updated": "2026-04-05T20:47:32.992419+09:00",
       "error": null
     },
     {
       "code": "7267",
-      "name": "Honda Motor Co., Ltd.",
+      "name": "本田技研工業",
       "current_price": 1269.0,
       "previous_close": 1273.0,
       "price_change": -4.0,
@@ -899,12 +899,12 @@
       "dividend_yield": 5.5,
       "sector": "一般消費財",
       "market_cap": 4939647549440,
-      "last_updated": "2026-04-05T20:37:07.043818+09:00",
+      "last_updated": "2026-04-05T20:47:33.256914+09:00",
       "error": null
     },
     {
       "code": "9101",
-      "name": "Nippon Yusen Kabushiki Kaisha",
+      "name": "日本郵船",
       "current_price": 6164.0,
       "previous_close": 6162.0,
       "price_change": 2.0,
@@ -912,12 +912,12 @@
       "dividend_yield": 3.25,
       "sector": "産業",
       "market_cap": 2508837879808,
-      "last_updated": "2026-04-05T20:37:07.214434+09:00",
+      "last_updated": "2026-04-05T20:47:33.512627+09:00",
       "error": null
     },
     {
       "code": "7240",
-      "name": "NOK Corporation",
+      "name": "NOK",
       "current_price": 2872.0,
       "previous_close": 2842.5,
       "price_change": 29.5,
@@ -925,12 +925,12 @@
       "dividend_yield": 4.57,
       "sector": "一般消費財",
       "market_cap": 455039320064,
-      "last_updated": "2026-04-05T20:37:07.395616+09:00",
+      "last_updated": "2026-04-05T20:47:33.748600+09:00",
       "error": null
     },
     {
       "code": "9434",
-      "name": "SoftBank Corp.",
+      "name": "ソフトバンク",
       "current_price": 218.8,
       "previous_close": 215.4,
       "price_change": 3.4,
@@ -938,12 +938,12 @@
       "dividend_yield": 3.99,
       "sector": "通信",
       "market_cap": 10450647384064,
-      "last_updated": "2026-04-05T20:37:07.598154+09:00",
+      "last_updated": "2026-04-05T20:47:33.988214+09:00",
       "error": null
     },
     {
       "code": "4202",
-      "name": "Daicel Corporation",
+      "name": "ダイセル",
       "current_price": 1240.5,
       "previous_close": 1235.5,
       "price_change": 5.0,
@@ -951,12 +951,12 @@
       "dividend_yield": 4.86,
       "sector": "素材",
       "market_cap": 319006146560,
-      "last_updated": "2026-04-05T20:37:07.773883+09:00",
+      "last_updated": "2026-04-05T20:47:34.225842+09:00",
       "error": null
     },
     {
       "code": "9104",
-      "name": "Mitsui O.S.K. Lines, Ltd.",
+      "name": "商船三井",
       "current_price": 6766.0,
       "previous_close": 6603.0,
       "price_change": 163.0,
@@ -964,12 +964,12 @@
       "dividend_yield": 3.03,
       "sector": "産業",
       "market_cap": 2323893452800,
-      "last_updated": "2026-04-05T20:37:07.926041+09:00",
+      "last_updated": "2026-04-05T20:47:34.465427+09:00",
       "error": null
     },
     {
       "code": "3291",
-      "name": "Iida Group Holdings Co., Ltd.",
+      "name": "飯田グループホールディングス",
       "current_price": 2449.0,
       "previous_close": 2431.0,
       "price_change": 18.0,
@@ -977,12 +977,12 @@
       "dividend_yield": 3.7,
       "sector": "一般消費財",
       "market_cap": 676732731392,
-      "last_updated": "2026-04-05T20:37:08.131123+09:00",
+      "last_updated": "2026-04-05T20:47:34.699207+09:00",
       "error": null
     },
     {
       "code": "1719",
-      "name": "Hazama Ando Corporation",
+      "name": "安藤ハザマ",
       "current_price": 2016.0,
       "previous_close": 1987.0,
       "price_change": 29.0,
@@ -990,12 +990,12 @@
       "dividend_yield": 4.03,
       "sector": "産業",
       "market_cap": 316039823360,
-      "last_updated": "2026-04-05T20:37:08.308345+09:00",
+      "last_updated": "2026-04-05T20:47:34.939327+09:00",
       "error": null
     },
     {
       "code": "6417",
-      "name": "Sankyo Co., Ltd.",
+      "name": "SANKYO",
       "current_price": 1967.5,
       "previous_close": 1959.0,
       "price_change": 8.5,
@@ -1003,12 +1003,12 @@
       "dividend_yield": 4.59,
       "sector": "一般消費財",
       "market_cap": 388608163840,
-      "last_updated": "2026-04-05T20:37:08.491773+09:00",
+      "last_updated": "2026-04-05T20:47:35.183054+09:00",
       "error": null
     },
     {
       "code": "3861",
-      "name": "Oji Holdings Corporation",
+      "name": "王子ホールディングス",
       "current_price": 852.5,
       "previous_close": 847.2,
       "price_change": 5.3,
@@ -1016,12 +1016,12 @@
       "dividend_yield": 4.25,
       "sector": "素材",
       "market_cap": 755905265664,
-      "last_updated": "2026-04-05T20:37:08.643800+09:00",
+      "last_updated": "2026-04-05T20:47:35.454433+09:00",
       "error": null
     },
     {
       "code": "4927",
-      "name": "Pola Orbis Holdings Inc.",
+      "name": "ポーラ・オルビスホールディングス",
       "current_price": 1335.0,
       "previous_close": 1325.5,
       "price_change": 9.5,
@@ -1029,12 +1029,12 @@
       "dividend_yield": 3.92,
       "sector": "生活必需品",
       "market_cap": 295391592448,
-      "last_updated": "2026-04-05T20:37:08.795495+09:00",
+      "last_updated": "2026-04-05T20:47:35.696280+09:00",
       "error": null
     },
     {
       "code": "7164",
-      "name": "ZENKOKU HOSHO Co.,Ltd.",
+      "name": "全国保証",
       "current_price": 3190.0,
       "previous_close": 3200.0,
       "price_change": -10.0,
@@ -1042,12 +1042,12 @@
       "dividend_yield": 4.69,
       "sector": "金融",
       "market_cap": 423818461184,
-      "last_updated": "2026-04-05T20:37:08.951692+09:00",
+      "last_updated": "2026-04-05T20:47:35.939899+09:00",
       "error": null
     },
     {
       "code": "4205",
-      "name": "Zeon Corporation",
+      "name": "日本ゼオン",
       "current_price": 1761.5,
       "previous_close": 1755.5,
       "price_change": 6.0,
@@ -1055,12 +1055,12 @@
       "dividend_yield": 4.1,
       "sector": "素材",
       "market_cap": 337055121408,
-      "last_updated": "2026-04-05T20:37:09.128572+09:00",
+      "last_updated": "2026-04-05T20:47:36.249355+09:00",
       "error": null
     },
     {
       "code": "5411",
-      "name": "JFE Holdings, Inc.",
+      "name": "JFEホールディングス",
       "current_price": 1851.0,
       "previous_close": 1831.0,
       "price_change": 20.0,
@@ -1068,12 +1068,12 @@
       "dividend_yield": 4.37,
       "sector": "素材",
       "market_cap": 1177503662080,
-      "last_updated": "2026-04-05T20:37:09.329003+09:00",
+      "last_updated": "2026-04-05T20:47:36.493474+09:00",
       "error": null
     },
     {
       "code": "8174",
-      "name": "Nippon Gas Co., Ltd.",
+      "name": "日本瓦斯（ニチガス）",
       "current_price": 2899.5,
       "previous_close": 2894.0,
       "price_change": 5.5,
@@ -1081,12 +1081,12 @@
       "dividend_yield": 3.56,
       "sector": "公益事業",
       "market_cap": 309632040960,
-      "last_updated": "2026-04-05T20:37:09.528850+09:00",
+      "last_updated": "2026-04-05T20:47:36.729195+09:00",
       "error": null
     },
     {
       "code": "4502",
-      "name": "Takeda Pharmaceutical Company Limited",
+      "name": "武田薬品工業",
       "current_price": 5802.0,
       "previous_close": 5890.0,
       "price_change": -88.0,
@@ -1094,12 +1094,12 @@
       "dividend_yield": 3.4,
       "sector": "ヘルスケア",
       "market_cap": 9164818481152,
-      "last_updated": "2026-04-05T20:37:09.703869+09:00",
+      "last_updated": "2026-04-05T20:47:36.991784+09:00",
       "error": null
     },
     {
       "code": "8410",
-      "name": "Seven Bank, Ltd.",
+      "name": "セブン銀行",
       "current_price": 274.9,
       "previous_close": 272.8,
       "price_change": 2.1,
@@ -1107,12 +1107,12 @@
       "dividend_yield": 4.03,
       "sector": "金融",
       "market_cap": 322508619776,
-      "last_updated": "2026-04-05T20:37:09.881684+09:00",
+      "last_updated": "2026-04-05T20:47:37.229601+09:00",
       "error": null
     },
     {
       "code": "6141",
-      "name": "DMG Mori Co., Ltd.",
+      "name": "DMG森精機",
       "current_price": 2474.5,
       "previous_close": 2444.5,
       "price_change": 30.0,
@@ -1120,12 +1120,12 @@
       "dividend_yield": 4.3,
       "sector": "産業",
       "market_cap": 344675516416,
-      "last_updated": "2026-04-05T20:37:10.062288+09:00",
+      "last_updated": "2026-04-05T20:47:37.470107+09:00",
       "error": null
     },
     {
       "code": "4523",
-      "name": "Eisai Co., Ltd.",
+      "name": "エーザイ",
       "current_price": 5027.0,
       "previous_close": 5032.0,
       "price_change": -5.0,
@@ -1133,12 +1133,12 @@
       "dividend_yield": 3.18,
       "sector": "ヘルスケア",
       "market_cap": 1417066708992,
-      "last_updated": "2026-04-05T20:37:10.217561+09:00",
+      "last_updated": "2026-04-05T20:47:37.820197+09:00",
       "error": null
     },
     {
       "code": "8424",
-      "name": "Fuyo General Lease Co., Ltd.",
+      "name": "芙蓉総合リース",
       "current_price": 4356.0,
       "previous_close": 4336.0,
       "price_change": 20.0,
@@ -1146,12 +1146,12 @@
       "dividend_yield": 3.64,
       "sector": "産業",
       "market_cap": 392849915904,
-      "last_updated": "2026-04-05T20:37:10.374239+09:00",
+      "last_updated": "2026-04-05T20:47:38.059739+09:00",
       "error": null
     },
     {
       "code": "8766",
-      "name": "Tokio Marine Holdings, Inc.",
+      "name": "東京海上ホールディングス",
       "current_price": 7243.0,
       "previous_close": 7262.0,
       "price_change": -19.0,
@@ -1159,12 +1159,12 @@
       "dividend_yield": 2.91,
       "sector": "金融",
       "market_cap": 13605322883072,
-      "last_updated": "2026-04-05T20:37:10.575423+09:00",
+      "last_updated": "2026-04-05T20:47:38.296836+09:00",
       "error": null
     },
     {
       "code": "9143",
-      "name": "SG Holdings Co.,Ltd.",
+      "name": "SGホールディングス",
       "current_price": 1507.0,
       "previous_close": 1505.5,
       "price_change": 1.5,
@@ -1172,12 +1172,12 @@
       "dividend_yield": 3.59,
       "sector": "産業",
       "market_cap": 899273654272,
-      "last_updated": "2026-04-05T20:37:10.725113+09:00",
+      "last_updated": "2026-04-05T20:47:38.537018+09:00",
       "error": null
     },
     {
       "code": "6724",
-      "name": "Seiko Epson Corporation",
+      "name": "セイコーエプソン",
       "current_price": 1986.0,
       "previous_close": 1964.5,
       "price_change": 21.5,
@@ -1185,12 +1185,12 @@
       "dividend_yield": 3.77,
       "sector": "テクノロジー",
       "market_cap": 636369764352,
-      "last_updated": "2026-04-05T20:37:11.891959+09:00",
+      "last_updated": "2026-04-05T20:47:39.776469+09:00",
       "error": null
     },
     {
       "code": "9506",
-      "name": "Tohoku Electric Power Company, Incorporated",
+      "name": "東北電力",
       "current_price": 1190.5,
       "previous_close": 1190.5,
       "price_change": 0.0,
@@ -1198,12 +1198,12 @@
       "dividend_yield": 3.36,
       "sector": "公益事業",
       "market_cap": 595630292992,
-      "last_updated": "2026-04-05T20:37:12.054136+09:00",
+      "last_updated": "2026-04-05T20:47:40.017728+09:00",
       "error": null
     },
     {
       "code": "5076",
-      "name": "INFRONEER Holdings Inc.",
+      "name": "インフロニア・ホールディングス",
       "current_price": 2255.0,
       "previous_close": 2219.0,
       "price_change": 36.0,
@@ -1211,12 +1211,12 @@
       "dividend_yield": 4.15,
       "sector": "産業",
       "market_cap": 569595133952,
-      "last_updated": "2026-04-05T20:37:12.204380+09:00",
+      "last_updated": "2026-04-05T20:47:40.262457+09:00",
       "error": null
     },
     {
       "code": "4503",
-      "name": "Astellas Pharma Inc.",
+      "name": "アステラス製薬",
       "current_price": 2587.0,
       "previous_close": 2600.5,
       "price_change": -13.5,
@@ -1224,12 +1224,12 @@
       "dividend_yield": 3.0,
       "sector": "ヘルスケア",
       "market_cap": 4634379288576,
-      "last_updated": "2026-04-05T20:37:12.390009+09:00",
+      "last_updated": "2026-04-05T20:47:40.505256+09:00",
       "error": null
     },
     {
       "code": "5201",
-      "name": "AGC Inc.",
+      "name": "AGC",
       "current_price": 5598.0,
       "previous_close": 5627.0,
       "price_change": -29.0,
@@ -1237,12 +1237,12 @@
       "dividend_yield": 3.73,
       "sector": "産業",
       "market_cap": 1188814651392,
-      "last_updated": "2026-04-05T20:37:12.586664+09:00",
+      "last_updated": "2026-04-05T20:47:40.742199+09:00",
       "error": null
     },
     {
       "code": "5021",
-      "name": "Cosmo Energy Holdings Co., Ltd.",
+      "name": "コスモエネルギーホールディングス",
       "current_price": 4530.0,
       "previous_close": 4442.0,
       "price_change": 88.0,
@@ -1250,12 +1250,12 @@
       "dividend_yield": 3.71,
       "sector": "エネルギー",
       "market_cap": 722250563584,
-      "last_updated": "2026-04-05T20:37:12.744831+09:00",
+      "last_updated": "2026-04-05T20:47:40.978561+09:00",
       "error": null
     },
     {
       "code": "8425",
-      "name": "Mizuho Leasing Company, Limited",
+      "name": "みずほリース",
       "current_price": 1421.0,
       "previous_close": 1417.0,
       "price_change": 4.0,
@@ -1263,12 +1263,12 @@
       "dividend_yield": 3.53,
       "sector": "金融",
       "market_cap": 398145454080,
-      "last_updated": "2026-04-05T20:37:12.894848+09:00",
+      "last_updated": "2026-04-05T20:47:41.218819+09:00",
       "error": null
     },
     {
       "code": "7202",
-      "name": "Isuzu Motors Limited",
+      "name": "いすゞ自動車",
       "current_price": 2288.0,
       "previous_close": 2265.5,
       "price_change": 22.5,
@@ -1276,12 +1276,12 @@
       "dividend_yield": 4.06,
       "sector": "一般消費財",
       "market_cap": 1572399874048,
-      "last_updated": "2026-04-05T20:37:13.083511+09:00",
+      "last_updated": "2026-04-05T20:47:41.459041+09:00",
       "error": null
     },
     {
       "code": "5929",
-      "name": "Sanwa Holdings Corporation",
+      "name": "三和ホールディングス",
       "current_price": 3557.0,
       "previous_close": 3568.0,
       "price_change": -11.0,
@@ -1289,12 +1289,12 @@
       "dividend_yield": 3.48,
       "sector": "産業",
       "market_cap": 747773624320,
-      "last_updated": "2026-04-05T20:37:13.244983+09:00",
+      "last_updated": "2026-04-05T20:47:41.694636+09:00",
       "error": null
     },
     {
       "code": "5406",
-      "name": "Kobe Steel, Ltd.",
+      "name": "神戸製鋼所",
       "current_price": 1943.5,
       "previous_close": 1934.5,
       "price_change": 9.0,
@@ -1302,12 +1302,12 @@
       "dividend_yield": 4.14,
       "sector": "素材",
       "market_cap": 765069492224,
-      "last_updated": "2026-04-05T20:37:13.383771+09:00",
+      "last_updated": "2026-04-05T20:47:41.927798+09:00",
       "error": null
     },
     {
       "code": "7762",
-      "name": "Citizen Watch Co., Ltd.",
+      "name": "シチズン時計",
       "current_price": 1761.0,
       "previous_close": 1717.0,
       "price_change": 44.0,
@@ -1315,12 +1315,12 @@
       "dividend_yield": 2.74,
       "sector": "一般消費財",
       "market_cap": 429675577344,
-      "last_updated": "2026-04-05T20:37:13.583018+09:00",
+      "last_updated": "2026-04-05T20:47:42.233586+09:00",
       "error": null
     },
     {
       "code": "7272",
-      "name": "Yamaha Motor Co., Ltd.",
+      "name": "ヤマハ発動機",
       "current_price": 1184.0,
       "previous_close": 1158.0,
       "price_change": 26.0,
@@ -1328,12 +1328,12 @@
       "dividend_yield": 4.32,
       "sector": "一般消費財",
       "market_cap": 1147976941568,
-      "last_updated": "2026-04-05T20:37:13.771013+09:00",
+      "last_updated": "2026-04-05T20:47:42.903124+09:00",
       "error": null
     },
     {
       "code": "8439",
-      "name": "Tokyo Century Corporation",
+      "name": "東京センチュリー",
       "current_price": 2070.5,
       "previous_close": 2059.5,
       "price_change": 11.0,
@@ -1341,12 +1341,12 @@
       "dividend_yield": 3.5,
       "sector": "産業",
       "market_cap": 1011981615104,
-      "last_updated": "2026-04-05T20:37:13.917127+09:00",
+      "last_updated": "2026-04-05T20:47:43.144341+09:00",
       "error": null
     },
     {
       "code": "7751",
-      "name": "Canon Inc.",
+      "name": "キヤノン",
       "current_price": 4488.0,
       "previous_close": 4451.0,
       "price_change": 37.0,
@@ -1354,12 +1354,12 @@
       "dividend_yield": 3.59,
       "sector": "テクノロジー",
       "market_cap": 3926753280000,
-      "last_updated": "2026-04-05T20:37:14.349392+09:00",
+      "last_updated": "2026-04-05T20:47:43.382115+09:00",
       "error": null
     },
     {
       "code": "4528",
-      "name": "Ono Pharmaceutical Co., Ltd.",
+      "name": "小野薬品工業",
       "current_price": 2532.5,
       "previous_close": 2532.5,
       "price_change": 0.0,
@@ -1367,12 +1367,12 @@
       "dividend_yield": 3.16,
       "sector": "ヘルスケア",
       "market_cap": 1190041092096,
-      "last_updated": "2026-04-05T20:37:14.486161+09:00",
+      "last_updated": "2026-04-05T20:47:43.619395+09:00",
       "error": null
     },
     {
       "code": "4118",
-      "name": "Kaneka Corporation",
+      "name": "カネカ",
       "current_price": 4976.0,
       "previous_close": 4919.0,
       "price_change": 57.0,
@@ -1380,12 +1380,12 @@
       "dividend_yield": 3.25,
       "sector": "素材",
       "market_cap": 301385646080,
-      "last_updated": "2026-04-05T20:37:14.645269+09:00",
+      "last_updated": "2026-04-05T20:47:43.853146+09:00",
       "error": null
     },
     {
       "code": "5444",
-      "name": "Yamato Kogyo Co., Ltd.",
+      "name": "大和工業",
       "current_price": 12205.0,
       "previous_close": 12070.0,
       "price_change": 135.0,
@@ -1393,12 +1393,12 @@
       "dividend_yield": 3.31,
       "sector": "素材",
       "market_cap": 731428290560,
-      "last_updated": "2026-04-05T20:37:14.806754+09:00",
+      "last_updated": "2026-04-05T20:47:44.112496+09:00",
       "error": null
     },
     {
       "code": "7270",
-      "name": "Subaru Corporation",
+      "name": "SUBARU",
       "current_price": 2538.5,
       "previous_close": 2510.5,
       "price_change": 28.0,
@@ -1406,12 +1406,12 @@
       "dividend_yield": 4.58,
       "sector": "一般消費財",
       "market_cap": 1816115544064,
-      "last_updated": "2026-04-05T20:37:15.023608+09:00",
+      "last_updated": "2026-04-05T20:47:44.349422+09:00",
       "error": null
     },
     {
       "code": "8539",
-      "name": "8539",
+      "name": "山陰合同銀行",
       "current_price": null,
       "previous_close": null,
       "price_change": null,
@@ -1419,12 +1419,12 @@
       "dividend_yield": null,
       "sector": "不明",
       "market_cap": null,
-      "last_updated": "2026-04-05T20:37:15.201510+09:00",
+      "last_updated": "2026-04-05T20:47:44.596451+09:00",
       "error": null
     },
     {
       "code": "1925",
-      "name": "Daiwa House Industry Co., Ltd.",
+      "name": "大和ハウス工業",
       "current_price": 5007.0,
       "previous_close": 5009.0,
       "price_change": -2.0,
@@ -1432,12 +1432,12 @@
       "dividend_yield": 3.29,
       "sector": "不動産",
       "market_cap": 3101077536768,
-      "last_updated": "2026-04-05T20:37:15.408072+09:00",
+      "last_updated": "2026-04-05T20:47:44.908949+09:00",
       "error": null
     },
     {
       "code": "4021",
-      "name": "Nissan Chemical Corporation",
+      "name": "日産化学",
       "current_price": 6179.0,
       "previous_close": 6078.0,
       "price_change": 101.0,
@@ -1445,12 +1445,12 @@
       "dividend_yield": 3.62,
       "sector": "素材",
       "market_cap": 828657238016,
-      "last_updated": "2026-04-05T20:37:15.601544+09:00",
+      "last_updated": "2026-04-05T20:47:45.144150+09:00",
       "error": null
     },
     {
       "code": "5108",
-      "name": "Bridgestone Corporation",
+      "name": "ブリヂストン",
       "current_price": 3337.0,
       "previous_close": 3319.0,
       "price_change": 18.0,
@@ -1458,12 +1458,12 @@
       "dividend_yield": 3.92,
       "sector": "一般消費財",
       "market_cap": 4256297385984,
-      "last_updated": "2026-04-05T20:37:15.804798+09:00",
+      "last_updated": "2026-04-05T20:47:45.406892+09:00",
       "error": null
     },
     {
       "code": "4183",
-      "name": "Mitsui Chemicals, Inc.",
+      "name": "三井化学",
       "current_price": 1881.0,
       "previous_close": 1859.0,
       "price_change": 22.0,
@@ -1471,12 +1471,12 @@
       "dividend_yield": 4.03,
       "sector": "素材",
       "market_cap": 705181581312,
-      "last_updated": "2026-04-05T20:37:15.969596+09:00",
+      "last_updated": "2026-04-05T20:47:45.646210+09:00",
       "error": null
     },
     {
       "code": "9882",
-      "name": "Yellow Hat Ltd.",
+      "name": "イエローハット",
       "current_price": 1546.0,
       "previous_close": 1557.0,
       "price_change": -11.0,
@@ -1484,12 +1484,12 @@
       "dividend_yield": 3.73,
       "sector": "一般消費財",
       "market_cap": 132315856896,
-      "last_updated": "2026-04-05T20:37:16.193754+09:00",
+      "last_updated": "2026-04-05T20:47:45.881253+09:00",
       "error": null
     },
     {
       "code": "9989",
-      "name": "Sundrug Co.,Ltd.",
+      "name": "サンドラッグ",
       "current_price": 3946.0,
       "previous_close": 3930.0,
       "price_change": 16.0,
@@ -1497,12 +1497,12 @@
       "dividend_yield": 3.36,
       "sector": "ヘルスケア",
       "market_cap": 461614514176,
-      "last_updated": "2026-04-05T20:37:16.411234+09:00",
+      "last_updated": "2026-04-05T20:47:46.118060+09:00",
       "error": null
     },
     {
       "code": "4732",
-      "name": "USS Co., Ltd.",
+      "name": "ユー・エス・エス",
       "current_price": 1694.0,
       "previous_close": 1681.0,
       "price_change": 13.0,
@@ -1510,12 +1510,12 @@
       "dividend_yield": 3.08,
       "sector": "一般消費財",
       "market_cap": 784623861760,
-      "last_updated": "2026-04-05T20:37:16.592002+09:00",
+      "last_updated": "2026-04-05T20:47:46.356151+09:00",
       "error": null
     },
     {
       "code": "7476",
-      "name": "AS ONE Corporation",
+      "name": "アズワン",
       "current_price": 2260.0,
       "previous_close": 2251.5,
       "price_change": 8.5,
@@ -1523,12 +1523,12 @@
       "dividend_yield": 2.8,
       "sector": "ヘルスケア",
       "market_cap": 161061421056,
-      "last_updated": "2026-04-05T20:37:16.774435+09:00",
+      "last_updated": "2026-04-05T20:47:46.595562+09:00",
       "error": null
     },
     {
       "code": "7504",
-      "name": "Kohsoku Corporation",
+      "name": "高速",
       "current_price": 3095.0,
       "previous_close": 3050.0,
       "price_change": 45.0,
@@ -1536,12 +1536,12 @@
       "dividend_yield": 1.84,
       "sector": "一般消費財",
       "market_cap": 60520267776,
-      "last_updated": "2026-04-05T20:37:17.032564+09:00",
+      "last_updated": "2026-04-05T20:47:46.832429+09:00",
       "error": null
     },
     {
       "code": "8111",
-      "name": "Goldwin Inc.",
+      "name": "ゴールドウイン",
       "current_price": 2194.0,
       "previous_close": 2222.0,
       "price_change": -28.0,
@@ -1549,12 +1549,12 @@
       "dividend_yield": 2.46,
       "sector": "一般消費財",
       "market_cap": 300009160704,
-      "last_updated": "2026-04-05T20:37:17.192665+09:00",
+      "last_updated": "2026-04-05T20:47:47.075749+09:00",
       "error": null
     },
     {
       "code": "8012",
-      "name": "Nagase & Co., Ltd.",
+      "name": "長瀬産業",
       "current_price": 1175.5,
       "previous_close": 1171.5,
       "price_change": 4.0,
@@ -1562,12 +1562,12 @@
       "dividend_yield": 2.13,
       "sector": "素材",
       "market_cap": 479392858112,
-      "last_updated": "2026-04-05T20:37:17.356751+09:00",
+      "last_updated": "2026-04-05T20:47:47.316148+09:00",
       "error": null
     },
     {
       "code": "8418",
-      "name": "Yamaguchi Financial Group, Inc.",
+      "name": "コンコルディア・フィナンシャルグループ",
       "current_price": 2595.5,
       "previous_close": 2599.0,
       "price_change": -3.5,
@@ -1575,12 +1575,12 @@
       "dividend_yield": 2.46,
       "sector": "金融",
       "market_cap": 537838387200,
-      "last_updated": "2026-04-05T20:37:18.538407+09:00",
+      "last_updated": "2026-04-05T20:47:48.555762+09:00",
       "error": null
     },
     {
       "code": "4901",
-      "name": "FUJIFILM Holdings Corporation",
+      "name": "富士フイルムホールディングス",
       "current_price": 3112.0,
       "previous_close": 3094.0,
       "price_change": 18.0,
@@ -1588,12 +1588,12 @@
       "dividend_yield": 2.26,
       "sector": "産業",
       "market_cap": 3750882705408,
-      "last_updated": "2026-04-05T20:37:18.702647+09:00",
+      "last_updated": "2026-04-05T20:47:48.796041+09:00",
       "error": null
     },
     {
       "code": "4041",
-      "name": "Nippon Soda Co., Ltd.",
+      "name": "日本曹達",
       "current_price": 3615.0,
       "previous_close": 3590.0,
       "price_change": 25.0,
@@ -1601,12 +1601,12 @@
       "dividend_yield": 3.9,
       "sector": "素材",
       "market_cap": 193831616512,
-      "last_updated": "2026-04-05T20:37:18.883988+09:00",
+      "last_updated": "2026-04-05T20:47:49.033719+09:00",
       "error": null
     },
     {
       "code": "3946",
-      "name": "Tomoku Co., Ltd.",
+      "name": "北越コーポレーション",
       "current_price": 3405.0,
       "previous_close": 3405.0,
       "price_change": 0.0,
@@ -1614,12 +1614,12 @@
       "dividend_yield": 3.82,
       "sector": "一般消費財",
       "market_cap": 56171991040,
-      "last_updated": "2026-04-05T20:37:19.141966+09:00",
+      "last_updated": "2026-04-05T20:47:49.274865+09:00",
       "error": null
     },
     {
       "code": "4272",
-      "name": "Nippon Kayaku Co., Ltd.",
+      "name": "日本化薬",
       "current_price": 1773.5,
       "previous_close": 1762.0,
       "price_change": 11.5,
@@ -1627,12 +1627,12 @@
       "dividend_yield": 3.41,
       "sector": "素材",
       "market_cap": 264776908800,
-      "last_updated": "2026-04-05T20:37:19.313472+09:00",
+      "last_updated": "2026-04-05T20:47:49.535378+09:00",
       "error": null
     },
     {
       "code": "6272",
-      "name": "Rheon Automatic Machinery Co., Ltd.",
+      "name": "レオン自動機",
       "current_price": 1498.0,
       "previous_close": 1483.0,
       "price_change": 15.0,
@@ -1640,12 +1640,12 @@
       "dividend_yield": 3.64,
       "sector": "産業",
       "market_cap": 40346492928,
-      "last_updated": "2026-04-05T20:37:19.475442+09:00",
+      "last_updated": "2026-04-05T20:47:49.774366+09:00",
       "error": null
     },
     {
       "code": "8037",
-      "name": "Kamei Corporation",
+      "name": "三菱食品",
       "current_price": 3450.0,
       "previous_close": 3455.0,
       "price_change": -5.0,
@@ -1653,12 +1653,12 @@
       "dividend_yield": 3.18,
       "sector": "エネルギー",
       "market_cap": 105568714752,
-      "last_updated": "2026-04-05T20:37:19.635587+09:00",
+      "last_updated": "2026-04-05T20:47:50.014105+09:00",
       "error": null
     },
     {
       "code": "2168",
-      "name": "Pasona Group Inc.",
+      "name": "パソナグループ",
       "current_price": 1940.0,
       "previous_close": 1907.0,
       "price_change": 33.0,
@@ -1666,12 +1666,12 @@
       "dividend_yield": 79.0,
       "sector": "産業",
       "market_cap": 72462614528,
-      "last_updated": "2026-04-05T20:37:19.775498+09:00",
+      "last_updated": "2026-04-05T20:47:50.253956+09:00",
       "error": null
     },
     {
       "code": "7607",
-      "name": "Shinwa Co., Ltd.",
+      "name": "シグマ光機",
       "current_price": 3135.0,
       "previous_close": 3115.0,
       "price_change": 20.0,
@@ -1679,12 +1679,12 @@
       "dividend_yield": 3.98,
       "sector": "産業",
       "market_cap": 42013945856,
-      "last_updated": "2026-04-05T20:37:19.932794+09:00",
+      "last_updated": "2026-04-05T20:47:50.489808+09:00",
       "error": null
     },
     {
       "code": "6349",
-      "name": "Komori Corporation",
+      "name": "小森コーポレーション",
       "current_price": 1615.0,
       "previous_close": 1598.0,
       "price_change": 17.0,
@@ -1692,12 +1692,12 @@
       "dividend_yield": 4.38,
       "sector": "産業",
       "market_cap": 85690490880,
-      "last_updated": "2026-04-05T20:37:20.105319+09:00",
+      "last_updated": "2026-04-05T20:47:50.728151+09:00",
       "error": null
     },
     {
       "code": "7128",
-      "name": "UNISOL Holdings Corporation",
+      "name": "第四北越フィナンシャルグループ",
       "current_price": 2263.0,
       "previous_close": 2223.0,
       "price_change": 40.0,
@@ -1705,12 +1705,12 @@
       "dividend_yield": 4.54,
       "sector": "産業",
       "market_cap": 54410944512,
-      "last_updated": "2026-04-05T20:37:20.299428+09:00",
+      "last_updated": "2026-04-05T20:47:50.970794+09:00",
       "error": null
     },
     {
       "code": "8570",
-      "name": "AEON Financial Service Co., Ltd.",
+      "name": "イオンフィナンシャルサービス",
       "current_price": 1610.0,
       "previous_close": 1599.5,
       "price_change": 10.5,
@@ -1718,12 +1718,12 @@
       "dividend_yield": 3.31,
       "sector": "金融",
       "market_cap": 347573714944,
-      "last_updated": "2026-04-05T20:37:20.479893+09:00",
+      "last_updated": "2026-04-05T20:47:51.275035+09:00",
       "error": null
     },
     {
       "code": "5945",
-      "name": "Tenryu Saw Mfg. Co., Ltd.",
+      "name": "三ッ星",
       "current_price": 2439.0,
       "previous_close": 2459.0,
       "price_change": -20.0,
@@ -1731,12 +1731,12 @@
       "dividend_yield": 3.21,
       "sector": "産業",
       "market_cap": 21784733696,
-      "last_updated": "2026-04-05T20:37:20.617273+09:00",
+      "last_updated": "2026-04-05T20:47:51.512269+09:00",
       "error": null
     },
     {
       "code": "2664",
-      "name": "Cawachi Limited",
+      "name": "カワチ薬品",
       "current_price": 3050.0,
       "previous_close": 3030.0,
       "price_change": 20.0,
@@ -1744,12 +1744,12 @@
       "dividend_yield": 2.64,
       "sector": "ヘルスケア",
       "market_cap": 68119457792,
-      "last_updated": "2026-04-05T20:37:20.765102+09:00",
+      "last_updated": "2026-04-05T20:47:51.755182+09:00",
       "error": null
     },
     {
       "code": "6140",
-      "name": "Asahi Diamond Industrial Co., Ltd.",
+      "name": "旭ダイヤモンド工業",
       "current_price": 1203.0,
       "previous_close": 1218.0,
       "price_change": -15.0,
@@ -1757,12 +1757,12 @@
       "dividend_yield": 2.46,
       "sector": "産業",
       "market_cap": 57908858880,
-      "last_updated": "2026-04-05T20:37:20.956281+09:00",
+      "last_updated": "2026-04-05T20:47:51.989016+09:00",
       "error": null
     },
     {
       "code": "7925",
-      "name": "Maezawa Kasei Industries Co., Ltd.",
+      "name": "前澤化成工業",
       "current_price": 2182.0,
       "previous_close": 2175.0,
       "price_change": 7.0,
@@ -1770,12 +1770,12 @@
       "dividend_yield": 3.22,
       "sector": "素材",
       "market_cap": 32409227264,
-      "last_updated": "2026-04-05T20:37:21.126753+09:00",
+      "last_updated": "2026-04-05T20:47:52.229604+09:00",
       "error": null
     },
     {
       "code": "4627",
-      "name": "Natoco Co., Ltd.",
+      "name": "ナトコ",
       "current_price": 1701.0,
       "previous_close": 1677.0,
       "price_change": 24.0,
@@ -1783,12 +1783,12 @@
       "dividend_yield": 3.22,
       "sector": "素材",
       "market_cap": 12850587648,
-      "last_updated": "2026-04-05T20:37:21.306209+09:00",
+      "last_updated": "2026-04-05T20:47:52.470242+09:00",
       "error": null
     },
     {
       "code": "6317",
-      "name": "Kitagawa Corporation",
+      "name": "北川精機",
       "current_price": 1605.0,
       "previous_close": 1596.0,
       "price_change": 9.0,
@@ -1796,12 +1796,12 @@
       "dividend_yield": 5.33,
       "sector": "産業",
       "market_cap": 14849686528,
-      "last_updated": "2026-04-05T20:37:21.491072+09:00",
+      "last_updated": "2026-04-05T20:47:52.712207+09:00",
       "error": null
     },
     {
       "code": "1808",
-      "name": "HASEKO Corporation",
+      "name": "長谷工コーポレーション",
       "current_price": 2901.5,
       "previous_close": 2933.0,
       "price_change": -31.5,
@@ -1809,12 +1809,12 @@
       "dividend_yield": 3.07,
       "sector": "一般消費財",
       "market_cap": 767872466944,
-      "last_updated": "2026-04-05T20:37:21.747422+09:00",
+      "last_updated": "2026-04-05T20:47:52.951648+09:00",
       "error": null
     },
     {
       "code": "8316",
-      "name": "Sumitomo Mitsui Financial Group, Inc.",
+      "name": "三井住友フィナンシャルグループ",
       "current_price": 5373.0,
       "previous_close": 5388.0,
       "price_change": -15.0,
@@ -1822,12 +1822,12 @@
       "dividend_yield": 2.91,
       "sector": "金融",
       "market_cap": 20514133245952,
-      "last_updated": "2026-04-05T20:37:21.953179+09:00",
+      "last_updated": "2026-04-05T20:47:53.190311+09:00",
       "error": null
     },
     {
       "code": "7199",
-      "name": "Premium Group Co., Ltd.",
+      "name": "プレミアグループ",
       "current_price": 1744.0,
       "previous_close": 1744.0,
       "price_change": 0.0,
@@ -1835,12 +1835,12 @@
       "dividend_yield": 3.1,
       "sector": "金融",
       "market_cap": 67886120960,
-      "last_updated": "2026-04-05T20:37:22.132986+09:00",
+      "last_updated": "2026-04-05T20:47:53.431901+09:00",
       "error": null
     },
     {
       "code": "8919",
-      "name": "KATITAS CO., Ltd.",
+      "name": "カチタス",
       "current_price": 3245.0,
       "previous_close": 3230.0,
       "price_change": 15.0,
@@ -1848,12 +1848,12 @@
       "dividend_yield": 2.41,
       "sector": "一般消費財",
       "market_cap": 253873242112,
-      "last_updated": "2026-04-05T20:37:22.316571+09:00",
+      "last_updated": "2026-04-05T20:47:53.676422+09:00",
       "error": null
     },
     {
       "code": "1911",
-      "name": "Sumitomo Forestry Co., Ltd.",
+      "name": "住友林業",
       "current_price": 1416.0,
       "previous_close": 1428.0,
       "price_change": -12.0,
@@ -1861,12 +1861,12 @@
       "dividend_yield": 3.5,
       "sector": "一般消費財",
       "market_cap": 865790328832,
-      "last_updated": "2026-04-05T20:37:22.508410+09:00",
+      "last_updated": "2026-04-05T20:47:53.914188+09:00",
       "error": null
     },
     {
       "code": "1950",
-      "name": "Nippon Densetsu Kogyo Co., Ltd.",
+      "name": "日本電設工業",
       "current_price": 4910.0,
       "previous_close": 4900.0,
       "price_change": 10.0,
@@ -1874,12 +1874,12 @@
       "dividend_yield": 2.35,
       "sector": "産業",
       "market_cap": 286607998976,
-      "last_updated": "2026-04-05T20:37:22.683705+09:00",
+      "last_updated": "2026-04-05T20:47:54.158509+09:00",
       "error": null
     },
     {
       "code": "6480",
-      "name": "Nippon Thompson Co., Ltd.",
+      "name": "日本トムソン",
       "current_price": 899.0,
       "previous_close": 885.0,
       "price_change": 14.0,
@@ -1887,12 +1887,12 @@
       "dividend_yield": 3.16,
       "sector": "産業",
       "market_cap": 62694801408,
-      "last_updated": "2026-04-05T20:37:22.849704+09:00",
+      "last_updated": "2026-04-05T20:47:54.470028+09:00",
       "error": null
     },
     {
       "code": "8804",
-      "name": "Tokyo Tatemono Co., Ltd.",
+      "name": "東京建物",
       "current_price": 3698.0,
       "previous_close": 3682.0,
       "price_change": 16.0,
@@ -1900,12 +1900,12 @@
       "dividend_yield": 3.31,
       "sector": "不動産",
       "market_cap": 767729074176,
-      "last_updated": "2026-04-05T20:37:23.037365+09:00",
+      "last_updated": "2026-04-05T20:47:54.704527+09:00",
       "error": null
     },
     {
       "code": "2907",
-      "name": "Ahjikan Co., Ltd.",
+      "name": "旭松食品",
       "current_price": 1398.0,
       "previous_close": 1381.0,
       "price_change": 17.0,
@@ -1913,12 +1913,12 @@
       "dividend_yield": 3.77,
       "sector": "生活必需品",
       "market_cap": 10640103424,
-      "last_updated": "2026-04-05T20:37:23.168960+09:00",
+      "last_updated": "2026-04-05T20:47:54.949042+09:00",
       "error": null
     },
     {
       "code": "7296",
-      "name": "F.C.C. Co., Ltd.",
+      "name": "エフ・シー・シー",
       "current_price": 3290.0,
       "previous_close": 3270.0,
       "price_change": 20.0,
@@ -1926,12 +1926,12 @@
       "dividend_yield": 4.1,
       "sector": "一般消費財",
       "market_cap": 159352389632,
-      "last_updated": "2026-04-05T20:37:23.322212+09:00",
+      "last_updated": "2026-04-05T20:47:55.183896+09:00",
       "error": null
     },
     {
       "code": "5902",
-      "name": "Hokkan Holdings Limited",
+      "name": "ホッカンホールディングス",
       "current_price": 2285.0,
       "previous_close": 2261.0,
       "price_change": 24.0,
@@ -1939,12 +1939,12 @@
       "dividend_yield": 4.11,
       "sector": "一般消費財",
       "market_cap": 28136359936,
-      "last_updated": "2026-04-05T20:37:23.457790+09:00",
+      "last_updated": "2026-04-05T20:47:55.419678+09:00",
       "error": null
     },
     {
       "code": "6249",
-      "name": "Gamecard Holdings, Inc.",
+      "name": "ゲームカード・ジョイコホールディングス",
       "current_price": 2701.0,
       "previous_close": 2710.0,
       "price_change": -9.0,
@@ -1952,12 +1952,12 @@
       "dividend_yield": 3.69,
       "sector": "産業",
       "market_cap": 37876113408,
-      "last_updated": "2026-04-05T20:37:23.682553+09:00",
+      "last_updated": "2026-04-05T20:47:55.665577+09:00",
       "error": null
     },
     {
       "code": "3434",
-      "name": "ALPHA Corporation",
+      "name": "アルファ",
       "current_price": 1220.0,
       "previous_close": 1223.0,
       "price_change": -3.0,
@@ -1965,12 +1965,12 @@
       "dividend_yield": 4.09,
       "sector": "一般消費財",
       "market_cap": 11725704192,
-      "last_updated": "2026-04-05T20:37:24.825933+09:00",
+      "last_updated": "2026-04-05T20:47:56.905957+09:00",
       "error": null
     },
     {
       "code": "5451",
-      "name": "Yodoko, Ltd.",
+      "name": "淀川製鋼所",
       "current_price": 1406.0,
       "previous_close": 1409.0,
       "price_change": -3.0,
@@ -1978,12 +1978,12 @@
       "dividend_yield": 6.32,
       "sector": "素材",
       "market_cap": 203426349056,
-      "last_updated": "2026-04-05T20:37:24.995183+09:00",
+      "last_updated": "2026-04-05T20:47:57.148531+09:00",
       "error": null
     },
     {
       "code": "6501",
-      "name": "Hitachi, Ltd.",
+      "name": "日立製作所",
       "current_price": 4811.0,
       "previous_close": 4675.0,
       "price_change": 136.0,
@@ -1991,12 +1991,12 @@
       "dividend_yield": 96.0,
       "sector": "産業",
       "market_cap": 21764841144320,
-      "last_updated": "2026-04-05T20:37:25.154795+09:00",
+      "last_updated": "2026-04-05T20:47:57.381807+09:00",
       "error": null
     },
     {
       "code": "6954",
-      "name": "Fanuc Corporation",
+      "name": "ファナック",
       "current_price": 5517.0,
       "previous_close": 5476.0,
       "price_change": 41.0,
@@ -2004,12 +2004,12 @@
       "dividend_yield": 1.87,
       "sector": "産業",
       "market_cap": 5148238675968,
-      "last_updated": "2026-04-05T20:37:25.326315+09:00",
+      "last_updated": "2026-04-05T20:47:57.616449+09:00",
       "error": null
     },
     {
       "code": "7203",
-      "name": "Toyota Motor Corporation",
+      "name": "トヨタ自動車",
       "current_price": 3255.0,
       "previous_close": 3262.0,
       "price_change": -7.0,
@@ -2017,12 +2017,12 @@
       "dividend_yield": 2.91,
       "sector": "一般消費財",
       "market_cap": 42423669489664,
-      "last_updated": "2026-04-05T20:37:25.459661+09:00",
+      "last_updated": "2026-04-05T20:47:57.847679+09:00",
       "error": null
     },
     {
       "code": "9022",
-      "name": "Central Japan Railway Company",
+      "name": "東海旅客鉄道（JR東海）",
       "current_price": 4142.0,
       "previous_close": 4190.0,
       "price_change": -48.0,
@@ -2030,12 +2030,12 @@
       "dividend_yield": 76.0,
       "sector": "産業",
       "market_cap": 3956667318272,
-      "last_updated": "2026-04-05T20:37:25.639741+09:00",
+      "last_updated": "2026-04-05T20:47:58.079630+09:00",
       "error": null
     },
     {
       "code": "6702",
-      "name": "Fujitsu Limited",
+      "name": "富士通",
       "current_price": 3273.0,
       "previous_close": 3260.0,
       "price_change": 13.0,
@@ -2043,12 +2043,12 @@
       "dividend_yield": 1.53,
       "sector": "テクノロジー",
       "market_cap": 5689744818176,
-      "last_updated": "2026-04-05T20:37:25.798786+09:00",
+      "last_updated": "2026-04-05T20:47:58.311163+09:00",
       "error": null
     },
     {
       "code": "8233",
-      "name": "Takashimaya Company, Limited",
+      "name": "高島屋",
       "current_price": 1967.5,
       "previous_close": 1940.5,
       "price_change": 27.0,
@@ -2056,12 +2056,12 @@
       "dividend_yield": 1.75,
       "sector": "一般消費財",
       "market_cap": 576505839616,
-      "last_updated": "2026-04-05T20:37:26.000484+09:00",
+      "last_updated": "2026-04-05T20:47:58.539913+09:00",
       "error": null
     },
     {
       "code": "8267",
-      "name": "Aeon Co., Ltd.",
+      "name": "イオン",
       "current_price": 1941.0,
       "previous_close": 1927.5,
       "price_change": 13.5,
@@ -2069,12 +2069,12 @@
       "dividend_yield": 1.4,
       "sector": "一般消費財",
       "market_cap": 5370346471424,
-      "last_updated": "2026-04-05T20:37:26.132035+09:00",
+      "last_updated": "2026-04-05T20:47:58.774419+09:00",
       "error": null
     },
     {
       "code": "9766",
-      "name": "Konami Group Corporation",
+      "name": "コナミグループ",
       "current_price": 19100.0,
       "previous_close": 19390.0,
       "price_change": -290.0,
@@ -2082,12 +2082,12 @@
       "dividend_yield": 98.0,
       "sector": "通信",
       "market_cap": 2589131014144,
-      "last_updated": "2026-04-05T20:37:26.334759+09:00",
+      "last_updated": "2026-04-05T20:47:59.007056+09:00",
       "error": null
     },
     {
       "code": "4063",
-      "name": "Shin-Etsu Chemical Co., Ltd.",
+      "name": "信越化学工業",
       "current_price": 6450.0,
       "previous_close": 6412.0,
       "price_change": 38.0,
@@ -2095,12 +2095,12 @@
       "dividend_yield": 1.65,
       "sector": "素材",
       "market_cap": 11973223776256,
-      "last_updated": "2026-04-05T20:37:26.496833+09:00",
+      "last_updated": "2026-04-05T20:47:59.242325+09:00",
       "error": null
     },
     {
       "code": "4661",
-      "name": "Oriental Land Co., Ltd.",
+      "name": "オリエンタルランド",
       "current_price": 2732.5,
       "previous_close": 2735.0,
       "price_change": -2.5,
@@ -2108,12 +2108,12 @@
       "dividend_yield": 51.0,
       "sector": "一般消費財",
       "market_cap": 4479975948288,
-      "last_updated": "2026-04-05T20:37:26.693981+09:00",
+      "last_updated": "2026-04-05T20:47:59.483598+09:00",
       "error": null
     },
     {
       "code": "7011",
-      "name": "Mitsubishi Heavy Industries, Ltd.",
+      "name": "三菱重工業",
       "current_price": 4803.0,
       "previous_close": 4711.0,
       "price_change": 92.0,
@@ -2121,12 +2121,12 @@
       "dividend_yield": 51.0,
       "sector": "産業",
       "market_cap": 16138635313152,
-      "last_updated": "2026-04-05T20:37:26.870095+09:00",
+      "last_updated": "2026-04-05T20:47:59.719748+09:00",
       "error": null
     },
     {
       "code": "7974",
-      "name": "Nintendo Co., Ltd.",
+      "name": "任天堂",
       "current_price": 8736.0,
       "previous_close": 8762.0,
       "price_change": -26.0,
@@ -2134,12 +2134,12 @@
       "dividend_yield": 2.07,
       "sector": "通信",
       "market_cap": 10071113203712,
-      "last_updated": "2026-04-05T20:37:27.043314+09:00",
+      "last_updated": "2026-04-05T20:47:59.976661+09:00",
       "error": null
     },
     {
       "code": "9202",
-      "name": "ANA Holdings Inc.",
+      "name": "ANAホールディングス",
       "current_price": 2943.0,
       "previous_close": 2918.5,
       "price_change": 24.5,
@@ -2147,12 +2147,12 @@
       "dividend_yield": 2.06,
       "sector": "産業",
       "market_cap": 1347460268032,
-      "last_updated": "2026-04-05T20:37:27.198239+09:00",
+      "last_updated": "2026-04-05T20:48:00.218025+09:00",
       "error": null
     },
     {
       "code": "9861",
-      "name": "Yoshinoya Holdings Co., Ltd.",
+      "name": "吉野家ホールディングス",
       "current_price": 3394.0,
       "previous_close": 3334.0,
       "price_change": 60.0,
@@ -2160,12 +2160,12 @@
       "dividend_yield": 66.0,
       "sector": "一般消費財",
       "market_cap": 219683864576,
-      "last_updated": "2026-04-05T20:37:27.345082+09:00",
+      "last_updated": "2026-04-05T20:48:00.455169+09:00",
       "error": null
     },
     {
       "code": "9023",
-      "name": "TOKYO METRO CO LTD",
+      "name": "東京地下鉄（東京メトロ）",
       "current_price": 1668.5,
       "previous_close": 1659.5,
       "price_change": 9.0,
@@ -2173,12 +2173,12 @@
       "dividend_yield": 2.53,
       "sector": "産業",
       "market_cap": 968728444928,
-      "last_updated": "2026-04-05T20:37:27.497216+09:00",
+      "last_updated": "2026-04-05T20:48:00.688590+09:00",
       "error": null
     },
     {
       "code": "4373",
-      "name": "Simplex Holdings, Inc.",
+      "name": "ケアネット",
       "current_price": 832.0,
       "previous_close": 814.0,
       "price_change": 18.0,
@@ -2186,12 +2186,12 @@
       "dividend_yield": 2.21,
       "sector": "テクノロジー",
       "market_cap": 185867223040,
-      "last_updated": "2026-04-05T20:37:27.689511+09:00",
+      "last_updated": "2026-04-05T20:48:00.953059+09:00",
       "error": null
     },
     {
       "code": "6754",
-      "name": "Anritsu Corporation",
+      "name": "アンリツ",
       "current_price": 3002.0,
       "previous_close": 2911.5,
       "price_change": 90.5,
@@ -2199,12 +2199,12 @@
       "dividend_yield": 1.37,
       "sector": "テクノロジー",
       "market_cap": 384234061824,
-      "last_updated": "2026-04-05T20:37:27.864880+09:00",
+      "last_updated": "2026-04-05T20:48:01.190082+09:00",
       "error": null
     },
     {
       "code": "6857",
-      "name": "Advantest Corporation",
+      "name": "アドバンテスト",
       "current_price": 21555.0,
       "previous_close": 21125.0,
       "price_change": 430.0,
@@ -2212,12 +2212,12 @@
       "dividend_yield": 23.0,
       "sector": "テクノロジー",
       "market_cap": 15649240776704,
-      "last_updated": "2026-04-05T20:37:28.078733+09:00",
+      "last_updated": "2026-04-05T20:48:01.428652+09:00",
       "error": null
     },
     {
       "code": "4413",
-      "name": "baudroie,inc.",
+      "name": "ビジョナル",
       "current_price": 1926.0,
       "previous_close": 1882.0,
       "price_change": 44.0,
@@ -2225,12 +2225,12 @@
       "dividend_yield": 40.0,
       "sector": "テクノロジー",
       "market_cap": 59992760320,
-      "last_updated": "2026-04-05T20:37:28.277792+09:00",
+      "last_updated": "2026-04-05T20:48:01.669157+09:00",
       "error": null
     },
     {
       "code": "4461",
-      "name": "DKS Co. Ltd.",
+      "name": "第一工業製薬",
       "current_price": 7660.0,
       "previous_close": 7610.0,
       "price_change": 50.0,
@@ -2238,12 +2238,12 @@
       "dividend_yield": 1.97,
       "sector": "素材",
       "market_cap": 81054892032,
-      "last_updated": "2026-04-05T20:37:28.427409+09:00",
+      "last_updated": "2026-04-05T20:48:01.933318+09:00",
       "error": null
     },
     {
       "code": "6798",
-      "name": "SMK Corporation",
+      "name": "SMK",
       "current_price": 2990.0,
       "previous_close": 2989.0,
       "price_change": 1.0,
@@ -2251,12 +2251,12 @@
       "dividend_yield": 3.35,
       "sector": "テクノロジー",
       "market_cap": 18923796480,
-      "last_updated": "2026-04-05T20:37:28.602172+09:00",
+      "last_updated": "2026-04-05T20:48:02.174542+09:00",
       "error": null
     },
     {
       "code": "6086",
-      "name": "Shin Maint Holdings Co.,Ltd.",
+      "name": "シンクロ・フード",
       "current_price": 1090.0,
       "previous_close": 1050.0,
       "price_change": 40.0,
@@ -2264,12 +2264,12 @@
       "dividend_yield": 1.9,
       "sector": "産業",
       "market_cap": 20588875776,
-      "last_updated": "2026-04-05T20:37:28.762012+09:00",
+      "last_updated": "2026-04-05T20:48:02.416084+09:00",
       "error": null
     },
     {
       "code": "6432",
-      "name": "Takeuchi Mfg. Co., Ltd.",
+      "name": "竹内製作所",
       "current_price": 6510.0,
       "previous_close": 6400.0,
       "price_change": 110.0,
@@ -2277,12 +2277,12 @@
       "dividend_yield": 3.28,
       "sector": "産業",
       "market_cap": 300716818432,
-      "last_updated": "2026-04-05T20:37:28.931875+09:00",
+      "last_updated": "2026-04-05T20:48:02.655403+09:00",
       "error": null
     },
     {
       "code": "5333",
-      "name": "NGK Corporation",
+      "name": "日本ガイシ（NGK）",
       "current_price": 4135.0,
       "previous_close": 4059.0,
       "price_change": 76.0,
@@ -2290,12 +2290,12 @@
       "dividend_yield": 2.07,
       "sector": "産業",
       "market_cap": 1188955029504,
-      "last_updated": "2026-04-05T20:37:29.092558+09:00",
+      "last_updated": "2026-04-05T20:48:02.894585+09:00",
       "error": null
     },
     {
       "code": "6999",
-      "name": "KOA Corporation",
+      "name": "KOA",
       "current_price": 1554.0,
       "previous_close": 1520.0,
       "price_change": 34.0,
@@ -2303,12 +2303,12 @@
       "dividend_yield": 1.97,
       "sector": "テクノロジー",
       "market_cap": 57713672192,
-      "last_updated": "2026-04-05T20:37:29.281505+09:00",
+      "last_updated": "2026-04-05T20:48:03.143887+09:00",
       "error": null
     },
     {
       "code": "9509",
-      "name": "Hokkaido Electric Power Company, Incorporated",
+      "name": "北海道電力",
       "current_price": 1095.0,
       "previous_close": 1103.0,
       "price_change": -8.0,
@@ -2316,12 +2316,12 @@
       "dividend_yield": 2.72,
       "sector": "公益事業",
       "market_cap": 224863256576,
-      "last_updated": "2026-04-05T20:37:29.516877+09:00",
+      "last_updated": "2026-04-05T20:48:03.381592+09:00",
       "error": null
     },
     {
       "code": "7908",
-      "name": "Kimoto Co., Ltd.",
+      "name": "KISCO",
       "current_price": 262.0,
       "previous_close": 264.0,
       "price_change": -2.0,
@@ -2329,12 +2329,12 @@
       "dividend_yield": 2.65,
       "sector": "テクノロジー",
       "market_cap": 11440466944,
-      "last_updated": "2026-04-05T20:37:29.677832+09:00",
+      "last_updated": "2026-04-05T20:48:03.618145+09:00",
       "error": null
     },
     {
       "code": "6516",
-      "name": "Sanyo Denki Co., Ltd.",
+      "name": "安川電機",
       "current_price": 4545.0,
       "previous_close": 4485.0,
       "price_change": 60.0,
@@ -2342,12 +2342,12 @@
       "dividend_yield": 1.56,
       "sector": "産業",
       "market_cap": 161417035776,
-      "last_updated": "2026-04-05T20:37:29.880154+09:00",
+      "last_updated": "2026-04-05T20:48:03.855560+09:00",
       "error": null
     },
     {
       "code": "6952",
-      "name": "Casio Computer Co.,Ltd.",
+      "name": "カシオ計算機",
       "current_price": 1570.5,
       "previous_close": 1458.5,
       "price_change": 112.0,
@@ -2355,12 +2355,12 @@
       "dividend_yield": 3.09,
       "sector": "テクノロジー",
       "market_cap": 358146834432,
-      "last_updated": "2026-04-05T20:37:31.053791+09:00",
+      "last_updated": "2026-04-05T20:48:05.089435+09:00",
       "error": null
     },
     {
       "code": "3826",
-      "name": "System Integrator Corp.",
+      "name": "システムインテグレータ",
       "current_price": 454.0,
       "previous_close": 450.0,
       "price_change": 4.0,
@@ -2368,12 +2368,12 @@
       "dividend_yield": 2.44,
       "sector": "テクノロジー",
       "market_cap": 4956644352,
-      "last_updated": "2026-04-05T20:37:31.204543+09:00",
+      "last_updated": "2026-04-05T20:48:05.329518+09:00",
       "error": null
     },
     {
       "code": "7823",
-      "name": "Artnature Inc.",
+      "name": "テクノスマート",
       "current_price": 821.0,
       "previous_close": 823.0,
       "price_change": -2.0,
@@ -2381,12 +2381,12 @@
       "dividend_yield": 3.4,
       "sector": "生活必需品",
       "market_cap": 26744698880,
-      "last_updated": "2026-04-05T20:37:31.361566+09:00",
+      "last_updated": "2026-04-05T20:48:05.558687+09:00",
       "error": null
     },
     {
       "code": "8141",
-      "name": "Shinko Shoji Co., Ltd.",
+      "name": "新光商事",
       "current_price": 1311.0,
       "previous_close": 1269.0,
       "price_change": 42.0,
@@ -2394,12 +2394,12 @@
       "dividend_yield": 99.0,
       "sector": "テクノロジー",
       "market_cap": 37432016896,
-      "last_updated": "2026-04-05T20:37:31.522947+09:00",
+      "last_updated": "2026-04-05T20:48:05.793805+09:00",
       "error": null
     },
     {
       "code": "4229",
-      "name": "Gun Ei Chemical Industry Co., Ltd.",
+      "name": "群栄化学工業",
       "current_price": 5350.0,
       "previous_close": 5300.0,
       "price_change": 50.0,
@@ -2407,12 +2407,12 @@
       "dividend_yield": 1.89,
       "sector": "素材",
       "market_cap": 35503230976,
-      "last_updated": "2026-04-05T20:37:31.680066+09:00",
+      "last_updated": "2026-04-05T20:48:06.030406+09:00",
       "error": null
     },
     {
       "code": "4973",
-      "name": "Japan Pure Chemical Co.,Ltd.",
+      "name": "日本高純度化学",
       "current_price": 4845.0,
       "previous_close": 4740.0,
       "price_change": 105.0,
@@ -2420,12 +2420,12 @@
       "dividend_yield": 4.22,
       "sector": "素材",
       "market_cap": 28028291072,
-      "last_updated": "2026-04-05T20:37:31.835479+09:00",
+      "last_updated": "2026-04-05T20:48:06.271766+09:00",
       "error": null
     },
     {
       "code": "6701",
-      "name": "NEC Corporation",
+      "name": "NEC",
       "current_price": 4046.0,
       "previous_close": 4023.0,
       "price_change": 23.0,
@@ -2433,12 +2433,12 @@
       "dividend_yield": 80.0,
       "sector": "テクノロジー",
       "market_cap": 5384289910784,
-      "last_updated": "2026-04-05T20:37:32.020381+09:00",
+      "last_updated": "2026-04-05T20:48:06.515627+09:00",
       "error": null
     },
     {
       "code": "6146",
-      "name": "Disco Corporation",
+      "name": "ディスコ",
       "current_price": 65650.0,
       "previous_close": 63570.0,
       "price_change": 2080.0,
@@ -2446,12 +2446,12 @@
       "dividend_yield": 69.0,
       "sector": "テクノロジー",
       "market_cap": 7118464221184,
-      "last_updated": "2026-04-05T20:37:32.227870+09:00",
+      "last_updated": "2026-04-05T20:48:06.756303+09:00",
       "error": null
     },
     {
       "code": "6814",
-      "name": "Furuno Electric Co., Ltd.",
+      "name": "古野電気",
       "current_price": 6650.0,
       "previous_close": 6470.0,
       "price_change": 180.0,
@@ -2459,12 +2459,12 @@
       "dividend_yield": 2.32,
       "sector": "テクノロジー",
       "market_cap": 210199576576,
-      "last_updated": "2026-04-05T20:37:32.428578+09:00",
+      "last_updated": "2026-04-05T20:48:06.996235+09:00",
       "error": null
     },
     {
       "code": "7721",
-      "name": "TOKYO KEIKI INC.",
+      "name": "東京計器",
       "current_price": 7270.0,
       "previous_close": 6980.0,
       "price_change": 290.0,
@@ -2472,12 +2472,12 @@
       "dividend_yield": 57.0,
       "sector": "テクノロジー",
       "market_cap": 119470080000,
-      "last_updated": "2026-04-05T20:37:32.622504+09:00",
+      "last_updated": "2026-04-05T20:48:07.235769+09:00",
       "error": null
     },
     {
       "code": "2326",
-      "name": "Digital Arts Inc.",
+      "name": "デジタルアーツ",
       "current_price": 5370.0,
       "previous_close": 5260.0,
       "price_change": 110.0,
@@ -2485,12 +2485,12 @@
       "dividend_yield": 1.9,
       "sector": "テクノロジー",
       "market_cap": 72193122304,
-      "last_updated": "2026-04-05T20:37:32.760325+09:00",
+      "last_updated": "2026-04-05T20:48:07.479626+09:00",
       "error": null
     },
     {
       "code": "3915",
-      "name": "TerraSky Co.,Ltd.",
+      "name": "テラスカイ",
       "current_price": 1580.0,
       "previous_close": 1555.0,
       "price_change": 25.0,
@@ -2498,12 +2498,12 @@
       "dividend_yield": 2.06,
       "sector": "テクノロジー",
       "market_cap": 20396816384,
-      "last_updated": "2026-04-05T20:37:32.925736+09:00",
+      "last_updated": "2026-04-05T20:48:07.718994+09:00",
       "error": null
     },
     {
       "code": "7970",
-      "name": "Shin-Etsu Polymer Co.,Ltd.",
+      "name": "信越ポリマー",
       "current_price": 2001.0,
       "previous_close": 1977.0,
       "price_change": 24.0,
@@ -2511,12 +2511,12 @@
       "dividend_yield": 3.03,
       "sector": "素材",
       "market_cap": 160400162816,
-      "last_updated": "2026-04-05T20:37:33.121061+09:00",
+      "last_updated": "2026-04-05T20:48:07.959643+09:00",
       "error": null
     },
     {
       "code": "1605",
-      "name": "Inpex Corporation",
+      "name": "INPEX",
       "current_price": 4675.0,
       "previous_close": 4567.0,
       "price_change": 108.0,
@@ -2524,12 +2524,12 @@
       "dividend_yield": 2.36,
       "sector": "エネルギー",
       "market_cap": 5433178193920,
-      "last_updated": "2026-04-05T20:37:33.286654+09:00",
+      "last_updated": "2026-04-05T20:48:08.202448+09:00",
       "error": null
     },
     {
       "code": "2502",
-      "name": "Asahi Group Holdings, Ltd.",
+      "name": "アサヒグループホールディングス",
       "current_price": 1640.0,
       "previous_close": 1619.0,
       "price_change": 21.0,
@@ -2537,12 +2537,12 @@
       "dividend_yield": 3.21,
       "sector": "生活必需品",
       "market_cap": 2399101779968,
-      "last_updated": "2026-04-05T20:37:33.476634+09:00",
+      "last_updated": "2026-04-05T20:48:08.445106+09:00",
       "error": null
     },
     {
       "code": "2503",
-      "name": "Kirin Holdings Company, Limited",
+      "name": "キリンホールディングス",
       "current_price": 2540.0,
       "previous_close": 2616.5,
       "price_change": -76.5,
@@ -2550,12 +2550,12 @@
       "dividend_yield": 2.9,
       "sector": "生活必需品",
       "market_cap": 2057773252608,
-      "last_updated": "2026-04-05T20:37:33.704440+09:00",
+      "last_updated": "2026-04-05T20:48:08.684823+09:00",
       "error": null
     },
     {
       "code": "4204",
-      "name": "Sekisui Chemical Co., Ltd.",
+      "name": "積水化学工業",
       "current_price": 2648.0,
       "previous_close": 2652.0,
       "price_change": -4.0,
@@ -2563,12 +2563,12 @@
       "dividend_yield": 3.02,
       "sector": "産業",
       "market_cap": 1069013729280,
-      "last_updated": "2026-04-05T20:37:33.861389+09:00",
+      "last_updated": "2026-04-05T20:48:08.921025+09:00",
       "error": null
     },
     {
       "code": "5334",
-      "name": "Niterra Co., Ltd.",
+      "name": "日本特殊陶業（NGK）",
       "current_price": 7516.0,
       "previous_close": 7455.0,
       "price_change": 61.0,
@@ -2576,12 +2576,12 @@
       "dividend_yield": 3.0,
       "sector": "一般消費財",
       "market_cap": 1475876487168,
-      "last_updated": "2026-04-05T20:37:34.037562+09:00",
+      "last_updated": "2026-04-05T20:48:09.164393+09:00",
       "error": null
     },
     {
       "code": "6301",
-      "name": "Komatsu Ltd.",
+      "name": "コマツ",
       "current_price": 6493.0,
       "previous_close": 6341.0,
       "price_change": 152.0,
@@ -2589,12 +2589,12 @@
       "dividend_yield": 3.0,
       "sector": "産業",
       "market_cap": 5850805567488,
-      "last_updated": "2026-04-05T20:37:34.202662+09:00",
+      "last_updated": "2026-04-05T20:48:09.406192+09:00",
       "error": null
     },
     {
       "code": "6326",
-      "name": "Kubota Corporation",
+      "name": "クボタ",
       "current_price": 2520.0,
       "previous_close": 2511.5,
       "price_change": 8.5,
@@ -2602,12 +2602,12 @@
       "dividend_yield": 2.07,
       "sector": "産業",
       "market_cap": 2865402740736,
-      "last_updated": "2026-04-05T20:37:34.393012+09:00",
+      "last_updated": "2026-04-05T20:48:09.650144+09:00",
       "error": null
     },
     {
       "code": "8001",
-      "name": "ITOCHU Corporation",
+      "name": "伊藤忠商事",
       "current_price": 2042.0,
       "previous_close": 2038.5,
       "price_change": 3.5,
@@ -2615,12 +2615,12 @@
       "dividend_yield": 2.16,
       "sector": "産業",
       "market_cap": 14288411426816,
-      "last_updated": "2026-04-05T20:37:34.558495+09:00",
+      "last_updated": "2026-04-05T20:48:09.889764+09:00",
       "error": null
     },
     {
       "code": "8031",
-      "name": "Mitsui & Co., Ltd.",
+      "name": "三井物産",
       "current_price": 6381.0,
       "previous_close": 6212.0,
       "price_change": 169.0,
@@ -2628,12 +2628,12 @@
       "dividend_yield": 1.93,
       "sector": "産業",
       "market_cap": 18120653668352,
-      "last_updated": "2026-04-05T20:37:34.720522+09:00",
+      "last_updated": "2026-04-05T20:48:10.133451+09:00",
       "error": null
     },
     {
       "code": "8058",
-      "name": "Mitsubishi Corporation",
+      "name": "三菱商事",
       "current_price": 5475.0,
       "previous_close": 5397.0,
       "price_change": 78.0,
@@ -2641,12 +2641,12 @@
       "dividend_yield": 2.04,
       "sector": "産業",
       "market_cap": 20108294488064,
-      "last_updated": "2026-04-05T20:37:34.908922+09:00",
+      "last_updated": "2026-04-05T20:48:10.370569+09:00",
       "error": null
     },
     {
       "code": "8306",
-      "name": "Mitsubishi UFJ Financial Group, Inc.",
+      "name": "三菱UFJフィナンシャル・グループ",
       "current_price": 2761.5,
       "previous_close": 2760.0,
       "price_change": 1.5,
@@ -2654,12 +2654,12 @@
       "dividend_yield": 2.83,
       "sector": "金融",
       "market_cap": 31170699984896,
-      "last_updated": "2026-04-05T20:37:35.045391+09:00",
+      "last_updated": "2026-04-05T20:48:10.610520+09:00",
       "error": null
     },
     {
       "code": "8473",
-      "name": "SBI Holdings, Inc.",
+      "name": "SBIホールディングス",
       "current_price": 2948.0,
       "previous_close": 2935.5,
       "price_change": 12.5,
@@ -2667,12 +2667,12 @@
       "dividend_yield": 3.24,
       "sector": "金融",
       "market_cap": 1904913285120,
-      "last_updated": "2026-04-05T20:37:35.182233+09:00",
+      "last_updated": "2026-04-05T20:48:10.853800+09:00",
       "error": null
     },
     {
       "code": "8591",
-      "name": "ORIX Corporation",
+      "name": "オリックス",
       "current_price": 4704.0,
       "previous_close": 4677.0,
       "price_change": 27.0,
@@ -2680,12 +2680,12 @@
       "dividend_yield": 4.01,
       "sector": "金融",
       "market_cap": 5166113226752,
-      "last_updated": "2026-04-05T20:37:35.343446+09:00",
+      "last_updated": "2026-04-05T20:48:11.098775+09:00",
       "error": null
     },
     {
       "code": "8630",
-      "name": "Sompo Holdings, Inc.",
+      "name": "SOMPOホールディングス",
       "current_price": 6017.0,
       "previous_close": 6059.0,
       "price_change": -42.0,
@@ -2693,12 +2693,12 @@
       "dividend_yield": 2.48,
       "sector": "金融",
       "market_cap": 5384247967744,
-      "last_updated": "2026-04-05T20:37:35.537474+09:00",
+      "last_updated": "2026-04-05T20:48:11.335501+09:00",
       "error": null
     },
     {
       "code": "9433",
-      "name": "KDDI Corporation",
+      "name": "KDDI",
       "current_price": 2745.0,
       "previous_close": 2711.0,
       "price_change": 34.0,
@@ -2706,12 +2706,12 @@
       "dividend_yield": 2.95,
       "sector": "通信",
       "market_cap": 10450430328832,
-      "last_updated": "2026-04-05T20:37:35.726548+09:00",
+      "last_updated": "2026-04-05T20:48:11.580320+09:00",
       "error": null
     },
     {
       "code": "1951",
-      "name": "EXEO Group, Inc.",
+      "name": "エクシオグループ",
       "current_price": 2782.0,
       "previous_close": 2719.0,
       "price_change": 63.0,
@@ -2719,12 +2719,12 @@
       "dividend_yield": 2.43,
       "sector": "産業",
       "market_cap": 577283424256,
-      "last_updated": "2026-04-05T20:37:35.905967+09:00",
+      "last_updated": "2026-04-05T20:48:11.849875+09:00",
       "error": null
     },
     {
       "code": "2124",
-      "name": "JAC Recruitment Co., Ltd.",
+      "name": "ジェイエイシーリクルートメント",
       "current_price": 852.0,
       "previous_close": 850.0,
       "price_change": 2.0,
@@ -2732,12 +2732,12 @@
       "dividend_yield": 4.47,
       "sector": "産業",
       "market_cap": 134958956544,
-      "last_updated": "2026-04-05T20:37:36.074822+09:00",
+      "last_updated": "2026-04-05T20:48:12.094555+09:00",
       "error": null
     },
     {
       "code": "5105",
-      "name": "Toyo Tire Corporation",
+      "name": "Toyo Tires（トーヨータイヤ）",
       "current_price": 3762.0,
       "previous_close": 3691.0,
       "price_change": 71.0,
@@ -2745,12 +2745,12 @@
       "dividend_yield": 3.79,
       "sector": "一般消費財",
       "market_cap": 579332734976,
-      "last_updated": "2026-04-05T20:37:37.231690+09:00",
+      "last_updated": "2026-04-05T20:48:13.334582+09:00",
       "error": null
     },
     {
       "code": "9069",
-      "name": "SENKO Group Holdings Co., Ltd.",
+      "name": "住友倉庫",
       "current_price": 1867.0,
       "previous_close": 1875.0,
       "price_change": -8.0,
@@ -2758,12 +2758,12 @@
       "dividend_yield": 2.67,
       "sector": "産業",
       "market_cap": 312267341824,
-      "last_updated": "2026-04-05T20:37:37.368351+09:00",
+      "last_updated": "2026-04-05T20:48:13.577178+09:00",
       "error": null
     },
     {
       "code": "2163",
-      "name": "Artner Co., Ltd.",
+      "name": "アルトナー",
       "current_price": 1950.0,
       "previous_close": 1956.0,
       "price_change": -6.0,
@@ -2771,12 +2771,12 @@
       "dividend_yield": 4.4,
       "sector": "産業",
       "market_cap": 20719458304,
-      "last_updated": "2026-04-05T20:37:37.533364+09:00",
+      "last_updated": "2026-04-05T20:48:13.820851+09:00",
       "error": null
     },
     {
       "code": "3834",
-      "name": "Asahi Net, Inc.",
+      "name": "朝日ネット",
       "current_price": 649.0,
       "previous_close": 647.0,
       "price_change": 2.0,
@@ -2784,12 +2784,12 @@
       "dividend_yield": 3.86,
       "sector": "通信",
       "market_cap": 16817536000,
-      "last_updated": "2026-04-05T20:37:37.745355+09:00",
+      "last_updated": "2026-04-05T20:48:14.059137+09:00",
       "error": null
     },
     {
       "code": "7921",
-      "name": "Takara & Company Ltd.",
+      "name": "宝印刷",
       "current_price": 3835.0,
       "previous_close": 3800.0,
       "price_change": 35.0,
@@ -2797,12 +2797,12 @@
       "dividend_yield": 3.16,
       "sector": "産業",
       "market_cap": 49500995584,
-      "last_updated": "2026-04-05T20:37:37.911374+09:00",
+      "last_updated": "2026-04-05T20:48:14.296203+09:00",
       "error": null
     },
     {
       "code": "7995",
-      "name": "Valqua, Ltd.",
+      "name": "バルカー",
       "current_price": 4905.0,
       "previous_close": 4845.0,
       "price_change": 60.0,
@@ -2810,12 +2810,12 @@
       "dividend_yield": 3.1,
       "sector": "産業",
       "market_cap": 86433062912,
-      "last_updated": "2026-04-05T20:37:38.096437+09:00",
+      "last_updated": "2026-04-05T20:48:14.540395+09:00",
       "error": null
     },
     {
       "code": "9233",
-      "name": "Asia Air Survey Co., Ltd.",
+      "name": "アジア航測",
       "current_price": 1222.0,
       "previous_close": 1215.0,
       "price_change": 7.0,
@@ -2823,12 +2823,12 @@
       "dividend_yield": 3.62,
       "sector": "産業",
       "market_cap": 22240399360,
-      "last_updated": "2026-04-05T20:37:38.283126+09:00",
+      "last_updated": "2026-04-05T20:48:14.781085+09:00",
       "error": null
     },
     {
       "code": "1723",
-      "name": "Nihon Dengi Co., Ltd.",
+      "name": "日本電技",
       "current_price": 2186.0,
       "previous_close": 2287.0,
       "price_change": -101.0,
@@ -2836,12 +2836,12 @@
       "dividend_yield": 1.66,
       "sector": "テクノロジー",
       "market_cap": 139320377344,
-      "last_updated": "2026-04-05T20:37:38.437098+09:00",
+      "last_updated": "2026-04-05T20:48:15.018927+09:00",
       "error": null
     },
     {
       "code": "2185",
-      "name": "CMC Corporation",
+      "name": "シイエム・シイ",
       "current_price": 1868.0,
       "previous_close": 1877.0,
       "price_change": -9.0,
@@ -2849,12 +2849,12 @@
       "dividend_yield": 2.93,
       "sector": "テクノロジー",
       "market_cap": 24137433088,
-      "last_updated": "2026-04-05T20:37:38.652973+09:00",
+      "last_updated": "2026-04-05T20:48:15.262517+09:00",
       "error": null
     },
     {
       "code": "2768",
-      "name": "Sojitz Corporation",
+      "name": "双日",
       "current_price": 6359.0,
       "previous_close": 6280.0,
       "price_change": 79.0,
@@ -2862,12 +2862,12 @@
       "dividend_yield": 2.63,
       "sector": "産業",
       "market_cap": 1323069997056,
-      "last_updated": "2026-04-05T20:37:38.842668+09:00",
+      "last_updated": "2026-04-05T20:48:15.502695+09:00",
       "error": null
     },
     {
       "code": "3433",
-      "name": "TOCALO Co.,Ltd.",
+      "name": "トーカロ",
       "current_price": 2625.0,
       "previous_close": 2563.0,
       "price_change": 62.0,
@@ -2875,12 +2875,12 @@
       "dividend_yield": 2.73,
       "sector": "産業",
       "market_cap": 156105326592,
-      "last_updated": "2026-04-05T20:37:39.031847+09:00",
+      "last_updated": "2026-04-05T20:48:15.740120+09:00",
       "error": null
     },
     {
       "code": "4248",
-      "name": "Takemoto Yohki Co., Ltd.",
+      "name": "竹本容器",
       "current_price": 884.0,
       "previous_close": 884.0,
       "price_change": 0.0,
@@ -2888,12 +2888,12 @@
       "dividend_yield": 4.3,
       "sector": "一般消費財",
       "market_cap": 10667224064,
-      "last_updated": "2026-04-05T20:37:39.208280+09:00",
+      "last_updated": "2026-04-05T20:48:15.979470+09:00",
       "error": null
     },
     {
       "code": "5186",
-      "name": "Nitta Corporation",
+      "name": "ニッタ",
       "current_price": 4570.0,
       "previous_close": 4545.0,
       "price_change": 25.0,
@@ -2901,12 +2901,12 @@
       "dividend_yield": 3.19,
       "sector": "産業",
       "market_cap": 123708915712,
-      "last_updated": "2026-04-05T20:37:39.391051+09:00",
+      "last_updated": "2026-04-05T20:48:16.218479+09:00",
       "error": null
     },
     {
       "code": "5911",
-      "name": "Yokogawa Bridge Holdings Corp.",
+      "name": "横河ブリッジホールディングス",
       "current_price": 3020.0,
       "previous_close": 3030.0,
       "price_change": -10.0,
@@ -2914,12 +2914,12 @@
       "dividend_yield": 3.96,
       "sector": "産業",
       "market_cap": 118856687616,
-      "last_updated": "2026-04-05T20:37:39.582497+09:00",
+      "last_updated": "2026-04-05T20:48:16.487906+09:00",
       "error": null
     },
     {
       "code": "7438",
-      "name": "Kondotec Inc.",
+      "name": "コンドーテック",
       "current_price": 1515.0,
       "previous_close": 1508.0,
       "price_change": 7.0,
@@ -2927,12 +2927,12 @@
       "dividend_yield": 3.45,
       "sector": "産業",
       "market_cap": 38804754432,
-      "last_updated": "2026-04-05T20:37:39.742663+09:00",
+      "last_updated": "2026-04-05T20:48:16.731353+09:00",
       "error": null
     },
     {
       "code": "8002",
-      "name": "Marubeni Corporation",
+      "name": "丸紅",
       "current_price": 5988.0,
       "previous_close": 5890.0,
       "price_change": 98.0,
@@ -2940,12 +2940,12 @@
       "dividend_yield": 1.83,
       "sector": "産業",
       "market_cap": 9810621759488,
-      "last_updated": "2026-04-05T20:37:39.901622+09:00",
+      "last_updated": "2026-04-05T20:48:16.966719+09:00",
       "error": null
     },
     {
       "code": "8098",
-      "name": "Inabata & Co.,Ltd.",
+      "name": "稲畑産業",
       "current_price": 4050.0,
       "previous_close": 4030.0,
       "price_change": 20.0,
@@ -2953,12 +2953,12 @@
       "dividend_yield": 3.18,
       "sector": "素材",
       "market_cap": 216199168000,
-      "last_updated": "2026-04-05T20:37:40.062491+09:00",
+      "last_updated": "2026-04-05T20:48:17.201267+09:00",
       "error": null
     },
     {
       "code": "5970",
-      "name": "G-Tekt Corporation",
+      "name": "ジーエス・ユアサ コーポレーション",
       "current_price": 1876.0,
       "previous_close": 1845.0,
       "price_change": 31.0,
@@ -2966,12 +2966,12 @@
       "dividend_yield": 4.88,
       "sector": "一般消費財",
       "market_cap": 80316424192,
-      "last_updated": "2026-04-05T20:37:40.238810+09:00",
+      "last_updated": "2026-04-05T20:48:17.437246+09:00",
       "error": null
     },
     {
       "code": "7466",
-      "name": "SPK Corporation",
+      "name": "SPK",
       "current_price": 1267.0,
       "previous_close": 1276.0,
       "price_change": -9.0,
@@ -2979,12 +2979,12 @@
       "dividend_yield": 2.86,
       "sector": "一般消費財",
       "market_cap": 25584936960,
-      "last_updated": "2026-04-05T20:37:40.457511+09:00",
+      "last_updated": "2026-04-05T20:48:17.676205+09:00",
       "error": null
     },
     {
       "code": "8015",
-      "name": "Toyota Tsusho Corporation",
+      "name": "豊田通商",
       "current_price": 6081.0,
       "previous_close": 6061.0,
       "price_change": 20.0,
@@ -2992,12 +2992,12 @@
       "dividend_yield": 1.91,
       "sector": "産業",
       "market_cap": 6420177616896,
-      "last_updated": "2026-04-05T20:37:40.617074+09:00",
+      "last_updated": "2026-04-05T20:48:17.912098+09:00",
       "error": null
     },
     {
       "code": "8566",
-      "name": "Ricoh Leasing Company, Ltd.",
+      "name": "リコーリース",
       "current_price": 5930.0,
       "previous_close": 5900.0,
       "price_change": 30.0,
@@ -3005,12 +3005,12 @@
       "dividend_yield": 3.22,
       "sector": "金融",
       "market_cap": 182788931584,
-      "last_updated": "2026-04-05T20:37:40.813264+09:00",
+      "last_updated": "2026-04-05T20:48:18.159796+09:00",
       "error": null
     },
     {
       "code": "9436",
-      "name": "Okinawa Cellular Telephone Company",
+      "name": "沖縄セルラー電話",
       "current_price": 3510.0,
       "previous_close": 3470.0,
       "price_change": 40.0,
@@ -3018,12 +3018,12 @@
       "dividend_yield": 1.84,
       "sector": "通信",
       "market_cap": 323377168384,
-      "last_updated": "2026-04-05T20:37:40.987746+09:00",
+      "last_updated": "2026-04-05T20:48:18.403206+09:00",
       "error": null
     },
     {
       "code": "3837",
-      "name": "Ad-Sol Nissin Corporation",
+      "name": "アドソル日進",
       "current_price": 1466.0,
       "previous_close": 1444.0,
       "price_change": 22.0,
@@ -3031,12 +3031,12 @@
       "dividend_yield": 3.19,
       "sector": "テクノロジー",
       "market_cap": 24685651968,
-      "last_updated": "2026-04-05T20:37:41.131257+09:00",
+      "last_updated": "2026-04-05T20:48:18.711629+09:00",
       "error": null
     },
     {
       "code": "3844",
-      "name": "Comture Corporation",
+      "name": "コムチュア",
       "current_price": 1469.0,
       "previous_close": 1450.0,
       "price_change": 19.0,
@@ -3044,12 +3044,12 @@
       "dividend_yield": 3.45,
       "sector": "テクノロジー",
       "market_cap": 46851592192,
-      "last_updated": "2026-04-05T20:37:41.292693+09:00",
+      "last_updated": "2026-04-05T20:48:18.960106+09:00",
       "error": null
     },
     {
       "code": "4345",
-      "name": "CTS Co., Ltd.",
+      "name": "シーエーエス",
       "current_price": 921.0,
       "previous_close": 924.0,
       "price_change": -3.0,
@@ -3057,12 +3057,12 @@
       "dividend_yield": 3.14,
       "sector": "産業",
       "market_cap": 38005178368,
-      "last_updated": "2026-04-05T20:37:41.486205+09:00",
+      "last_updated": "2026-04-05T20:48:19.197430+09:00",
       "error": null
     },
     {
       "code": "4507",
-      "name": "Shionogi & Co., Ltd.",
+      "name": "塩野義製薬",
       "current_price": 3562.0,
       "previous_close": 3544.0,
       "price_change": 18.0,
@@ -3070,12 +3070,12 @@
       "dividend_yield": 1.86,
       "sector": "ヘルスケア",
       "market_cap": 3031177363456,
-      "last_updated": "2026-04-05T20:37:41.727004+09:00",
+      "last_updated": "2026-04-05T20:48:19.444011+09:00",
       "error": null
     },
     {
       "code": "5393",
-      "name": "Nichias Corporation",
+      "name": "ニチアス",
       "current_price": 2895.0,
       "previous_close": 2852.0,
       "price_change": 43.0,
@@ -3083,12 +3083,12 @@
       "dividend_yield": 1.92,
       "sector": "産業",
       "market_cap": 547413655552,
-      "last_updated": "2026-04-05T20:37:41.930414+09:00",
+      "last_updated": "2026-04-05T20:48:19.686151+09:00",
       "error": null
     },
     {
       "code": "6367",
-      "name": "Daikin Industries,Ltd.",
+      "name": "ダイキン工業",
       "current_price": 19765.0,
       "previous_close": 19545.0,
       "price_change": 220.0,
@@ -3096,12 +3096,12 @@
       "dividend_yield": 1.69,
       "sector": "産業",
       "market_cap": 5787762032640,
-      "last_updated": "2026-04-05T20:37:42.099836+09:00",
+      "last_updated": "2026-04-05T20:48:19.930260+09:00",
       "error": null
     },
     {
       "code": "8117",
-      "name": "Central Automotive Products Ltd.",
+      "name": "中央自動車工業",
       "current_price": 1934.0,
       "previous_close": 1938.0,
       "price_change": -4.0,
@@ -3109,12 +3109,12 @@
       "dividend_yield": 2.94,
       "sector": "一般消費財",
       "market_cap": 106882285568,
-      "last_updated": "2026-04-05T20:37:42.273849+09:00",
+      "last_updated": "2026-04-05T20:48:20.173594+09:00",
       "error": null
     },
     {
       "code": "8697",
-      "name": "Japan Exchange Group, Inc.",
+      "name": "日本取引所グループ",
       "current_price": 1886.5,
       "previous_close": 1867.0,
       "price_change": 19.5,
@@ -3122,12 +3122,12 @@
       "dividend_yield": 3.27,
       "sector": "金融",
       "market_cap": 1939152044032,
-      "last_updated": "2026-04-05T20:37:42.478350+09:00",
+      "last_updated": "2026-04-05T20:48:20.419316+09:00",
       "error": null
     },
     {
       "code": "1828",
-      "name": "Tanabe Engineering Corporation",
+      "name": "三井住友建設",
       "current_price": 2458.0,
       "previous_close": 2442.0,
       "price_change": 16.0,
@@ -3135,12 +3135,12 @@
       "dividend_yield": 3.77,
       "sector": "産業",
       "market_cap": 25806665728,
-      "last_updated": "2026-04-05T20:37:43.656901+09:00",
+      "last_updated": "2026-04-05T20:48:21.658895+09:00",
       "error": null
     },
     {
       "code": "3191",
-      "name": "Joyful Honda Co.,Ltd.",
+      "name": "ジョイフル本田",
       "current_price": 2160.0,
       "previous_close": 2151.0,
       "price_change": 9.0,
@@ -3148,12 +3148,12 @@
       "dividend_yield": 3.91,
       "sector": "一般消費財",
       "market_cap": 130191654912,
-      "last_updated": "2026-04-05T20:37:43.892136+09:00",
+      "last_updated": "2026-04-05T20:48:21.899909+09:00",
       "error": null
     },
     {
       "code": "5184",
-      "name": "Nichirin Co., Ltd.",
+      "name": "ニチリン",
       "current_price": 4115.0,
       "previous_close": 4120.0,
       "price_change": -5.0,
@@ -3161,12 +3161,12 @@
       "dividend_yield": 4.61,
       "sector": "一般消費財",
       "market_cap": 54294355968,
-      "last_updated": "2026-04-05T20:37:44.073543+09:00",
+      "last_updated": "2026-04-05T20:48:22.136542+09:00",
       "error": null
     },
     {
       "code": "7613",
-      "name": "SIIX Corporation",
+      "name": "シークス",
       "current_price": 1228.0,
       "previous_close": 1211.0,
       "price_change": 17.0,
@@ -3174,12 +3174,12 @@
       "dividend_yield": 4.13,
       "sector": "テクノロジー",
       "market_cap": 57885036544,
-      "last_updated": "2026-04-05T20:37:44.283442+09:00",
+      "last_updated": "2026-04-05T20:48:22.372287+09:00",
       "error": null
     },
     {
       "code": "7811",
-      "name": "Nakamoto Packs Co.,Ltd.",
+      "name": "中本パックス",
       "current_price": 1772.0,
       "previous_close": 1791.0,
       "price_change": -19.0,
@@ -3187,12 +3187,12 @@
       "dividend_yield": 3.8,
       "sector": "産業",
       "market_cap": 15679869952,
-      "last_updated": "2026-04-05T20:37:44.505367+09:00",
+      "last_updated": "2026-04-05T20:48:22.609666+09:00",
       "error": null
     },
     {
       "code": "9956",
-      "name": "Valor Holdings Co., Ltd.",
+      "name": "バロー",
       "current_price": 3870.0,
       "previous_close": 3805.0,
       "price_change": 65.0,
@@ -3200,12 +3200,12 @@
       "dividend_yield": 1.84,
       "sector": "一般消費財",
       "market_cap": 203829641216,
-      "last_updated": "2026-04-05T20:37:44.655249+09:00",
+      "last_updated": "2026-04-05T20:48:22.847734+09:00",
       "error": null
     },
     {
       "code": "9997",
-      "name": "Belluna Co., Ltd.",
+      "name": "ベルーナ",
       "current_price": 877.0,
       "previous_close": 879.0,
       "price_change": -2.0,
@@ -3213,12 +3213,12 @@
       "dividend_yield": 3.41,
       "sector": "一般消費財",
       "market_cap": 84404731904,
-      "last_updated": "2026-04-05T20:37:44.848200+09:00",
+      "last_updated": "2026-04-05T20:48:23.110528+09:00",
       "error": null
     },
     {
       "code": "8967",
-      "name": "Japan Logistics Fund, Inc.",
+      "name": "日本ロジスティクスファンド投資法人",
       "current_price": 96900.0,
       "previous_close": 96000.0,
       "price_change": 900.0,
@@ -3226,12 +3226,12 @@
       "dividend_yield": 4.64,
       "sector": "不動産",
       "market_cap": 266103193600,
-      "last_updated": "2026-04-05T20:37:45.004018+09:00",
+      "last_updated": "2026-04-05T20:48:23.345323+09:00",
       "error": null
     },
     {
       "code": "3283",
-      "name": "Nippon Prologis REIT, Inc.",
+      "name": "日本プロロジスリート投資法人",
       "current_price": 87300.0,
       "previous_close": 86700.0,
       "price_change": 600.0,
@@ -3239,12 +3239,12 @@
       "dividend_yield": 4.43,
       "sector": "不動産",
       "market_cap": 732369059840,
-      "last_updated": "2026-04-05T20:37:45.182963+09:00",
+      "last_updated": "2026-04-05T20:48:23.580075+09:00",
       "error": null
     },
     {
       "code": "3471",
-      "name": "Mitsui Fudosan Logistics Park Inc.",
+      "name": "三井不動産ロジスティクスパーク投資法人",
       "current_price": 114600.0,
       "previous_close": 113600.0,
       "price_change": 1000.0,
@@ -3252,12 +3252,12 @@
       "dividend_yield": 5.09,
       "sector": "不動産",
       "market_cap": 368977510400,
-      "last_updated": "2026-04-05T20:37:45.361563+09:00",
+      "last_updated": "2026-04-05T20:48:23.820697+09:00",
       "error": null
     },
     {
       "code": "8952",
-      "name": "Japan Real Estate Investment Corporation",
+      "name": "ジャパンリアルエステイト投資法人",
       "current_price": 120100.0,
       "previous_close": 117100.0,
       "price_change": 3000.0,
@@ -3265,12 +3265,12 @@
       "dividend_yield": 4.31,
       "sector": "不動産",
       "market_cap": 854429859840,
-      "last_updated": "2026-04-05T20:37:45.537449+09:00",
+      "last_updated": "2026-04-05T20:48:24.052678+09:00",
       "error": null
     },
     {
       "code": "3226",
-      "name": "Mitsui Fudosan Accommodations Fund Inc.",
+      "name": "日本アコモデーションファンド投資法人",
       "current_price": 135000.0,
       "previous_close": 134500.0,
       "price_change": 500.0,
@@ -3278,12 +3278,12 @@
       "dividend_yield": 3.53,
       "sector": "不動産",
       "market_cap": 339843612672,
-      "last_updated": "2026-04-05T20:37:45.733965+09:00",
+      "last_updated": "2026-04-05T20:48:24.283331+09:00",
       "error": null
     },
     {
       "code": "3269",
-      "name": "Advance Residence Investment Corporation",
+      "name": "アドバンス・レジデンス投資法人",
       "current_price": 164600.0,
       "previous_close": 162800.0,
       "price_change": 1800.0,
@@ -3291,12 +3291,12 @@
       "dividend_yield": 3.92,
       "sector": "不動産",
       "market_cap": 469488893952,
-      "last_updated": "2026-04-05T20:37:45.915762+09:00",
+      "last_updated": "2026-04-05T20:48:24.518640+09:00",
       "error": null
     },
     {
       "code": "3282",
-      "name": "Comforia Residential REIT, Inc",
+      "name": "コンフォリア・レジデンシャル投資法人",
       "current_price": 112000.0,
       "previous_close": 111000.0,
       "price_change": 1000.0,
@@ -3304,12 +3304,12 @@
       "dividend_yield": 3.69,
       "sector": "不動産",
       "market_cap": 261161041920,
-      "last_updated": "2026-04-05T20:37:46.104281+09:00",
+      "last_updated": "2026-04-05T20:48:24.762072+09:00",
       "error": null
     },
     {
       "code": "3462",
-      "name": "Nomura Real Estate Master Fund, Inc.",
+      "name": "野村不動産マスターファンド投資法人",
       "current_price": 160700.0,
       "previous_close": 158600.0,
       "price_change": 2100.0,
@@ -3317,12 +3317,12 @@
       "dividend_yield": 4.22,
       "sector": "不動産",
       "market_cap": 746670718976,
-      "last_updated": "2026-04-05T20:37:46.255931+09:00",
+      "last_updated": "2026-04-05T20:48:25.021803+09:00",
       "error": null
     },
     {
       "code": "8953",
-      "name": "Japan Metropolitan Fund Investment Corporation",
+      "name": "日本リテールファンド投資法人",
       "current_price": 117000.0,
       "previous_close": 114800.0,
       "price_change": 2200.0,
@@ -3330,12 +3330,12 @@
       "dividend_yield": 5.14,
       "sector": "不動産",
       "market_cap": 841558654976,
-      "last_updated": "2026-04-05T20:37:46.402202+09:00",
+      "last_updated": "2026-04-05T20:48:25.258943+09:00",
       "error": null
     },
     {
       "code": "3249",
-      "name": "Industrial & Infrastructure Fund Investment Corporation",
+      "name": "産業ファンド投資法人",
       "current_price": 145000.0,
       "previous_close": 143400.0,
       "price_change": 1600.0,
@@ -3343,7 +3343,7 @@
       "dividend_yield": 5.92,
       "sector": "不動産",
       "market_cap": 367751331840,
-      "last_updated": "2026-04-05T20:37:46.542351+09:00",
+      "last_updated": "2026-04-05T20:48:25.498882+09:00",
       "error": null
     }
   ]
