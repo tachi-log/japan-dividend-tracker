@@ -1,227 +1,36 @@
-#!/usr/bin/env python3
-"""
-日本株高配当トラッカー - Gmail通知スクリプト
-data/stocks.json を読み込み、配当利回り3.7%以上の銘柄をGmailで通知する
-環境変数: GMAIL_APP_PASSWORD（GitHub Secretsで設定）
-"""
+name: fetch-stocks
 
-import json
-import os
-import smtplib
-import sys
-from datetime import datetime
-from email.mime.multipart import MIMEMultipart
-from email.mime.text import MIMEText
-import pytz
+"on":
+  schedule:
+    - cron: '35 2 * * 1-5'
+    - cron: '35 6 * * 1-5'
+    - cron: '0 9 * * 1-5'
+  workflow_dispatch:
 
-# ============================================================
-# 設定
-# ============================================================
-GMAIL_USER      = "Kazuhiromaho1122@gmail.com"
-NOTIFY_TO       = "Kazuhiromaho1122@gmail.com"
-THRESHOLD_ALERT = 4.0   # 🔴 赤アラート
-THRESHOLD_HIGH  = 3.7   # 🟠 オレンジ通知
-DATA_FILE       = "data/stocks.json"
-JST             = pytz.timezone('Asia/Tokyo')
+jobs:
+  fetch-stocks:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - name: checkout
+        uses: actions/checkout@v4
 
+      - name: setup-python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
 
-def load_stocks() -> dict:
-    with open(DATA_FILE, encoding="utf-8") as f:
-        return json.load(f)
+      - name: install-deps
+        run: pip install yfinance pytz
 
+      - name: fetch-data
+        run: python scripts/fetch_stocks.py
 
-def build_html(stocks_alert: list, stocks_high: list, meta: dict) -> str:
-    """HTMLメール本文を生成"""
-
-    now_str = meta.get("last_updated", "")
-    if now_str:
-        try:
-            dt = datetime.fromisoformat(now_str)
-            now_str = dt.strftime("%Y年%m月%d日 %H:%M JST")
-        except Exception:
-            pass
-
-    def rows(stocks: list, color: str, label: str) -> str:
-        if not stocks:
-            return f'<tr><td colspan="5" style="padding:12px;color:#888;text-align:center;">該当銘柄なし</td></tr>'
-        html = ""
-        for s in stocks:
-            price = f"¥{s['current_price']:,.0f}" if s.get("current_price") else "-"
-            chg   = s.get("price_change_pct")
-            chg_s = f"{'+' if chg and chg>0 else ''}{chg:.2f}%" if chg is not None else "-"
-            chg_c = "#e74c3c" if chg and chg > 0 else "#27ae60" if chg and chg < 0 else "#888"
-            dy    = f"{s['dividend_yield']:.2f}%" if s.get("dividend_yield") else "-"
-            sec   = s.get("sector") or "不明"
-            html += f"""
-            <tr style="border-bottom:1px solid #2a2d3e;">
-              <td style="padding:10px 8px;font-weight:700;color:#e0e0e0;">{s['code']}</td>
-              <td style="padding:10px 8px;color:#c0c8d8;max-width:180px;">{s.get('name','')[:20]}</td>
-              <td style="padding:10px 8px;text-align:right;color:#fff;font-weight:700;">{price}</td>
-              <td style="padding:10px 8px;text-align:right;color:{chg_c};">{chg_s}</td>
-              <td style="padding:10px 8px;text-align:center;">
-                <span style="background:{color}22;color:{color};border:1px solid {color}44;
-                             border-radius:6px;padding:3px 8px;font-weight:800;font-size:13px;">
-                  {dy}
-                </span>
-              </td>
-            </tr>"""
-        return html
-
-    alert_rows = rows(stocks_alert, "#ff6b6b", "🔴")
-    high_rows  = rows(stocks_high,  "#ffb347", "🟠")
-
-    total_valid = meta.get("valid_count", 0)
-
-    return f"""<!DOCTYPE html>
-<html lang="ja">
-<head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0"></head>
-<body style="margin:0;padding:0;background:#0f1117;font-family:-apple-system,BlinkMacSystemFont,'Hiragino Sans',sans-serif;">
-<div style="max-width:600px;margin:0 auto;padding:20px;">
-
-  <!-- ヘッダー -->
-  <div style="background:linear-gradient(135deg,#1a1d2e,#16213e);border-radius:12px;padding:20px;margin-bottom:16px;border:1px solid #2a2d3e;">
-    <h1 style="color:#fff;font-size:18px;margin:0 0 8px;">📈 日本株 高配当トラッカー</h1>
-    <p style="color:#8892a4;font-size:13px;margin:0;">取得時刻：{now_str}</p>
-  </div>
-
-  <!-- サマリー -->
-  <div style="display:flex;gap:10px;margin-bottom:16px;">
-    <div style="flex:1;background:#1a1d2e;border:1px solid #ff6b6b44;border-radius:10px;padding:14px;text-align:center;">
-      <div style="font-size:28px;font-weight:800;color:#ff6b6b;">{len(stocks_alert)}</div>
-      <div style="font-size:11px;color:#8892a4;margin-top:4px;">🔴 4.0%以上</div>
-    </div>
-    <div style="flex:1;background:#1a1d2e;border:1px solid #ffb34744;border-radius:10px;padding:14px;text-align:center;">
-      <div style="font-size:28px;font-weight:800;color:#ffb347;">{len(stocks_high)}</div>
-      <div style="font-size:11px;color:#8892a4;margin-top:4px;">🟠 3.7〜4.0%</div>
-    </div>
-    <div style="flex:1;background:#1a1d2e;border:1px solid #2a2d3e;border-radius:10px;padding:14px;text-align:center;">
-      <div style="font-size:28px;font-weight:800;color:#6a7288;">{total_valid}</div>
-      <div style="font-size:11px;color:#8892a4;margin-top:4px;">取得銘柄数</div>
-    </div>
-  </div>
-
-  <!-- 4.0%以上テーブル -->
-  <div style="background:#1a1d2e;border-radius:10px;border:1px solid #ff6b6b44;margin-bottom:16px;overflow:hidden;">
-    <div style="background:#ff6b6b22;padding:12px 16px;border-bottom:1px solid #ff6b6b33;">
-      <h2 style="color:#ff6b6b;font-size:14px;margin:0;">🔴 配当利回り 4.0%以上（要注目）</h2>
-    </div>
-    <table style="width:100%;border-collapse:collapse;">
-      <thead>
-        <tr style="background:#12141f;">
-          <th style="padding:8px;text-align:left;color:#5a6070;font-size:11px;font-weight:600;">コード</th>
-          <th style="padding:8px;text-align:left;color:#5a6070;font-size:11px;font-weight:600;">銘柄名</th>
-          <th style="padding:8px;text-align:right;color:#5a6070;font-size:11px;font-weight:600;">株価</th>
-          <th style="padding:8px;text-align:right;color:#5a6070;font-size:11px;font-weight:600;">前日比</th>
-          <th style="padding:8px;text-align:center;color:#5a6070;font-size:11px;font-weight:600;">配当利回り</th>
-        </tr>
-      </thead>
-      <tbody>{alert_rows}</tbody>
-    </table>
-  </div>
-
-  <!-- 3.7〜4.0%テーブル -->
-  <div style="background:#1a1d2e;border-radius:10px;border:1px solid #ffb34744;margin-bottom:16px;overflow:hidden;">
-    <div style="background:#ffb34722;padding:12px 16px;border-bottom:1px solid #ffb34733;">
-      <h2 style="color:#ffb347;font-size:14px;margin:0;">🟠 配当利回り 3.7〜4.0%（注目銘柄）</h2>
-    </div>
-    <table style="width:100%;border-collapse:collapse;">
-      <thead>
-        <tr style="background:#12141f;">
-          <th style="padding:8px;text-align:left;color:#5a6070;font-size:11px;font-weight:600;">コード</th>
-          <th style="padding:8px;text-align:left;color:#5a6070;font-size:11px;font-weight:600;">銘柄名</th>
-          <th style="padding:8px;text-align:right;color:#5a6070;font-size:11px;font-weight:600;">株価</th>
-          <th style="padding:8px;text-align:right;color:#5a6070;font-size:11px;font-weight:600;">前日比</th>
-          <th style="padding:8px;text-align:center;color:#5a6070;font-size:11px;font-weight:600;">配当利回り</th>
-        </tr>
-      </thead>
-      <tbody>{high_rows}</tbody>
-    </table>
-  </div>
-
-  <!-- フッター -->
-  <div style="text-align:center;padding:16px;color:#3a3f50;font-size:11px;">
-    <a href="https://tachi-log.github.io/japan-dividend-tracker/"
-       style="color:#4a9eff;text-decoration:none;">📊 Webアプリで全銘柄を確認</a><br><br>
-    このメールは GitHub Actions により自動送信されています。<br>
-    配当利回りはリアルタイム計算値です。投資判断はご自身でお願いします。
-  </div>
-
-</div>
-</body>
-</html>"""
-
-
-def send_email(subject: str, html_body: str, app_password: str) -> bool:
-    """Gmail SMTPでHTMLメールを送信"""
-    msg = MIMEMultipart("alternative")
-    msg["Subject"] = subject
-    msg["From"]    = GMAIL_USER
-    msg["To"]      = NOTIFY_TO
-    msg.attach(MIMEText(html_body, "html", "utf-8"))
-
-    try:
-        with smtplib.SMTP("smtp.gmail.com", 587) as server:
-            server.ehlo()
-            server.starttls()
-            server.login(GMAIL_USER, app_password)
-            server.sendmail(GMAIL_USER, NOTIFY_TO, msg.as_string())
-        return True
-    except Exception as e:
-        print(f"[ERROR] メール送信失敗: {e}")
-        return False
-
-
-def main():
-    # Gmail App Password を環境変数から取得
-    app_password = os.environ.get("GMAIL_APP_PASSWORD", "")
-    if not app_password:
-        print("[WARN] GMAIL_APP_PASSWORD が設定されていません。メール送信をスキップします。")
-        sys.exit(0)
-
-    # データ読み込み
-    try:
-        data = load_stocks()
-    except FileNotFoundError:
-        print(f"[ERROR] {DATA_FILE} が見つかりません。fetch_stocks.py を先に実行してください。")
-        sys.exit(1)
-
-    stocks = data.get("stocks", [])
-    valid  = [s for s in stocks if s.get("dividend_yield") is not None]
-
-    # 閾値でフィルタ（降順ソート）
-    stocks_alert = sorted(
-        [s for s in valid if s["dividend_yield"] >= THRESHOLD_ALERT],
-        key=lambda s: s["dividend_yield"], reverse=True
-    )
-    stocks_high = sorted(
-        [s for s in valid if THRESHOLD_HIGH <= s["dividend_yield"] < THRESHOLD_ALERT],
-        key=lambda s: s["dividend_yield"], reverse=True
-    )
-
-    print(f"🔴 4.0%以上: {len(stocks_alert)} 銘柄")
-    print(f"🟠 3.7〜4.0%: {len(stocks_high)} 銘柄")
-
-    # 3.7%以上がゼロなら送信しない
-    if len(stocks_alert) + len(stocks_high) == 0:
-        print("通知対象銘柄なし。メール送信をスキップします。")
-        sys.exit(0)
-
-    # 件名
-    now_jst = datetime.now(JST).strftime("%m/%d %H:%M")
-    subject = (
-        f"📈【高配当アラート】{now_jst} JST | "
-        f"🔴{len(stocks_alert)}銘柄(4.0%+) 🟠{len(stocks_high)}銘柄(3.7%+)"
-    )
-
-    # HTML生成 & 送信
-    html = build_html(stocks_alert, stocks_high, data)
-    ok   = send_email(subject, html, app_password)
-
-    if ok:
-        print(f"✓ メール送信完了 → {NOTIFY_TO}")
-    else:
-        sys.exit(1)
-
-
-if __name__ == "__main__":
-    main()
+      - name: commit-push
+        run: |
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git config user.name "github-actions[bot]"
+          git add data/stocks.json
+          git diff --staged --quiet || git commit -m "update stocks $(TZ='Asia/Tokyo' date '+%Y-%m-%d %H:%M') JST"
+          git push
