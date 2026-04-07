@@ -937,6 +937,34 @@ function getStockData(code) {
   return loadAllStockData()[code] || {};
 }
 
+// ── 自動取得データをフォームのキー名にマッピング ──
+function getAutoData(stock) {
+  if (!stock) return {};
+  return {
+    revenue:   stock.revenue_trend   || null,
+    op_margin: stock.operating_margin != null ? stock.operating_margin : null,
+    eps:       stock.eps_trend        || null,
+    ocf:       stock.ocf_status       || null,
+    dividend:  stock.dividend_hist    || null,
+    payout:    stock.payout_ratio     != null ? stock.payout_ratio     : null,
+    equity:    stock.equity_ratio     != null ? stock.equity_ratio     : null,
+    cash:      stock.cash_trend       || null,
+    week52h:   stock.week52_high      != null ? stock.week52_high      : null,
+    week52l:   stock.week52_low       != null ? stock.week52_low       : null,
+  };
+}
+
+// ── 手動入力が自動取得を上書き（nullの手動値は上書きしない）──
+function getMergedData(stock) {
+  const auto   = getAutoData(stock);
+  const manual = getStockData(stock.code);
+  const merged = { ...auto };
+  for (const [k, v] of Object.entries(manual)) {
+    if (v != null && v !== '') merged[k] = v;
+  }
+  return merged;
+}
+
 function setStockData(code, patch) {
   const all = loadAllStockData();
   all[code] = { ...(all[code] || {}), ...patch };
@@ -947,7 +975,11 @@ function setStockData(code, patch) {
 // [新機能] 優良度スコア計算 (0〜8点)
 // ============================================================
 function calcScore(sd) {
-  if (!sd || Object.keys(sd).length === 0) return null;
+  if (!sd) return null;
+  const hasData = sd.revenue != null || sd.op_margin != null || sd.eps != null ||
+                  sd.ocf != null || sd.dividend != null || sd.payout != null ||
+                  sd.equity != null || sd.cash != null;
+  if (!hasData) return null;
   let score = 0;
 
   // 1. 売上推移
@@ -1065,7 +1097,7 @@ function applyFilters() {
   // スコアフィルタ (新機能)
   if (scoreFilter > 0) {
     stocks = stocks.filter(s => {
-      const score = calcScore(allSD[s.code]);
+      const score = calcScore(getMergedData(s));
       return score != null && score >= scoreFilter;
     });
   }
@@ -1083,9 +1115,8 @@ function applyFilters() {
       av = a.current_price ?? -999;
       bv = b.current_price ?? -999;
     } else if (currentSort === 'score') {
-      // スコア未入力は最後に
-      av = calcScore(allSD[a.code]) ?? -1;
-      bv = calcScore(allSD[b.code]) ?? -1;
+      av = calcScore(getMergedData(a)) ?? -1;
+      bv = calcScore(getMergedData(b)) ?? -1;
     }
     return (av - bv) * currentSortDir;
   });
@@ -1111,7 +1142,7 @@ function renderCards(stocks) {
 function cardHTML(s) {
   const dy    = s.dividend_yield;
   const price = s.current_price;
-  const sd    = getStockData(s.code);
+  const sd    = getMergedData(s);
   const score = calcScore(sd);
 
   // 利回り分類
@@ -1223,7 +1254,8 @@ function openModal(code) {
   if (!stock) return;
   modalStock = stock;
 
-  const sd = getStockData(code);
+  const sd   = getMergedData(stock);
+  const auto = getAutoData(stock);
 
   // ヘッダー
   document.getElementById('modal-code').textContent = code;
@@ -1258,8 +1290,8 @@ function openModal(code) {
   // レーダーチャート
   renderRadarChart(sd);
 
-  // フォームに既存データをセット
-  setFormValues(sd);
+  // フォームに既存データをセット（自動取得データをデフォルト値として表示）
+  setFormValues(sd, auto);
 
   // Yahoo Finance リンク
   document.getElementById('modal-yahoo-link').href =
@@ -1320,7 +1352,8 @@ function setModalTag(tag) {
 
 // スコア表示更新
 function updateModalScore(code) {
-  const sd    = getStockData(code);
+  const stock = allStocks.find(s => s.code === code);
+  const sd    = stock ? getMergedData(stock) : getStockData(code);
   const score = calcScore(sd);
   const big   = document.getElementById('modal-score-big');
   const bars  = document.getElementById('modal-score-bars');
@@ -1483,7 +1516,10 @@ function renderRadarChart(sd) {
 }
 
 // フォームに既存データをセット
-function setFormValues(sd) {
+function setFormValues(sd, auto) {
+  auto = auto || {};
+  const manual = getStockData(modalStock?.code || '');
+
   document.getElementById('f-revenue').value    = sd.revenue    || '';
   document.getElementById('f-op-margin').value  = sd.op_margin  ?? '';
   document.getElementById('f-eps').value         = sd.eps        || '';
@@ -1496,6 +1532,29 @@ function setFormValues(sd) {
   document.getElementById('f-week52h').value     = sd.week52h    ?? '';
   document.getElementById('f-week52l').value     = sd.week52l    ?? '';
   document.getElementById('f-memo').value        = sd.memo       || '';
+
+  // 自動取得フィールドには「自動」ラベルを表示
+  const autoFields = {
+    'f-revenue': 'revenue', 'f-op-margin': 'op_margin', 'f-eps': 'eps',
+    'f-ocf': 'ocf', 'f-dividend': 'dividend', 'f-payout': 'payout',
+    'f-equity': 'equity', 'f-cash': 'cash',
+    'f-week52h': 'week52h', 'f-week52l': 'week52l',
+  };
+  for (const [elId, key] of Object.entries(autoFields)) {
+    const label = document.querySelector(`label[for="${elId}"], #${elId}`)
+      ?.closest('.form-group')?.querySelector('.form-label');
+    if (!label) continue;
+    // 既存の自動ラベルを削除
+    label.querySelectorAll('.auto-tag').forEach(t => t.remove());
+    // 自動取得データがあり、手動上書きがない場合に表示
+    if (auto[key] != null && (manual[key] == null || manual[key] === '')) {
+      const tag = document.createElement('span');
+      tag.className = 'auto-tag';
+      tag.style.cssText = 'margin-left:4px;padding:1px 5px;border-radius:4px;background:#4a9eff22;color:#4a9eff;font-size:0.65rem;font-weight:700';
+      tag.textContent = '自動';
+      label.appendChild(tag);
+    }
+  }
 }
 
 // フォーム保存
@@ -1527,12 +1586,14 @@ function saveManualData(e) {
 
   setStockData(code, patch);
 
-  // モーダル内表示を更新
-  const sd = getStockData(code);
+  // モーダル内表示を更新（手動＋自動のマージデータで再描画）
+  const sd   = getMergedData(modalStock);
+  const auto = getAutoData(modalStock);
   updateModalScore(code);
   updateJudgment(modalStock, sd);
   updateWeek52(modalStock, sd);
   renderRadarChart(sd);
+  setFormValues(sd, auto);
 
   // カード側も更新
   applyFilters();

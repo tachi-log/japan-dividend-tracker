@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 import yfinance as yf
-import json, os, time, requests
+import json, os, time, requests, math
 from datetime import datetime
 import pytz
 
@@ -37,6 +37,167 @@ SECTOR_JA = {
     'Consumer Staples':'生活必需品','Information Technology':'テクノロジー',
 }
 
+# ============================================================
+# トレンド分析ヘルパー
+# ============================================================
+
+def safe_float(v):
+    """値をfloatに変換。変換不能またはNaNはNoneを返す。"""
+    try:
+        f = float(v)
+        return None if math.isnan(f) else f
+    except (TypeError, ValueError):
+        return None
+
+
+def analyze_trend(values):
+    """
+    values: 古い順→新しい順のリスト
+    戻り値: 'up' / 'flat' / 'down' / None
+    線形回帰の傾きを平均値で正規化して判定する。
+    """
+    vals = [safe_float(v) for v in values]
+    vals = [v for v in vals if v is not None]
+    if len(vals) < 2:
+        return None
+    n = len(vals)
+    mx = (n - 1) / 2
+    my = sum(vals) / n
+    if my == 0:
+        return 'flat'
+    num = sum((i - mx) * (vals[i] - my) for i in range(n))
+    den = sum((i - mx) ** 2 for i in range(n))
+    if den == 0:
+        return 'flat'
+    rel_slope = (num / den) / abs(my)
+    if rel_slope > 0.03:
+        return 'up'
+    elif rel_slope < -0.03:
+        return 'down'
+    return 'flat'
+
+
+def get_series(df, *names):
+    """
+    DataFrameから指定した行名のいずれかを探して値リストを返す。
+    yfinanceは新しい順で返すので逆順（古い順）にして返す。
+    """
+    for name in names:
+        if name in df.index:
+            raw = df.loc[name].tolist()
+            result = []
+            for v in reversed(raw):
+                result.append(safe_float(v))
+            return result
+    return []
+
+
+# ============================================================
+# 財務諸表データ取得
+# ============================================================
+
+def fetch_financial_data(ticker):
+    """
+    ticker: yf.Ticker オブジェクト
+    財務諸表から8項目スクリーニングに必要なデータを取得して返す。
+    すべてtry/exceptで保護 — 失敗しても空dictを返す。
+    """
+    result = {}
+
+    # ── 損益計算書 ──
+    try:
+        fin = ticker.financials
+        if fin is not None and not fin.empty:
+            # 売上推移
+            rev = get_series(fin, 'Total Revenue', 'TotalRevenue')
+            if rev:
+                result['revenue_trend'] = analyze_trend(rev)
+
+            # EPS推移
+            eps = get_series(fin, 'Basic EPS', 'Diluted EPS', 'BasicEPS', 'DilutedEPS')
+            if eps:
+                result['eps_trend'] = analyze_trend(eps)
+    except Exception as e:
+        print(f"  [WARN] financials: {e}")
+
+    # ── キャッシュフロー計算書 ──
+    try:
+        cf = ticker.cashflow
+        if cf is not None and not cf.empty:
+            ocf = get_series(
+                cf,
+                'Operating Cash Flow', 'OperatingCashFlow',
+                'Total Cash From Operating Activities',
+                'Cash From Operations',
+            )
+            if ocf:
+                valid = [v for v in ocf if v is not None]
+                if valid:
+                    all_pos = all(v > 0 for v in valid)
+                    trend   = analyze_trend(ocf)
+                    if all_pos and trend == 'up':
+                        result['ocf_status'] = 'good'
+                    elif all_pos:
+                        result['ocf_status'] = 'ok'
+                    else:
+                        result['ocf_status'] = 'bad'
+    except Exception as e:
+        print(f"  [WARN] cashflow: {e}")
+
+    # ── 貸借対照表 ──
+    try:
+        bs = ticker.balance_sheet
+        if bs is not None and not bs.empty:
+            # 自己資本比率 = 自己資本 / 総資産
+            eq = get_series(
+                bs,
+                'Stockholders Equity', 'Total Stockholder Equity',
+                'StockholdersEquity', 'Common Stock Equity', 'CommonStockEquity',
+            )
+            ta = get_series(bs, 'Total Assets', 'TotalAssets')
+            if eq and ta:
+                eq_v = next((v for v in reversed(eq) if v is not None), None)
+                ta_v = next((v for v in reversed(ta) if v is not None), None)
+                if eq_v is not None and ta_v and ta_v > 0:
+                    result['equity_ratio'] = round(eq_v / ta_v * 100, 1)
+
+            # 現金推移
+            cash = get_series(
+                bs,
+                'Cash And Cash Equivalents', 'CashAndCashEquivalents',
+                'Cash', 'Cash Cash Equivalents And Short Term Investments',
+                'Cash And Short Term Investments',
+            )
+            if cash:
+                result['cash_trend'] = analyze_trend(cash)
+    except Exception as e:
+        print(f"  [WARN] balance_sheet: {e}")
+
+    # ── 配当履歴 ──
+    try:
+        divs = ticker.dividends
+        if divs is not None and len(divs) >= 4:
+            annual = divs.groupby(divs.index.year).sum()
+            if len(annual) >= 2:
+                amounts = [float(annual[y]) for y in sorted(annual.index)]
+                cut   = any(b < a * 0.9 for a, b in zip(amounts, amounts[1:]))
+                incr  = all(b >= a        for a, b in zip(amounts, amounts[1:]))
+                if cut:
+                    result['dividend_hist'] = 'cut'
+                elif incr:
+                    result['dividend_hist'] = 'increase'
+                else:
+                    result['dividend_hist'] = 'stable'
+    except Exception as e:
+        print(f"  [WARN] dividends: {e}")
+
+    return result
+
+
+# ============================================================
+# 銘柄名取得
+# ============================================================
+
 def get_japanese_names(codes):
     name_map = {}
     for i in range(0, len(codes), 50):
@@ -45,61 +206,131 @@ def get_japanese_names(codes):
         try:
             url = f"https://query1.finance.yahoo.com/v7/finance/quote?symbols={symbols}&lang=ja&region=JP"
             r = requests.get(url, headers=HEADERS, timeout=15)
-            for item in r.json().get('quoteResponse',{}).get('result',[]):
-                sym = item.get('symbol','').replace('.T','')
+            for item in r.json().get('quoteResponse', {}).get('result', []):
+                sym = item.get('symbol', '').replace('.T', '')
                 name_map[sym] = item.get('longName') or item.get('shortName') or sym
         except Exception as e:
-            print(f"[WARN] {e}")
+            print(f"[WARN] name fetch: {e}")
         time.sleep(0.5)
     return name_map
 
+
+# ============================================================
+# 1銘柄のデータ取得
+# ============================================================
+
 def fetch_stock(code, name_map):
     sym = f"{code}.T"
-    s = str(code)
-    rec = {'code':s,'name':name_map.get(s,s),'current_price':None,'previous_close':None,
-           'price_change':None,'price_change_pct':None,'dividend_yield':None,
-           'sector':'不明','market_cap':None,'last_updated':datetime.now(JST).isoformat(),'error':None}
+    s   = str(code)
+    rec = {
+        'code': s,
+        'name': name_map.get(s, s),
+        'current_price': None,
+        'previous_close': None,
+        'price_change': None,
+        'price_change_pct': None,
+        'dividend_yield': None,
+        'annual_dividend': None,
+        'sector': '不明',
+        'market_cap': None,
+        'last_updated': datetime.now(JST).isoformat(),
+        'error': None,
+        # ── スクリーニング項目（自動取得） ──
+        'operating_margin': None,   # 営業利益率 (%)
+        'payout_ratio': None,       # 配当性向 (%)
+        'week52_high': None,        # 52週高値
+        'week52_low': None,         # 52週安値
+        'revenue_trend': None,      # 売上推移: 'up'/'flat'/'down'
+        'eps_trend': None,          # EPS推移: 'up'/'flat'/'down'
+        'ocf_status': None,         # 営業CF: 'good'/'ok'/'bad'
+        'equity_ratio': None,       # 自己資本比率 (%)
+        'cash_trend': None,         # 現金推移: 'up'/'flat'/'down'
+        'dividend_hist': None,      # 配当履歴: 'increase'/'stable'/'cut'
+    }
+
     try:
-        info = yf.Ticker(sym).info
+        ticker = yf.Ticker(sym)
+        info   = ticker.info
+
+        # ── 基本情報 ──
         price = info.get('currentPrice') or info.get('regularMarketPrice')
         prev  = info.get('previousClose') or info.get('regularMarketPreviousClose')
-        chg   = round(price-prev,2) if price and prev else None
-        chgp  = round(chg/prev*100,2) if chg and prev else None
+        chg   = round(price - prev, 2) if price and prev else None
+        chgp  = round(chg / prev * 100, 2) if chg and prev else None
         raw   = info.get('dividendYield') or info.get('trailingAnnualDividendYield')
-        dy    = round(raw*100 if raw and raw<1 else raw,2) if raw else None
+        dy    = round(raw * 100 if raw and raw < 1 else raw, 2) if raw else None
         ann   = info.get('dividendRate') or info.get('trailingAnnualDividendRate')
         if dy is None and ann and price:
-            dy = round(ann/price*100,2)
-        sector_en = info.get('sector','')
-        rec.update({'name':name_map.get(s) or info.get('longName') or info.get('shortName') or s,
-                    'current_price':price,'previous_close':prev,'price_change':chg,
-                    'price_change_pct':chgp,'dividend_yield':dy,
-                    'sector':SECTOR_JA.get(sector_en, sector_en or '不明'),
-                    'market_cap':info.get('marketCap')})
+            dy = round(ann / price * 100, 2)
+
+        sector_en = info.get('sector', '')
+
+        # ── info から直接取得できるスクリーニング項目 ──
+        op_m = safe_float(info.get('operatingMargins'))
+        pay  = safe_float(info.get('payoutRatio'))
+
+        rec.update({
+            'name': name_map.get(s) or info.get('longName') or info.get('shortName') or s,
+            'current_price': price,
+            'previous_close': prev,
+            'price_change': chg,
+            'price_change_pct': chgp,
+            'dividend_yield': dy,
+            'annual_dividend': ann,
+            'sector': SECTOR_JA.get(sector_en, sector_en or '不明'),
+            'market_cap': info.get('marketCap'),
+            'operating_margin': round(op_m * 100, 1) if op_m is not None else None,
+            'payout_ratio':     round(pay * 100, 1) if pay is not None else None,
+            'week52_high': safe_float(info.get('fiftyTwoWeekHigh')),
+            'week52_low':  safe_float(info.get('fiftyTwoWeekLow')),
+        })
+
+        # ── 財務諸表からトレンドデータを取得 ──
+        fin_data = fetch_financial_data(ticker)
+        rec.update(fin_data)
+
     except Exception as e:
-        rec['error']=str(e)
+        rec['error'] = str(e)
+
     return rec
+
+
+# ============================================================
+# メイン
+# ============================================================
 
 def main():
     print(f"開始: {datetime.now(JST).strftime('%Y-%m-%d %H:%M:%S JST')} / {len(STOCK_CODES)}銘柄")
     name_map = get_japanese_names(STOCK_CODES)
     print(f"日本語名取得: {len(name_map)}件")
+
     results = []
-    for i,code in enumerate(STOCK_CODES,1):
+    for i, code in enumerate(STOCK_CODES, 1):
         s = fetch_stock(code, name_map)
         results.append(s)
         dy = f"{s['dividend_yield']:.2f}%" if s['dividend_yield'] else "N/A"
-        print(f"[{i:3d}] {s['code']} {s['name'][:15]:15s} {dy}")
-        if i % 30 == 0: time.sleep(1)
+        auto_fields = sum(1 for k in ['operating_margin', 'revenue_trend', 'equity_ratio',
+                                       'ocf_status', 'dividend_hist'] if s.get(k) is not None)
+        print(f"[{i:3d}] {s['code']} {s['name'][:15]:15s} {dy} (自動取得: {auto_fields}/5項目)")
+        # レート制限対策
+        if i % 10 == 0:
+            time.sleep(2)
+        else:
+            time.sleep(0.3)
+
     valid = [s for s in results if s['dividend_yield']]
     os.makedirs('data', exist_ok=True)
-    with open('data/stocks.json','w',encoding='utf-8') as f:
-        json.dump({'last_updated':datetime.now(JST).isoformat(),
-                   'fetch_count':len(results),'valid_count':len(valid),
-                   'alert_40_count':len([s for s in valid if s['dividend_yield']>=4.0]),
-                   'alert_37_count':len([s for s in valid if 3.7<=s['dividend_yield']<4.0]),
-                   'stocks':results},f,ensure_ascii=False,indent=2)
+    with open('data/stocks.json', 'w', encoding='utf-8') as f:
+        json.dump({
+            'last_updated': datetime.now(JST).isoformat(),
+            'fetch_count': len(results),
+            'valid_count': len(valid),
+            'alert_40_count': len([s for s in valid if s['dividend_yield'] >= 4.0]),
+            'alert_37_count': len([s for s in valid if 3.7 <= s['dividend_yield'] < 4.0]),
+            'stocks': results,
+        }, f, ensure_ascii=False, indent=2)
     print("✓ data/stocks.json 保存完了")
 
-if __name__=='__main__':
+
+if __name__ == '__main__':
     main()
