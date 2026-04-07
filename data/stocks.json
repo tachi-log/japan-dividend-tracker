@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-04-07T16:00:59.772678+09:00",
+  "last_updated": "2026-04-07T19:19:09.672910+09:00",
   "fetch_count": 257,
   "valid_count": 256,
   "alert_40_count": 93,
@@ -15,7 +15,7 @@
       "dividend_yield": 3.75,
       "sector": "産業",
       "market_cap": 14514670592,
-      "last_updated": "2026-04-07T15:59:55.978525+09:00",
+      "last_updated": "2026-04-07T19:17:40.327511+09:00",
       "error": null
     },
     {
@@ -28,7 +28,7 @@
       "dividend_yield": 4.03,
       "sector": "産業",
       "market_cap": 149432205312,
-      "last_updated": "2026-04-07T15:59:56.522017+09:00",
+      "last_updated": "2026-04-07T19:17:41.099512+09:00",
       "error": null
     },
     {
@@ -41,7 +41,7 @@
       "dividend_yield": 5.01,
       "sector": "一般消費財",
       "market_cap": 180130070528,
-      "last_updated": "2026-04-07T15:59:56.720910+09:00",
+      "last_updated": "2026-04-07T19:17:41.408233+09:00",
       "error": null
     },
     {
@@ -54,7 +54,7 @@
       "dividend_yield": 3.24,
       "sector": "一般消費財",
       "market_cap": 209663541248,
-      "last_updated": "2026-04-07T15:59:56.928943+09:00",
+      "last_updated": "2026-04-07T19:17:41.715583+09:00",
       "error": null
     },
     {
@@ -67,7 +67,7 @@
       "dividend_yield": 3.63,
       "sector": "一般消費財",
       "market_cap": 36693065728,
-      "last_updated": "2026-04-07T15:59:57.140465+09:00",
+      "last_updated": "2026-04-07T19:17:42.013572+09:00",
       "error": null
     },
     {
@@ -80,7 +80,7 @@
       "dividend_yield": 3.65,
       "sector": "素材",
       "market_cap": 79555346432,
-      "last_updated": "2026-04-07T15:59:57.342124+09:00",
+      "last_updated": "2026-04-07T19:17:42.321469+09:00",
       "error": null
     },
     {
@@ -93,7 +93,7 @@
       "dividend_yield": 4.3,
       "sector": "素材",
       "market_cap": 729464504320,
-      "last_updated": "2026-04-07T15:59:57.550052+09:00",
+      "last_updated": "2026-04-07T19:17:42.681664+09:00",
       "error": null
     },
     {
@@ -106,7 +106,7 @@
       "dividend_yield": 3.63,
       "sector": "素材",
       "market_cap": 60999770112,
-      "last_updated": "2026-04-07T15:59:57.751358+09:00",
+      "last_updated": "2026-04-07T19:17:42.975079+09:00",
       "error": null
     },
     {
@@ -119,7 +119,7 @@
       "dividend_yield": 3.33,
       "sector": "金融",
       "market_cap": 3597838319616,
-      "last_updated": "2026-04-07T15:59:57.955341+09:00",
+      "last_updated": "2026-04-07T19:17:43.271978+09:00",
       "error": null
     },
     {
@@ -132,7 +132,7 @@
       "dividend_yield": 2.93,
       "sector": "金融",
       "market_cap": 5968732094464,
-      "last_updated": "2026-04-07T15:59:58.158038+09:00",
+      "last_updated": "2026-04-07T19:17:43.568415+09:00",
       "error": null
     },
     {
@@ -145,7 +145,7 @@
       "dividend_yield": 3.15,
       "sector": "金融",
       "market_cap": 2128280944640,
-      "last_updated": "2026-04-07T15:59:58.364141+09:00",
+      "last_updated": "2026-04-07T19:17:43.867049+09:00",
       "error": null
     },
     {
@@ -158,7 +158,7 @@
       "dividend_yield": 4.9,
       "sector": "金融",
       "market_cap": 185316179968,
-      "last_updated": "2026-04-07T15:59:58.568870+09:00",
+      "last_updated": "2026-04-07T19:17:44.231309+09:00",
       "error": null
     },
     {
@@ -171,7 +171,7 @@
       "dividend_yield": 3.51,
       "sector": "テクノロジー",
       "market_cap": 39215202304,
-      "last_updated": "2026-04-07T15:59:58.771628+09:00",
+      "last_updated": "2026-04-07T19:17:44.536545+09:00",
       "error": null
     },
     {
@@ -184,7 +184,7 @@
       "dividend_yield": 3.79,
       "sector": "テクノロジー",
       "market_cap": 45825515520,
-      "last_updated": "2026-04-07T15:59:58.969987+09:00",
+      "last_updated": "2026-04-07T19:17:44.834411+09:00",
       "error": null
     },
     {
@@ -197,7 +197,7 @@
       "dividend_yield": 3.86,
       "sector": "不動産",
       "market_cap": 889613910016,
-      "last_updated": "2026-04-07T15:59:59.172917+09:00",
+      "last_updated": "2026-04-07T19:17:45.132530+09:00",
       "error": null
     },
     {
@@ -210,7 +210,7 @@
       "dividend_yield": 3.58,
       "sector": "不動産",
       "market_cap": 1435493990400,
-      "last_updated": "2026-04-07T15:59:59.371698+09:00",
+      "last_updated": "2026-04-07T19:17:45.431701+09:00",
       "error": null
     },
     {
@@ -223,7 +223,7 @@
       "dividend_yield": 4.04,
       "sector": "テクノロジー",
       "market_cap": 12534496256,
-      "last_updated": "2026-04-07T15:59:59.581464+09:00",
+      "last_updated": "2026-04-07T19:17:45.732329+09:00",
       "error": null
     },
     {
@@ -236,7 +236,7 @@
       "dividend_yield": 4.2,
       "sector": "産業",
       "market_cap": 107062198272,
-      "last_updated": "2026-04-07T15:59:59.788272+09:00",
+      "last_updated": "2026-04-07T19:17:46.044067+09:00",
       "error": null
     },
     {
@@ -249,7 +249,7 @@
       "dividend_yield": 4.45,
       "sector": "生活必需品",
       "market_cap": 26159751168,
-      "last_updated": "2026-04-07T16:00:00.106866+09:00",
+      "last_updated": "2026-04-07T19:17:46.353705+09:00",
       "error": null
     },
     {
@@ -262,7 +262,7 @@
       "dividend_yield": 4.19,
       "sector": "産業",
       "market_cap": 51592519680,
-      "last_updated": "2026-04-07T16:00:00.423069+09:00",
+      "last_updated": "2026-04-07T19:17:46.700301+09:00",
       "error": null
     },
     {
@@ -275,7 +275,7 @@
       "dividend_yield": 4.21,
       "sector": "テクノロジー",
       "market_cap": 61084852224,
-      "last_updated": "2026-04-07T16:00:00.634968+09:00",
+      "last_updated": "2026-04-07T19:17:47.006730+09:00",
       "error": null
     },
     {
@@ -288,7 +288,7 @@
       "dividend_yield": 3.38,
       "sector": "通信",
       "market_cap": 19884570624,
-      "last_updated": "2026-04-07T16:00:00.839143+09:00",
+      "last_updated": "2026-04-07T19:17:47.310017+09:00",
       "error": null
     },
     {
@@ -301,7 +301,7 @@
       "dividend_yield": 4.01,
       "sector": "テクノロジー",
       "market_cap": 58890231808,
-      "last_updated": "2026-04-07T16:00:01.043997+09:00",
+      "last_updated": "2026-04-07T19:17:47.613983+09:00",
       "error": null
     },
     {
@@ -314,7 +314,7 @@
       "dividend_yield": 3.86,
       "sector": "生活必需品",
       "market_cap": 67631964160,
-      "last_updated": "2026-04-07T16:00:01.242223+09:00",
+      "last_updated": "2026-04-07T19:17:47.916505+09:00",
       "error": null
     },
     {
@@ -327,7 +327,7 @@
       "dividend_yield": 3.17,
       "sector": "産業",
       "market_cap": 291824205824,
-      "last_updated": "2026-04-07T16:00:01.450364+09:00",
+      "last_updated": "2026-04-07T19:17:48.218083+09:00",
       "error": null
     },
     {
@@ -340,7 +340,7 @@
       "dividend_yield": 4.06,
       "sector": "一般消費財",
       "market_cap": 2319393488896,
-      "last_updated": "2026-04-07T16:00:01.653560+09:00",
+      "last_updated": "2026-04-07T19:17:48.518565+09:00",
       "error": null
     },
     {
@@ -353,7 +353,7 @@
       "dividend_yield": 4.55,
       "sector": "産業",
       "market_cap": 86574759936,
-      "last_updated": "2026-04-07T16:00:01.927176+09:00",
+      "last_updated": "2026-04-07T19:17:48.827248+09:00",
       "error": null
     },
     {
@@ -366,7 +366,7 @@
       "dividend_yield": 3.37,
       "sector": "産業",
       "market_cap": 545224818688,
-      "last_updated": "2026-04-07T16:00:02.112285+09:00",
+      "last_updated": "2026-04-07T19:17:49.130446+09:00",
       "error": null
     },
     {
@@ -379,7 +379,7 @@
       "dividend_yield": 4.93,
       "sector": "産業",
       "market_cap": 52813594624,
-      "last_updated": "2026-04-07T16:00:02.421178+09:00",
+      "last_updated": "2026-04-07T19:17:49.426732+09:00",
       "error": null
     },
     {
@@ -392,7 +392,7 @@
       "dividend_yield": 3.11,
       "sector": "素材",
       "market_cap": 15527478272,
-      "last_updated": "2026-04-07T16:00:02.606179+09:00",
+      "last_updated": "2026-04-07T19:17:49.729396+09:00",
       "error": null
     },
     {
@@ -405,7 +405,7 @@
       "dividend_yield": 5.56,
       "sector": "一般消費財",
       "market_cap": 52061966336,
-      "last_updated": "2026-04-07T16:00:03.814902+09:00",
+      "last_updated": "2026-04-07T19:17:51.022533+09:00",
       "error": null
     },
     {
@@ -418,7 +418,7 @@
       "dividend_yield": 4.48,
       "sector": "産業",
       "market_cap": 18660542464,
-      "last_updated": "2026-04-07T16:00:03.989380+09:00",
+      "last_updated": "2026-04-07T19:17:51.315592+09:00",
       "error": null
     },
     {
@@ -431,7 +431,7 @@
       "dividend_yield": 3.82,
       "sector": "産業",
       "market_cap": 244360298496,
-      "last_updated": "2026-04-07T16:00:04.183094+09:00",
+      "last_updated": "2026-04-07T19:17:51.607133+09:00",
       "error": null
     },
     {
@@ -444,7 +444,7 @@
       "dividend_yield": 3.76,
       "sector": "ヘルスケア",
       "market_cap": 284559474688,
-      "last_updated": "2026-04-07T16:00:04.385690+09:00",
+      "last_updated": "2026-04-07T19:17:51.950913+09:00",
       "error": null
     },
     {
@@ -457,7 +457,7 @@
       "dividend_yield": 4.24,
       "sector": "不明",
       "market_cap": null,
-      "last_updated": "2026-04-07T16:00:04.593026+09:00",
+      "last_updated": "2026-04-07T19:17:52.250631+09:00",
       "error": null
     },
     {
@@ -470,7 +470,7 @@
       "dividend_yield": 3.38,
       "sector": "通信",
       "market_cap": 12653230555136,
-      "last_updated": "2026-04-07T16:00:04.803368+09:00",
+      "last_updated": "2026-04-07T19:17:52.538623+09:00",
       "error": null
     },
     {
@@ -483,7 +483,7 @@
       "dividend_yield": 4.72,
       "sector": "産業",
       "market_cap": 530502483968,
-      "last_updated": "2026-04-07T16:00:04.985217+09:00",
+      "last_updated": "2026-04-07T19:17:52.833109+09:00",
       "error": null
     },
     {
@@ -496,7 +496,7 @@
       "dividend_yield": 3.26,
       "sector": "産業",
       "market_cap": 88940888064,
-      "last_updated": "2026-04-07T16:00:05.264912+09:00",
+      "last_updated": "2026-04-07T19:17:53.125245+09:00",
       "error": null
     },
     {
@@ -509,7 +509,7 @@
       "dividend_yield": 4.24,
       "sector": "金融",
       "market_cap": 742574981120,
-      "last_updated": "2026-04-07T16:00:05.443725+09:00",
+      "last_updated": "2026-04-07T19:17:53.422191+09:00",
       "error": null
     },
     {
@@ -522,7 +522,7 @@
       "dividend_yield": 4.89,
       "sector": "一般消費財",
       "market_cap": 57778819072,
-      "last_updated": "2026-04-07T16:00:05.635644+09:00",
+      "last_updated": "2026-04-07T19:17:53.727338+09:00",
       "error": null
     },
     {
@@ -535,7 +535,7 @@
       "dividend_yield": 4.11,
       "sector": "素材",
       "market_cap": 3062640934912,
-      "last_updated": "2026-04-07T16:00:05.807232+09:00",
+      "last_updated": "2026-04-07T19:17:54.023964+09:00",
       "error": null
     },
     {
@@ -548,7 +548,7 @@
       "dividend_yield": 4.78,
       "sector": "ヘルスケア",
       "market_cap": 47416389632,
-      "last_updated": "2026-04-07T16:00:06.014061+09:00",
+      "last_updated": "2026-04-07T19:17:54.385607+09:00",
       "error": null
     },
     {
@@ -561,7 +561,7 @@
       "dividend_yield": 7.69,
       "sector": "一般消費財",
       "market_cap": 100779925504,
-      "last_updated": "2026-04-07T16:00:06.190093+09:00",
+      "last_updated": "2026-04-07T19:17:54.673704+09:00",
       "error": null
     },
     {
@@ -574,7 +574,7 @@
       "dividend_yield": 4.35,
       "sector": "産業",
       "market_cap": 67780743168,
-      "last_updated": "2026-04-07T16:00:06.363255+09:00",
+      "last_updated": "2026-04-07T19:17:54.961853+09:00",
       "error": null
     },
     {
@@ -587,7 +587,7 @@
       "dividend_yield": 4.5,
       "sector": "一般消費財",
       "market_cap": 22489411584,
-      "last_updated": "2026-04-07T16:00:06.687871+09:00",
+      "last_updated": "2026-04-07T19:17:55.259787+09:00",
       "error": null
     },
     {
@@ -600,7 +600,7 @@
       "dividend_yield": 4.05,
       "sector": "産業",
       "market_cap": 49442967552,
-      "last_updated": "2026-04-07T16:00:06.897156+09:00",
+      "last_updated": "2026-04-07T19:17:55.549082+09:00",
       "error": null
     },
     {
@@ -613,7 +613,7 @@
       "dividend_yield": 4.4,
       "sector": "一般消費財",
       "market_cap": 57170059264,
-      "last_updated": "2026-04-07T16:00:07.073723+09:00",
+      "last_updated": "2026-04-07T19:17:55.866043+09:00",
       "error": null
     },
     {
@@ -626,7 +626,7 @@
       "dividend_yield": 3.26,
       "sector": "産業",
       "market_cap": 11472041984,
-      "last_updated": "2026-04-07T16:00:07.252419+09:00",
+      "last_updated": "2026-04-07T19:17:56.177295+09:00",
       "error": null
     },
     {
@@ -639,7 +639,7 @@
       "dividend_yield": 4.61,
       "sector": "一般消費財",
       "market_cap": 81100914688,
-      "last_updated": "2026-04-07T16:00:07.439455+09:00",
+      "last_updated": "2026-04-07T19:17:56.487637+09:00",
       "error": null
     },
     {
@@ -652,7 +652,7 @@
       "dividend_yield": 2.46,
       "sector": "生活必需品",
       "market_cap": 328587542528,
-      "last_updated": "2026-04-07T16:00:07.648938+09:00",
+      "last_updated": "2026-04-07T19:17:56.875239+09:00",
       "error": null
     },
     {
@@ -665,7 +665,7 @@
       "dividend_yield": 3.84,
       "sector": "素材",
       "market_cap": 349274701824,
-      "last_updated": "2026-04-07T16:00:07.853440+09:00",
+      "last_updated": "2026-04-07T19:17:57.185703+09:00",
       "error": null
     },
     {
@@ -678,7 +678,7 @@
       "dividend_yield": 4.39,
       "sector": "産業",
       "market_cap": 1738259300352,
-      "last_updated": "2026-04-07T16:00:08.055957+09:00",
+      "last_updated": "2026-04-07T19:17:57.514962+09:00",
       "error": null
     },
     {
@@ -691,7 +691,7 @@
       "dividend_yield": 5.52,
       "sector": "産業",
       "market_cap": 471270064128,
-      "last_updated": "2026-04-07T16:00:08.256092+09:00",
+      "last_updated": "2026-04-07T19:17:57.828191+09:00",
       "error": null
     },
     {
@@ -704,7 +704,7 @@
       "dividend_yield": 5.18,
       "sector": "産業",
       "market_cap": 96791855104,
-      "last_updated": "2026-04-07T16:00:08.468791+09:00",
+      "last_updated": "2026-04-07T19:17:58.131636+09:00",
       "error": null
     },
     {
@@ -717,7 +717,7 @@
       "dividend_yield": 5.02,
       "sector": "一般消費財",
       "market_cap": 71551631360,
-      "last_updated": "2026-04-07T16:00:08.666371+09:00",
+      "last_updated": "2026-04-07T19:17:58.437820+09:00",
       "error": null
     },
     {
@@ -730,7 +730,7 @@
       "dividend_yield": 4.75,
       "sector": "産業",
       "market_cap": 49319858176,
-      "last_updated": "2026-04-07T16:00:08.869127+09:00",
+      "last_updated": "2026-04-07T19:17:58.742086+09:00",
       "error": null
     },
     {
@@ -743,7 +743,7 @@
       "dividend_yield": 4.58,
       "sector": "金融",
       "market_cap": 110084038656,
-      "last_updated": "2026-04-07T16:00:09.084188+09:00",
+      "last_updated": "2026-04-07T19:17:59.051887+09:00",
       "error": null
     },
     {
@@ -756,7 +756,7 @@
       "dividend_yield": 5.02,
       "sector": "一般消費財",
       "market_cap": 209874239488,
-      "last_updated": "2026-04-07T16:00:09.292090+09:00",
+      "last_updated": "2026-04-07T19:17:59.352377+09:00",
       "error": null
     },
     {
@@ -769,7 +769,7 @@
       "dividend_yield": 4.52,
       "sector": "ヘルスケア",
       "market_cap": 160183074816,
-      "last_updated": "2026-04-07T16:00:09.470024+09:00",
+      "last_updated": "2026-04-07T19:17:59.657289+09:00",
       "error": null
     },
     {
@@ -782,7 +782,7 @@
       "dividend_yield": 4.43,
       "sector": "素材",
       "market_cap": 332305399808,
-      "last_updated": "2026-04-07T16:00:09.682789+09:00",
+      "last_updated": "2026-04-07T19:17:59.959868+09:00",
       "error": null
     },
     {
@@ -795,7 +795,7 @@
       "dividend_yield": 3.84,
       "sector": "不動産",
       "market_cap": 1258495934464,
-      "last_updated": "2026-04-07T16:00:10.886652+09:00",
+      "last_updated": "2026-04-07T19:18:01.265348+09:00",
       "error": null
     },
     {
@@ -808,7 +808,7 @@
       "dividend_yield": 4.03,
       "sector": "生活必需品",
       "market_cap": 10805018886144,
-      "last_updated": "2026-04-07T16:00:11.108113+09:00",
+      "last_updated": "2026-04-07T19:18:01.573848+09:00",
       "error": null
     },
     {
@@ -821,7 +821,7 @@
       "dividend_yield": 4.47,
       "sector": "素材",
       "market_cap": 434095620096,
-      "last_updated": "2026-04-07T16:00:11.327078+09:00",
+      "last_updated": "2026-04-07T19:18:01.880481+09:00",
       "error": null
     },
     {
@@ -834,7 +834,7 @@
       "dividend_yield": 4.22,
       "sector": "金融",
       "market_cap": 555354816512,
-      "last_updated": "2026-04-07T16:00:11.536466+09:00",
+      "last_updated": "2026-04-07T19:18:02.190989+09:00",
       "error": null
     },
     {
@@ -847,7 +847,7 @@
       "dividend_yield": 3.54,
       "sector": "金融",
       "market_cap": 5327020883968,
-      "last_updated": "2026-04-07T16:00:11.745133+09:00",
+      "last_updated": "2026-04-07T19:18:02.512454+09:00",
       "error": null
     },
     {
@@ -860,7 +860,7 @@
       "dividend_yield": 4.11,
       "sector": "産業",
       "market_cap": 373741223936,
-      "last_updated": "2026-04-07T16:00:11.957784+09:00",
+      "last_updated": "2026-04-07T19:18:02.821888+09:00",
       "error": null
     },
     {
@@ -873,7 +873,7 @@
       "dividend_yield": 3.8,
       "sector": "産業",
       "market_cap": 556290277376,
-      "last_updated": "2026-04-07T16:00:12.161389+09:00",
+      "last_updated": "2026-04-07T19:18:03.167497+09:00",
       "error": null
     },
     {
@@ -886,7 +886,7 @@
       "dividend_yield": 5.26,
       "sector": "一般消費財",
       "market_cap": 649072803840,
-      "last_updated": "2026-04-07T16:00:12.470090+09:00",
+      "last_updated": "2026-04-07T19:18:03.473089+09:00",
       "error": null
     },
     {
@@ -899,7 +899,7 @@
       "dividend_yield": 5.5,
       "sector": "一般消費財",
       "market_cap": 4873474539520,
-      "last_updated": "2026-04-07T16:00:12.682007+09:00",
+      "last_updated": "2026-04-07T19:18:03.779615+09:00",
       "error": null
     },
     {
@@ -912,7 +912,7 @@
       "dividend_yield": 3.25,
       "sector": "産業",
       "market_cap": 2567855144960,
-      "last_updated": "2026-04-07T16:00:12.888901+09:00",
+      "last_updated": "2026-04-07T19:18:04.085526+09:00",
       "error": null
     },
     {
@@ -925,7 +925,7 @@
       "dividend_yield": 4.57,
       "sector": "一般消費財",
       "market_cap": 450365325312,
-      "last_updated": "2026-04-07T16:00:13.092970+09:00",
+      "last_updated": "2026-04-07T19:18:04.397495+09:00",
       "error": null
     },
     {
@@ -938,7 +938,7 @@
       "dividend_yield": 3.99,
       "sector": "通信",
       "market_cap": 10254816378880,
-      "last_updated": "2026-04-07T16:00:13.300744+09:00",
+      "last_updated": "2026-04-07T19:18:04.704721+09:00",
       "error": null
     },
     {
@@ -951,7 +951,7 @@
       "dividend_yield": 4.86,
       "sector": "素材",
       "market_cap": 313991528448,
-      "last_updated": "2026-04-07T16:00:13.501529+09:00",
+      "last_updated": "2026-04-07T19:18:05.011239+09:00",
       "error": null
     },
     {
@@ -964,7 +964,7 @@
       "dividend_yield": 3.03,
       "sector": "産業",
       "market_cap": 2359613980672,
-      "last_updated": "2026-04-07T16:00:13.710516+09:00",
+      "last_updated": "2026-04-07T19:18:05.315926+09:00",
       "error": null
     },
     {
@@ -977,7 +977,7 @@
       "dividend_yield": 3.7,
       "sector": "一般消費財",
       "market_cap": 677561761792,
-      "last_updated": "2026-04-07T16:00:13.921947+09:00",
+      "last_updated": "2026-04-07T19:18:05.686060+09:00",
       "error": null
     },
     {
@@ -990,7 +990,7 @@
       "dividend_yield": 4.03,
       "sector": "産業",
       "market_cap": 314864107520,
-      "last_updated": "2026-04-07T16:00:14.122141+09:00",
+      "last_updated": "2026-04-07T19:18:05.993383+09:00",
       "error": null
     },
     {
@@ -1003,7 +1003,7 @@
       "dividend_yield": 4.59,
       "sector": "一般消費財",
       "market_cap": 387126820864,
-      "last_updated": "2026-04-07T16:00:14.329063+09:00",
+      "last_updated": "2026-04-07T19:18:06.303643+09:00",
       "error": null
     },
     {
@@ -1016,7 +1016,7 @@
       "dividend_yield": 4.25,
       "sector": "素材",
       "market_cap": 750939799552,
-      "last_updated": "2026-04-07T16:00:14.537279+09:00",
+      "last_updated": "2026-04-07T19:18:06.608898+09:00",
       "error": null
     },
     {
@@ -1029,7 +1029,7 @@
       "dividend_yield": 3.92,
       "sector": "生活必需品",
       "market_cap": 300259475456,
-      "last_updated": "2026-04-07T16:00:14.774794+09:00",
+      "last_updated": "2026-04-07T19:18:06.916548+09:00",
       "error": null
     },
     {
@@ -1042,7 +1042,7 @@
       "dividend_yield": 4.69,
       "sector": "金融",
       "market_cap": 427272798208,
-      "last_updated": "2026-04-07T16:00:14.975955+09:00",
+      "last_updated": "2026-04-07T19:18:07.222097+09:00",
       "error": null
     },
     {
@@ -1055,7 +1055,7 @@
       "dividend_yield": 4.1,
       "sector": "素材",
       "market_cap": 342891134976,
-      "last_updated": "2026-04-07T16:00:15.184432+09:00",
+      "last_updated": "2026-04-07T19:18:07.587955+09:00",
       "error": null
     },
     {
@@ -1068,7 +1068,7 @@
       "dividend_yield": 4.37,
       "sector": "素材",
       "market_cap": 1162236133376,
-      "last_updated": "2026-04-07T16:00:15.488588+09:00",
+      "last_updated": "2026-04-07T19:18:07.891221+09:00",
       "error": null
     },
     {
@@ -1081,7 +1081,7 @@
       "dividend_yield": 3.56,
       "sector": "公益事業",
       "market_cap": 309685420032,
-      "last_updated": "2026-04-07T16:00:15.685046+09:00",
+      "last_updated": "2026-04-07T19:18:08.246350+09:00",
       "error": null
     },
     {
@@ -1094,7 +1094,7 @@
       "dividend_yield": 3.4,
       "sector": "ヘルスケア",
       "market_cap": 9158499762176,
-      "last_updated": "2026-04-07T16:00:15.886134+09:00",
+      "last_updated": "2026-04-07T19:18:08.547781+09:00",
       "error": null
     },
     {
@@ -1107,7 +1107,7 @@
       "dividend_yield": 4.03,
       "sector": "金融",
       "market_cap": 321570078720,
-      "last_updated": "2026-04-07T16:00:16.088543+09:00",
+      "last_updated": "2026-04-07T19:18:08.852886+09:00",
       "error": null
     },
     {
@@ -1120,7 +1120,7 @@
       "dividend_yield": 4.3,
       "sector": "産業",
       "market_cap": 345859489792,
-      "last_updated": "2026-04-07T16:00:16.295328+09:00",
+      "last_updated": "2026-04-07T19:18:09.165962+09:00",
       "error": null
     },
     {
@@ -1133,7 +1133,7 @@
       "dividend_yield": 3.18,
       "sector": "ヘルスケア",
       "market_cap": 1443000745984,
-      "last_updated": "2026-04-07T16:00:16.505130+09:00",
+      "last_updated": "2026-04-07T19:18:09.461676+09:00",
       "error": null
     },
     {
@@ -1146,7 +1146,7 @@
       "dividend_yield": 3.64,
       "sector": "産業",
       "market_cap": 394924163072,
-      "last_updated": "2026-04-07T16:00:16.831082+09:00",
+      "last_updated": "2026-04-07T19:18:09.779789+09:00",
       "error": null
     },
     {
@@ -1159,7 +1159,7 @@
       "dividend_yield": 2.91,
       "sector": "金融",
       "market_cap": 13669188501504,
-      "last_updated": "2026-04-07T16:00:17.035738+09:00",
+      "last_updated": "2026-04-07T19:18:10.084706+09:00",
       "error": null
     },
     {
@@ -1172,7 +1172,7 @@
       "dividend_yield": 3.59,
       "sector": "産業",
       "market_cap": 912103374848,
-      "last_updated": "2026-04-07T16:00:17.354981+09:00",
+      "last_updated": "2026-04-07T19:18:10.371203+09:00",
       "error": null
     },
     {
@@ -1185,7 +1185,7 @@
       "dividend_yield": 3.77,
       "sector": "テクノロジー",
       "market_cap": 653833076736,
-      "last_updated": "2026-04-07T16:00:18.551512+09:00",
+      "last_updated": "2026-04-07T19:18:11.709573+09:00",
       "error": null
     },
     {
@@ -1198,7 +1198,7 @@
       "dividend_yield": 3.36,
       "sector": "公益事業",
       "market_cap": 584373108736,
-      "last_updated": "2026-04-07T16:00:18.758535+09:00",
+      "last_updated": "2026-04-07T19:18:12.015510+09:00",
       "error": null
     },
     {
@@ -1211,7 +1211,7 @@
       "dividend_yield": 4.15,
       "sector": "産業",
       "market_cap": 558607368192,
-      "last_updated": "2026-04-07T16:00:18.966557+09:00",
+      "last_updated": "2026-04-07T19:18:12.322135+09:00",
       "error": null
     },
     {
@@ -1224,7 +1224,7 @@
       "dividend_yield": 3.0,
       "sector": "ヘルスケア",
       "market_cap": 4679164493824,
-      "last_updated": "2026-04-07T16:00:19.172419+09:00",
+      "last_updated": "2026-04-07T19:18:12.630702+09:00",
       "error": null
     },
     {
@@ -1237,7 +1237,7 @@
       "dividend_yield": 3.73,
       "sector": "産業",
       "market_cap": 1182868439040,
-      "last_updated": "2026-04-07T16:00:19.380446+09:00",
+      "last_updated": "2026-04-07T19:18:12.943692+09:00",
       "error": null
     },
     {
@@ -1250,7 +1250,7 @@
       "dividend_yield": 3.71,
       "sector": "エネルギー",
       "market_cap": 718902394880,
-      "last_updated": "2026-04-07T16:00:19.584722+09:00",
+      "last_updated": "2026-04-07T19:18:13.251699+09:00",
       "error": null
     },
     {
@@ -1263,7 +1263,7 @@
       "dividend_yield": 3.53,
       "sector": "金融",
       "market_cap": 398425653248,
-      "last_updated": "2026-04-07T16:00:19.787456+09:00",
+      "last_updated": "2026-04-07T19:18:13.563383+09:00",
       "error": null
     },
     {
@@ -1276,7 +1276,7 @@
       "dividend_yield": 4.06,
       "sector": "一般消費財",
       "market_cap": 1583395635200,
-      "last_updated": "2026-04-07T16:00:19.997152+09:00",
+      "last_updated": "2026-04-07T19:18:13.867775+09:00",
       "error": null
     },
     {
@@ -1289,7 +1289,7 @@
       "dividend_yield": 3.48,
       "sector": "産業",
       "market_cap": 760597446656,
-      "last_updated": "2026-04-07T16:00:20.314615+09:00",
+      "last_updated": "2026-04-07T19:18:14.176598+09:00",
       "error": null
     },
     {
@@ -1302,7 +1302,7 @@
       "dividend_yield": 4.14,
       "sector": "素材",
       "market_cap": 757196390400,
-      "last_updated": "2026-04-07T16:00:20.525046+09:00",
+      "last_updated": "2026-04-07T19:18:14.489893+09:00",
       "error": null
     },
     {
@@ -1315,7 +1315,7 @@
       "dividend_yield": 2.74,
       "sector": "一般消費財",
       "market_cap": 435531448320,
-      "last_updated": "2026-04-07T16:00:20.740766+09:00",
+      "last_updated": "2026-04-07T19:18:14.802219+09:00",
       "error": null
     },
     {
@@ -1328,7 +1328,7 @@
       "dividend_yield": 4.32,
       "sector": "一般消費財",
       "market_cap": 1153794441216,
-      "last_updated": "2026-04-07T16:00:20.942640+09:00",
+      "last_updated": "2026-04-07T19:18:15.111389+09:00",
       "error": null
     },
     {
@@ -1341,7 +1341,7 @@
       "dividend_yield": 3.5,
       "sector": "産業",
       "market_cap": 1010759696384,
-      "last_updated": "2026-04-07T16:00:21.150154+09:00",
+      "last_updated": "2026-04-07T19:18:15.420432+09:00",
       "error": null
     },
     {
@@ -1354,7 +1354,7 @@
       "dividend_yield": 3.59,
       "sector": "テクノロジー",
       "market_cap": 3941627330560,
-      "last_updated": "2026-04-07T16:00:21.369523+09:00",
+      "last_updated": "2026-04-07T19:18:15.729804+09:00",
       "error": null
     },
     {
@@ -1367,7 +1367,7 @@
       "dividend_yield": 3.16,
       "sector": "ヘルスケア",
       "market_cap": 1194505273344,
-      "last_updated": "2026-04-07T16:00:21.573558+09:00",
+      "last_updated": "2026-04-07T19:18:16.046272+09:00",
       "error": null
     },
     {
@@ -1380,7 +1380,7 @@
       "dividend_yield": 3.25,
       "sector": "素材",
       "market_cap": 305080303616,
-      "last_updated": "2026-04-07T16:00:21.776298+09:00",
+      "last_updated": "2026-04-07T19:18:16.361626+09:00",
       "error": null
     },
     {
@@ -1393,7 +1393,7 @@
       "dividend_yield": 3.31,
       "sector": "素材",
       "market_cap": 711651819520,
-      "last_updated": "2026-04-07T16:00:22.008779+09:00",
+      "last_updated": "2026-04-07T19:18:16.670181+09:00",
       "error": null
     },
     {
@@ -1406,7 +1406,7 @@
       "dividend_yield": 4.58,
       "sector": "一般消費財",
       "market_cap": 1804310937600,
-      "last_updated": "2026-04-07T16:00:22.218409+09:00",
+      "last_updated": "2026-04-07T19:18:17.107291+09:00",
       "error": null
     },
     {
@@ -1419,7 +1419,7 @@
       "dividend_yield": null,
       "sector": "不明",
       "market_cap": null,
-      "last_updated": "2026-04-07T16:00:22.424671+09:00",
+      "last_updated": "2026-04-07T19:18:17.447515+09:00",
       "error": null
     },
     {
@@ -1432,7 +1432,7 @@
       "dividend_yield": 3.29,
       "sector": "不動産",
       "market_cap": 3078780878848,
-      "last_updated": "2026-04-07T16:00:22.624140+09:00",
+      "last_updated": "2026-04-07T19:18:17.740533+09:00",
       "error": null
     },
     {
@@ -1445,7 +1445,7 @@
       "dividend_yield": 3.62,
       "sector": "素材",
       "market_cap": 841129328640,
-      "last_updated": "2026-04-07T16:00:22.928540+09:00",
+      "last_updated": "2026-04-07T19:18:18.042592+09:00",
       "error": null
     },
     {
@@ -1458,7 +1458,7 @@
       "dividend_yield": 3.92,
       "sector": "一般消費財",
       "market_cap": 4271603187712,
-      "last_updated": "2026-04-07T16:00:23.135080+09:00",
+      "last_updated": "2026-04-07T19:18:18.350586+09:00",
       "error": null
     },
     {
@@ -1471,7 +1471,7 @@
       "dividend_yield": 4.03,
       "sector": "素材",
       "market_cap": 716241043456,
-      "last_updated": "2026-04-07T16:00:23.336322+09:00",
+      "last_updated": "2026-04-07T19:18:18.712752+09:00",
       "error": null
     },
     {
@@ -1484,7 +1484,7 @@
       "dividend_yield": 3.73,
       "sector": "一般消費財",
       "market_cap": 137365430272,
-      "last_updated": "2026-04-07T16:00:23.542539+09:00",
+      "last_updated": "2026-04-07T19:18:19.009448+09:00",
       "error": null
     },
     {
@@ -1497,7 +1497,7 @@
       "dividend_yield": 3.36,
       "sector": "ヘルスケア",
       "market_cap": 463486222336,
-      "last_updated": "2026-04-07T16:00:23.750349+09:00",
+      "last_updated": "2026-04-07T19:18:19.310763+09:00",
       "error": null
     },
     {
@@ -1510,7 +1510,7 @@
       "dividend_yield": 3.08,
       "sector": "一般消費財",
       "market_cap": 817509564416,
-      "last_updated": "2026-04-07T16:00:23.956588+09:00",
+      "last_updated": "2026-04-07T19:18:19.607541+09:00",
       "error": null
     },
     {
@@ -1523,7 +1523,7 @@
       "dividend_yield": 2.8,
       "sector": "ヘルスケア",
       "market_cap": 160526909440,
-      "last_updated": "2026-04-07T16:00:24.161043+09:00",
+      "last_updated": "2026-04-07T19:18:19.907414+09:00",
       "error": null
     },
     {
@@ -1536,7 +1536,7 @@
       "dividend_yield": 1.84,
       "sector": "一般消費財",
       "market_cap": 59933642752,
-      "last_updated": "2026-04-07T16:00:24.370311+09:00",
+      "last_updated": "2026-04-07T19:18:20.206880+09:00",
       "error": null
     },
     {
@@ -1549,7 +1549,7 @@
       "dividend_yield": 2.46,
       "sector": "一般消費財",
       "market_cap": 306641108992,
-      "last_updated": "2026-04-07T16:00:24.585448+09:00",
+      "last_updated": "2026-04-07T19:18:20.519262+09:00",
       "error": null
     },
     {
@@ -1562,7 +1562,7 @@
       "dividend_yield": 2.13,
       "sector": "素材",
       "market_cap": 482451521536,
-      "last_updated": "2026-04-07T16:00:24.782461+09:00",
+      "last_updated": "2026-04-07T19:18:20.827038+09:00",
       "error": null
     },
     {
@@ -1575,7 +1575,7 @@
       "dividend_yield": 2.46,
       "sector": "金融",
       "market_cap": 542500814848,
-      "last_updated": "2026-04-07T16:00:25.990473+09:00",
+      "last_updated": "2026-04-07T19:18:22.144181+09:00",
       "error": null
     },
     {
@@ -1588,7 +1588,7 @@
       "dividend_yield": 2.26,
       "sector": "産業",
       "market_cap": 3796683980800,
-      "last_updated": "2026-04-07T16:00:26.198122+09:00",
+      "last_updated": "2026-04-07T19:18:22.448467+09:00",
       "error": null
     },
     {
@@ -1601,7 +1601,7 @@
       "dividend_yield": 3.9,
       "sector": "素材",
       "market_cap": 194099707904,
-      "last_updated": "2026-04-07T16:00:26.400413+09:00",
+      "last_updated": "2026-04-07T19:18:22.759688+09:00",
       "error": null
     },
     {
@@ -1614,7 +1614,7 @@
       "dividend_yield": 3.82,
       "sector": "一般消費財",
       "market_cap": 56007024640,
-      "last_updated": "2026-04-07T16:00:26.711109+09:00",
+      "last_updated": "2026-04-07T19:18:23.056562+09:00",
       "error": null
     },
     {
@@ -1627,7 +1627,7 @@
       "dividend_yield": 3.41,
       "sector": "素材",
       "market_cap": 264254373888,
-      "last_updated": "2026-04-07T16:00:27.034207+09:00",
+      "last_updated": "2026-04-07T19:18:23.354205+09:00",
       "error": null
     },
     {
@@ -1640,7 +1640,7 @@
       "dividend_yield": 3.64,
       "sector": "産業",
       "market_cap": 40965967872,
-      "last_updated": "2026-04-07T16:00:27.242271+09:00",
+      "last_updated": "2026-04-07T19:18:23.648626+09:00",
       "error": null
     },
     {
@@ -1653,7 +1653,7 @@
       "dividend_yield": 3.18,
       "sector": "エネルギー",
       "market_cap": 105568714752,
-      "last_updated": "2026-04-07T16:00:27.556560+09:00",
+      "last_updated": "2026-04-07T19:18:23.944986+09:00",
       "error": null
     },
     {
@@ -1666,7 +1666,7 @@
       "dividend_yield": 79.0,
       "sector": "産業",
       "market_cap": 73508470784,
-      "last_updated": "2026-04-07T16:00:27.762140+09:00",
+      "last_updated": "2026-04-07T19:18:24.234614+09:00",
       "error": null
     },
     {
@@ -1679,7 +1679,7 @@
       "dividend_yield": 3.98,
       "sector": "産業",
       "market_cap": 42415992832,
-      "last_updated": "2026-04-07T16:00:27.963981+09:00",
+      "last_updated": "2026-04-07T19:18:24.533670+09:00",
       "error": null
     },
     {
@@ -1692,7 +1692,7 @@
       "dividend_yield": 4.38,
       "sector": "産業",
       "market_cap": 85796610048,
-      "last_updated": "2026-04-07T16:00:28.168680+09:00",
+      "last_updated": "2026-04-07T19:18:24.839717+09:00",
       "error": null
     },
     {
@@ -1705,7 +1705,7 @@
       "dividend_yield": 4.54,
       "sector": "産業",
       "market_cap": 54651379712,
-      "last_updated": "2026-04-07T16:00:28.370887+09:00",
+      "last_updated": "2026-04-07T19:18:25.157190+09:00",
       "error": null
     },
     {
@@ -1718,7 +1718,7 @@
       "dividend_yield": 3.31,
       "sector": "金融",
       "market_cap": 348329312256,
-      "last_updated": "2026-04-07T16:00:28.577263+09:00",
+      "last_updated": "2026-04-07T19:18:25.471055+09:00",
       "error": null
     },
     {
@@ -1731,7 +1731,7 @@
       "dividend_yield": 3.21,
       "sector": "産業",
       "market_cap": 21972301824,
-      "last_updated": "2026-04-07T16:00:28.774597+09:00",
+      "last_updated": "2026-04-07T19:18:25.778433+09:00",
       "error": null
     },
     {
@@ -1744,7 +1744,7 @@
       "dividend_yield": 2.64,
       "sector": "ヘルスケア",
       "market_cap": 69012824064,
-      "last_updated": "2026-04-07T16:00:29.002519+09:00",
+      "last_updated": "2026-04-07T19:18:26.081111+09:00",
       "error": null
     },
     {
@@ -1757,7 +1757,7 @@
       "dividend_yield": 2.46,
       "sector": "産業",
       "market_cap": 55453868032,
-      "last_updated": "2026-04-07T16:00:29.214046+09:00",
+      "last_updated": "2026-04-07T19:18:26.448487+09:00",
       "error": null
     },
     {
@@ -1770,7 +1770,7 @@
       "dividend_yield": 3.22,
       "sector": "素材",
       "market_cap": 32721139712,
-      "last_updated": "2026-04-07T16:00:29.512135+09:00",
+      "last_updated": "2026-04-07T19:18:26.755775+09:00",
       "error": null
     },
     {
@@ -1783,7 +1783,7 @@
       "dividend_yield": 3.22,
       "sector": "素材",
       "market_cap": 13220768768,
-      "last_updated": "2026-04-07T16:00:29.716937+09:00",
+      "last_updated": "2026-04-07T19:18:27.065982+09:00",
       "error": null
     },
     {
@@ -1796,7 +1796,7 @@
       "dividend_yield": 5.33,
       "sector": "産業",
       "market_cap": 15099494400,
-      "last_updated": "2026-04-07T16:00:29.921749+09:00",
+      "last_updated": "2026-04-07T19:18:27.371972+09:00",
       "error": null
     },
     {
@@ -1809,7 +1809,7 @@
       "dividend_yield": 3.07,
       "sector": "一般消費財",
       "market_cap": 772768399360,
-      "last_updated": "2026-04-07T16:00:30.114182+09:00",
+      "last_updated": "2026-04-07T19:18:27.679896+09:00",
       "error": null
     },
     {
@@ -1822,7 +1822,7 @@
       "dividend_yield": 2.91,
       "sector": "金融",
       "market_cap": 20685942423552,
-      "last_updated": "2026-04-07T16:00:30.380682+09:00",
+      "last_updated": "2026-04-07T19:18:28.004633+09:00",
       "error": null
     },
     {
@@ -1835,7 +1835,7 @@
       "dividend_yield": 3.1,
       "sector": "金融",
       "market_cap": 69131739136,
-      "last_updated": "2026-04-07T16:00:30.601453+09:00",
+      "last_updated": "2026-04-07T19:18:28.391851+09:00",
       "error": null
     },
     {
@@ -1848,7 +1848,7 @@
       "dividend_yield": 2.41,
       "sector": "一般消費財",
       "market_cap": 256611483648,
-      "last_updated": "2026-04-07T16:00:30.803545+09:00",
+      "last_updated": "2026-04-07T19:18:28.698516+09:00",
       "error": null
     },
     {
@@ -1861,7 +1861,7 @@
       "dividend_yield": 3.5,
       "sector": "一般消費財",
       "market_cap": 877407567872,
-      "last_updated": "2026-04-07T16:00:30.991961+09:00",
+      "last_updated": "2026-04-07T19:18:29.000413+09:00",
       "error": null
     },
     {
@@ -1874,7 +1874,7 @@
       "dividend_yield": 2.35,
       "sector": "産業",
       "market_cap": 289818476544,
-      "last_updated": "2026-04-07T16:00:31.195464+09:00",
+      "last_updated": "2026-04-07T19:18:29.339106+09:00",
       "error": null
     },
     {
@@ -1887,7 +1887,7 @@
       "dividend_yield": 3.16,
       "sector": "産業",
       "market_cap": 67088318464,
-      "last_updated": "2026-04-07T16:00:31.407125+09:00",
+      "last_updated": "2026-04-07T19:18:29.650850+09:00",
       "error": null
     },
     {
@@ -1900,7 +1900,7 @@
       "dividend_yield": 3.31,
       "sector": "不動産",
       "market_cap": 765653024768,
-      "last_updated": "2026-04-07T16:00:31.611995+09:00",
+      "last_updated": "2026-04-07T19:18:29.958563+09:00",
       "error": null
     },
     {
@@ -1913,7 +1913,7 @@
       "dividend_yield": 3.77,
       "sector": "生活必需品",
       "market_cap": 10472663040,
-      "last_updated": "2026-04-07T16:00:31.818381+09:00",
+      "last_updated": "2026-04-07T19:18:30.310461+09:00",
       "error": null
     },
     {
@@ -1926,7 +1926,7 @@
       "dividend_yield": 4.1,
       "sector": "一般消費財",
       "market_cap": 162258501632,
-      "last_updated": "2026-04-07T16:00:32.026950+09:00",
+      "last_updated": "2026-04-07T19:18:30.613822+09:00",
       "error": null
     },
     {
@@ -1939,7 +1939,7 @@
       "dividend_yield": 4.11,
       "sector": "一般消費財",
       "market_cap": 28308748288,
-      "last_updated": "2026-04-07T16:00:32.232816+09:00",
+      "last_updated": "2026-04-07T19:18:30.913393+09:00",
       "error": null
     },
     {
@@ -1951,8 +1951,8 @@
       "price_change_pct": -0.52,
       "dividend_yield": 3.69,
       "sector": "産業",
-      "market_cap": 37872295936,
-      "last_updated": "2026-04-07T16:00:32.422095+09:00",
+      "market_cap": 37862092800,
+      "last_updated": "2026-04-07T19:18:31.283809+09:00",
       "error": null
     },
     {
@@ -1965,7 +1965,7 @@
       "dividend_yield": 4.09,
       "sector": "一般消費財",
       "market_cap": 11802594304,
-      "last_updated": "2026-04-07T16:00:33.626705+09:00",
+      "last_updated": "2026-04-07T19:18:32.596870+09:00",
       "error": null
     },
     {
@@ -1978,7 +1978,7 @@
       "dividend_yield": 6.32,
       "sector": "素材",
       "market_cap": 202702929920,
-      "last_updated": "2026-04-07T16:00:33.829581+09:00",
+      "last_updated": "2026-04-07T19:18:32.902809+09:00",
       "error": null
     },
     {
@@ -1991,7 +1991,7 @@
       "dividend_yield": 96.0,
       "sector": "産業",
       "market_cap": 21552215097344,
-      "last_updated": "2026-04-07T16:00:34.036531+09:00",
+      "last_updated": "2026-04-07T19:18:33.262067+09:00",
       "error": null
     },
     {
@@ -2004,7 +2004,7 @@
       "dividend_yield": 1.87,
       "sector": "産業",
       "market_cap": 5136107175936,
-      "last_updated": "2026-04-07T16:00:34.246353+09:00",
+      "last_updated": "2026-04-07T19:18:33.571641+09:00",
       "error": null
     },
     {
@@ -2017,7 +2017,7 @@
       "dividend_yield": 2.91,
       "sector": "一般消費財",
       "market_cap": 42384565993472,
-      "last_updated": "2026-04-07T16:00:34.488094+09:00",
+      "last_updated": "2026-04-07T19:18:33.876367+09:00",
       "error": null
     },
     {
@@ -2030,7 +2030,7 @@
       "dividend_yield": 76.0,
       "sector": "産業",
       "market_cap": 3867828813824,
-      "last_updated": "2026-04-07T16:00:34.697660+09:00",
+      "last_updated": "2026-04-07T19:18:34.179235+09:00",
       "error": null
     },
     {
@@ -2043,7 +2043,7 @@
       "dividend_yield": 1.53,
       "sector": "テクノロジー",
       "market_cap": 5814908616704,
-      "last_updated": "2026-04-07T16:00:34.884759+09:00",
+      "last_updated": "2026-04-07T19:18:34.475269+09:00",
       "error": null
     },
     {
@@ -2056,7 +2056,7 @@
       "dividend_yield": 1.75,
       "sector": "一般消費財",
       "market_cap": 580608065536,
-      "last_updated": "2026-04-07T16:00:35.084417+09:00",
+      "last_updated": "2026-04-07T19:18:34.778494+09:00",
       "error": null
     },
     {
@@ -2069,7 +2069,7 @@
       "dividend_yield": 1.4,
       "sector": "一般消費財",
       "market_cap": 5303943823360,
-      "last_updated": "2026-04-07T16:00:35.290938+09:00",
+      "last_updated": "2026-04-07T19:18:35.075514+09:00",
       "error": null
     },
     {
@@ -2082,7 +2082,7 @@
       "dividend_yield": 98.0,
       "sector": "通信",
       "market_cap": 2592519749632,
-      "last_updated": "2026-04-07T16:00:35.491646+09:00",
+      "last_updated": "2026-04-07T19:18:35.371805+09:00",
       "error": null
     },
     {
@@ -2095,7 +2095,7 @@
       "dividend_yield": 1.65,
       "sector": "素材",
       "market_cap": 12203406131200,
-      "last_updated": "2026-04-07T16:00:35.695795+09:00",
+      "last_updated": "2026-04-07T19:18:35.668487+09:00",
       "error": null
     },
     {
@@ -2108,7 +2108,7 @@
       "dividend_yield": 51.0,
       "sector": "一般消費財",
       "market_cap": 4337338417152,
-      "last_updated": "2026-04-07T16:00:35.904231+09:00",
+      "last_updated": "2026-04-07T19:18:36.049459+09:00",
       "error": null
     },
     {
@@ -2121,7 +2121,7 @@
       "dividend_yield": 51.0,
       "sector": "産業",
       "market_cap": 16074793811968,
-      "last_updated": "2026-04-07T16:00:36.134246+09:00",
+      "last_updated": "2026-04-07T19:18:36.353359+09:00",
       "error": null
     },
     {
@@ -2134,7 +2134,7 @@
       "dividend_yield": 2.07,
       "sector": "通信",
       "market_cap": 10195619020800,
-      "last_updated": "2026-04-07T16:00:36.350319+09:00",
+      "last_updated": "2026-04-07T19:18:36.662563+09:00",
       "error": null
     },
     {
@@ -2147,7 +2147,7 @@
       "dividend_yield": 2.06,
       "sector": "産業",
       "market_cap": 1328001581056,
-      "last_updated": "2026-04-07T16:00:36.621095+09:00",
+      "last_updated": "2026-04-07T19:18:36.984549+09:00",
       "error": null
     },
     {
@@ -2160,7 +2160,7 @@
       "dividend_yield": 66.0,
       "sector": "一般消費財",
       "market_cap": 223567478784,
-      "last_updated": "2026-04-07T16:00:36.833490+09:00",
+      "last_updated": "2026-04-07T19:18:37.289536+09:00",
       "error": null
     },
     {
@@ -2173,7 +2173,7 @@
       "dividend_yield": 2.53,
       "sector": "産業",
       "market_cap": 960309755904,
-      "last_updated": "2026-04-07T16:00:37.039539+09:00",
+      "last_updated": "2026-04-07T19:18:37.665136+09:00",
       "error": null
     },
     {
@@ -2186,7 +2186,7 @@
       "dividend_yield": 2.21,
       "sector": "テクノロジー",
       "market_cap": 187654406144,
-      "last_updated": "2026-04-07T16:00:37.253106+09:00",
+      "last_updated": "2026-04-07T19:18:37.994516+09:00",
       "error": null
     },
     {
@@ -2199,7 +2199,7 @@
       "dividend_yield": 1.37,
       "sector": "テクノロジー",
       "market_cap": 385769996288,
-      "last_updated": "2026-04-07T16:00:37.587138+09:00",
+      "last_updated": "2026-04-07T19:18:38.308427+09:00",
       "error": null
     },
     {
@@ -2212,7 +2212,7 @@
       "dividend_yield": 23.0,
       "sector": "テクノロジー",
       "market_cap": 16117520138240,
-      "last_updated": "2026-04-07T16:00:37.786095+09:00",
+      "last_updated": "2026-04-07T19:18:38.610703+09:00",
       "error": null
     },
     {
@@ -2225,7 +2225,7 @@
       "dividend_yield": 40.0,
       "sector": "テクノロジー",
       "market_cap": 63574880256,
-      "last_updated": "2026-04-07T16:00:37.986115+09:00",
+      "last_updated": "2026-04-07T19:18:38.922423+09:00",
       "error": null
     },
     {
@@ -2238,7 +2238,7 @@
       "dividend_yield": 1.97,
       "sector": "素材",
       "market_cap": 85181710336,
-      "last_updated": "2026-04-07T16:00:38.186169+09:00",
+      "last_updated": "2026-04-07T19:18:39.229464+09:00",
       "error": null
     },
     {
@@ -2251,7 +2251,7 @@
       "dividend_yield": 3.35,
       "sector": "テクノロジー",
       "market_cap": 19050377216,
-      "last_updated": "2026-04-07T16:00:38.385543+09:00",
+      "last_updated": "2026-04-07T19:18:39.583868+09:00",
       "error": null
     },
     {
@@ -2264,7 +2264,7 @@
       "dividend_yield": 1.9,
       "sector": "産業",
       "market_cap": 19701098496,
-      "last_updated": "2026-04-07T16:00:38.603456+09:00",
+      "last_updated": "2026-04-07T19:18:39.899592+09:00",
       "error": null
     },
     {
@@ -2277,7 +2277,7 @@
       "dividend_yield": 3.28,
       "sector": "産業",
       "market_cap": 292864000000,
-      "last_updated": "2026-04-07T16:00:38.805457+09:00",
+      "last_updated": "2026-04-07T19:18:40.216537+09:00",
       "error": null
     },
     {
@@ -2290,7 +2290,7 @@
       "dividend_yield": 2.07,
       "sector": "産業",
       "market_cap": 1191830355968,
-      "last_updated": "2026-04-07T16:00:39.120091+09:00",
+      "last_updated": "2026-04-07T19:18:40.547339+09:00",
       "error": null
     },
     {
@@ -2303,7 +2303,7 @@
       "dividend_yield": 1.97,
       "sector": "テクノロジー",
       "market_cap": 59013529600,
-      "last_updated": "2026-04-07T16:00:39.326807+09:00",
+      "last_updated": "2026-04-07T19:18:40.865303+09:00",
       "error": null
     },
     {
@@ -2316,7 +2316,7 @@
       "dividend_yield": 2.72,
       "sector": "公益事業",
       "market_cap": 220858843136,
-      "last_updated": "2026-04-07T16:00:39.528017+09:00",
+      "last_updated": "2026-04-07T19:18:41.178486+09:00",
       "error": null
     },
     {
@@ -2329,7 +2329,7 @@
       "dividend_yield": 2.65,
       "sector": "テクノロジー",
       "market_cap": 11702462464,
-      "last_updated": "2026-04-07T16:00:39.728236+09:00",
+      "last_updated": "2026-04-07T19:18:41.489675+09:00",
       "error": null
     },
     {
@@ -2342,7 +2342,7 @@
       "dividend_yield": 1.56,
       "sector": "産業",
       "market_cap": 164080680960,
-      "last_updated": "2026-04-07T16:00:39.937237+09:00",
+      "last_updated": "2026-04-07T19:18:41.803642+09:00",
       "error": null
     },
     {
@@ -2355,7 +2355,7 @@
       "dividend_yield": 3.09,
       "sector": "テクノロジー",
       "market_cap": 371031474176,
-      "last_updated": "2026-04-07T16:00:41.141604+09:00",
+      "last_updated": "2026-04-07T19:18:43.113777+09:00",
       "error": null
     },
     {
@@ -2368,7 +2368,7 @@
       "dividend_yield": 2.44,
       "sector": "テクノロジー",
       "market_cap": 5109492736,
-      "last_updated": "2026-04-07T16:00:41.341433+09:00",
+      "last_updated": "2026-04-07T19:18:43.415077+09:00",
       "error": null
     },
     {
@@ -2381,7 +2381,7 @@
       "dividend_yield": 3.4,
       "sector": "生活必需品",
       "market_cap": 26972729344,
-      "last_updated": "2026-04-07T16:00:41.650452+09:00",
+      "last_updated": "2026-04-07T19:18:43.731112+09:00",
       "error": null
     },
     {
@@ -2394,7 +2394,7 @@
       "dividend_yield": 99.0,
       "sector": "テクノロジー",
       "market_cap": 38545555456,
-      "last_updated": "2026-04-07T16:00:41.866073+09:00",
+      "last_updated": "2026-04-07T19:18:44.041285+09:00",
       "error": null
     },
     {
@@ -2407,7 +2407,7 @@
       "dividend_yield": 1.89,
       "sector": "素材",
       "market_cap": 34640535552,
-      "last_updated": "2026-04-07T16:00:42.043279+09:00",
+      "last_updated": "2026-04-07T19:18:44.352413+09:00",
       "error": null
     },
     {
@@ -2420,7 +2420,7 @@
       "dividend_yield": 4.22,
       "sector": "素材",
       "market_cap": 28086140928,
-      "last_updated": "2026-04-07T16:00:42.251799+09:00",
+      "last_updated": "2026-04-07T19:18:44.655302+09:00",
       "error": null
     },
     {
@@ -2433,7 +2433,7 @@
       "dividend_yield": 80.0,
       "sector": "テクノロジー",
       "market_cap": 5421551583232,
-      "last_updated": "2026-04-07T16:00:42.560203+09:00",
+      "last_updated": "2026-04-07T19:18:44.956711+09:00",
       "error": null
     },
     {
@@ -2446,7 +2446,7 @@
       "dividend_yield": 69.0,
       "sector": "テクノロジー",
       "market_cap": 6815943229440,
-      "last_updated": "2026-04-07T16:00:42.760072+09:00",
+      "last_updated": "2026-04-07T19:18:45.275120+09:00",
       "error": null
     },
     {
@@ -2459,7 +2459,7 @@
       "dividend_yield": 2.32,
       "sector": "テクノロジー",
       "market_cap": 211780026368,
-      "last_updated": "2026-04-07T16:00:42.968364+09:00",
+      "last_updated": "2026-04-07T19:18:45.593980+09:00",
       "error": null
     },
     {
@@ -2472,7 +2472,7 @@
       "dividend_yield": 57.0,
       "sector": "テクノロジー",
       "market_cap": 124071403520,
-      "last_updated": "2026-04-07T16:00:43.173179+09:00",
+      "last_updated": "2026-04-07T19:18:45.898799+09:00",
       "error": null
     },
     {
@@ -2485,7 +2485,7 @@
       "dividend_yield": 1.9,
       "sector": "テクノロジー",
       "market_cap": 73134186496,
-      "last_updated": "2026-04-07T16:00:43.385484+09:00",
+      "last_updated": "2026-04-07T19:18:46.210327+09:00",
       "error": null
     },
     {
@@ -2498,7 +2498,7 @@
       "dividend_yield": 2.06,
       "sector": "テクノロジー",
       "market_cap": 21403746304,
-      "last_updated": "2026-04-07T16:00:43.587972+09:00",
+      "last_updated": "2026-04-07T19:18:46.530678+09:00",
       "error": null
     },
     {
@@ -2511,7 +2511,7 @@
       "dividend_yield": 3.03,
       "sector": "素材",
       "market_cap": 163285925888,
-      "last_updated": "2026-04-07T16:00:43.791731+09:00",
+      "last_updated": "2026-04-07T19:18:46.846209+09:00",
       "error": null
     },
     {
@@ -2524,7 +2524,7 @@
       "dividend_yield": 2.36,
       "sector": "エネルギー",
       "market_cap": 5206553657344,
-      "last_updated": "2026-04-07T16:00:43.991092+09:00",
+      "last_updated": "2026-04-07T19:18:47.154888+09:00",
       "error": null
     },
     {
@@ -2537,7 +2537,7 @@
       "dividend_yield": 3.21,
       "sector": "生活必需品",
       "market_cap": 2380084543488,
-      "last_updated": "2026-04-07T16:00:44.193002+09:00",
+      "last_updated": "2026-04-07T19:18:47.464020+09:00",
       "error": null
     },
     {
@@ -2550,7 +2550,7 @@
       "dividend_yield": 2.9,
       "sector": "生活必需品",
       "market_cap": 2132711833600,
-      "last_updated": "2026-04-07T16:00:44.405722+09:00",
+      "last_updated": "2026-04-07T19:18:47.828306+09:00",
       "error": null
     },
     {
@@ -2563,7 +2563,7 @@
       "dividend_yield": 3.02,
       "sector": "産業",
       "market_cap": 1070426685440,
-      "last_updated": "2026-04-07T16:00:44.607108+09:00",
+      "last_updated": "2026-04-07T19:18:48.132986+09:00",
       "error": null
     },
     {
@@ -2576,7 +2576,7 @@
       "dividend_yield": 3.0,
       "sector": "一般消費財",
       "market_cap": 1475091103744,
-      "last_updated": "2026-04-07T16:00:44.804819+09:00",
+      "last_updated": "2026-04-07T19:18:48.441714+09:00",
       "error": null
     },
     {
@@ -2589,7 +2589,7 @@
       "dividend_yield": 3.0,
       "sector": "産業",
       "market_cap": 5773311606784,
-      "last_updated": "2026-04-07T16:00:45.009701+09:00",
+      "last_updated": "2026-04-07T19:18:48.751675+09:00",
       "error": null
     },
     {
@@ -2602,7 +2602,7 @@
       "dividend_yield": 2.07,
       "sector": "産業",
       "market_cap": 2848346865664,
-      "last_updated": "2026-04-07T16:00:45.332383+09:00",
+      "last_updated": "2026-04-07T19:18:49.052459+09:00",
       "error": null
     },
     {
@@ -2615,7 +2615,7 @@
       "dividend_yield": 2.16,
       "sector": "産業",
       "market_cap": 14305904820224,
-      "last_updated": "2026-04-07T16:00:45.543011+09:00",
+      "last_updated": "2026-04-07T19:18:49.359648+09:00",
       "error": null
     },
     {
@@ -2628,7 +2628,7 @@
       "dividend_yield": 1.93,
       "sector": "産業",
       "market_cap": 18112132939776,
-      "last_updated": "2026-04-07T16:00:45.747035+09:00",
+      "last_updated": "2026-04-07T19:18:49.666015+09:00",
       "error": null
     },
     {
@@ -2641,7 +2641,7 @@
       "dividend_yield": 2.04,
       "sector": "産業",
       "market_cap": 19924657373184,
-      "last_updated": "2026-04-07T16:00:45.945464+09:00",
+      "last_updated": "2026-04-07T19:18:49.977252+09:00",
       "error": null
     },
     {
@@ -2654,7 +2654,7 @@
       "dividend_yield": 2.83,
       "sector": "金融",
       "market_cap": 31729435803648,
-      "last_updated": "2026-04-07T16:00:46.144489+09:00",
+      "last_updated": "2026-04-07T19:18:50.351543+09:00",
       "error": null
     },
     {
@@ -2667,7 +2667,7 @@
       "dividend_yield": 3.24,
       "sector": "金融",
       "market_cap": 1935283322880,
-      "last_updated": "2026-04-07T16:00:46.357062+09:00",
+      "last_updated": "2026-04-07T19:18:50.658986+09:00",
       "error": null
     },
     {
@@ -2680,7 +2680,7 @@
       "dividend_yield": 4.01,
       "sector": "金融",
       "market_cap": 5195765383168,
-      "last_updated": "2026-04-07T16:00:46.569203+09:00",
+      "last_updated": "2026-04-07T19:18:50.954988+09:00",
       "error": null
     },
     {
@@ -2693,7 +2693,7 @@
       "dividend_yield": 2.48,
       "sector": "金融",
       "market_cap": 5432569495552,
-      "last_updated": "2026-04-07T16:00:46.768777+09:00",
+      "last_updated": "2026-04-07T19:18:51.266816+09:00",
       "error": null
     },
     {
@@ -2706,7 +2706,7 @@
       "dividend_yield": 2.95,
       "sector": "通信",
       "market_cap": 10288629809152,
-      "last_updated": "2026-04-07T16:00:46.968116+09:00",
+      "last_updated": "2026-04-07T19:18:51.576721+09:00",
       "error": null
     },
     {
@@ -2719,7 +2719,7 @@
       "dividend_yield": 2.43,
       "sector": "産業",
       "market_cap": 579565977600,
-      "last_updated": "2026-04-07T16:00:47.280223+09:00",
+      "last_updated": "2026-04-07T19:18:51.961662+09:00",
       "error": null
     },
     {
@@ -2732,7 +2732,7 @@
       "dividend_yield": 4.47,
       "sector": "産業",
       "market_cap": 139552620544,
-      "last_updated": "2026-04-07T16:00:47.492684+09:00",
+      "last_updated": "2026-04-07T19:18:52.274131+09:00",
       "error": null
     },
     {
@@ -2745,7 +2745,7 @@
       "dividend_yield": 3.79,
       "sector": "一般消費財",
       "market_cap": 591960408064,
-      "last_updated": "2026-04-07T16:00:48.669959+09:00",
+      "last_updated": "2026-04-07T19:18:53.584915+09:00",
       "error": null
     },
     {
@@ -2758,7 +2758,7 @@
       "dividend_yield": 2.67,
       "sector": "産業",
       "market_cap": 313187237888,
-      "last_updated": "2026-04-07T16:00:48.870799+09:00",
+      "last_updated": "2026-04-07T19:18:53.894188+09:00",
       "error": null
     },
     {
@@ -2771,7 +2771,7 @@
       "dividend_yield": 4.4,
       "sector": "産業",
       "market_cap": 20910714880,
-      "last_updated": "2026-04-07T16:00:49.079018+09:00",
+      "last_updated": "2026-04-07T19:18:54.196785+09:00",
       "error": null
     },
     {
@@ -2784,7 +2784,7 @@
       "dividend_yield": 3.86,
       "sector": "通信",
       "market_cap": 16998926336,
-      "last_updated": "2026-04-07T16:00:49.293432+09:00",
+      "last_updated": "2026-04-07T19:18:54.509784+09:00",
       "error": null
     },
     {
@@ -2797,7 +2797,7 @@
       "dividend_yield": 3.16,
       "sector": "産業",
       "market_cap": 50081841152,
-      "last_updated": "2026-04-07T16:00:49.501180+09:00",
+      "last_updated": "2026-04-07T19:18:54.818593+09:00",
       "error": null
     },
     {
@@ -2810,7 +2810,7 @@
       "dividend_yield": 3.1,
       "sector": "産業",
       "market_cap": 88988172288,
-      "last_updated": "2026-04-07T16:00:49.702901+09:00",
+      "last_updated": "2026-04-07T19:18:55.130816+09:00",
       "error": null
     },
     {
@@ -2823,7 +2823,7 @@
       "dividend_yield": 3.62,
       "sector": "産業",
       "market_cap": 22131200000,
-      "last_updated": "2026-04-07T16:00:49.954813+09:00",
+      "last_updated": "2026-04-07T19:18:55.442130+09:00",
       "error": null
     },
     {
@@ -2836,7 +2836,7 @@
       "dividend_yield": 1.66,
       "sector": "テクノロジー",
       "market_cap": 144673947648,
-      "last_updated": "2026-04-07T16:00:50.157875+09:00",
+      "last_updated": "2026-04-07T19:18:55.783524+09:00",
       "error": null
     },
     {
@@ -2849,7 +2849,7 @@
       "dividend_yield": 2.93,
       "sector": "テクノロジー",
       "market_cap": 24227883008,
-      "last_updated": "2026-04-07T16:00:50.365487+09:00",
+      "last_updated": "2026-04-07T19:18:56.097429+09:00",
       "error": null
     },
     {
@@ -2862,7 +2862,7 @@
       "dividend_yield": 2.63,
       "sector": "産業",
       "market_cap": 1332016709632,
-      "last_updated": "2026-04-07T16:00:50.578451+09:00",
+      "last_updated": "2026-04-07T19:18:56.416802+09:00",
       "error": null
     },
     {
@@ -2875,7 +2875,7 @@
       "dividend_yield": 2.73,
       "sector": "産業",
       "market_cap": 158246207488,
-      "last_updated": "2026-04-07T16:00:50.759437+09:00",
+      "last_updated": "2026-04-07T19:18:56.736320+09:00",
       "error": null
     },
     {
@@ -2888,7 +2888,7 @@
       "dividend_yield": 4.3,
       "sector": "一般消費財",
       "market_cap": 10679291904,
-      "last_updated": "2026-04-07T16:00:50.961876+09:00",
+      "last_updated": "2026-04-07T19:18:57.041610+09:00",
       "error": null
     },
     {
@@ -2901,7 +2901,7 @@
       "dividend_yield": 3.19,
       "sector": "産業",
       "market_cap": 124521005056,
-      "last_updated": "2026-04-07T16:00:51.148629+09:00",
+      "last_updated": "2026-04-07T19:18:57.355093+09:00",
       "error": null
     },
     {
@@ -2914,7 +2914,7 @@
       "dividend_yield": 3.96,
       "sector": "産業",
       "market_cap": 118463127552,
-      "last_updated": "2026-04-07T16:00:51.349801+09:00",
+      "last_updated": "2026-04-07T19:18:57.688502+09:00",
       "error": null
     },
     {
@@ -2927,7 +2927,7 @@
       "dividend_yield": 3.45,
       "sector": "産業",
       "market_cap": 38958436352,
-      "last_updated": "2026-04-07T16:00:51.513342+09:00",
+      "last_updated": "2026-04-07T19:18:58.015397+09:00",
       "error": null
     },
     {
@@ -2940,7 +2940,7 @@
       "dividend_yield": 1.83,
       "sector": "産業",
       "market_cap": 9697573732352,
-      "last_updated": "2026-04-07T16:00:51.707155+09:00",
+      "last_updated": "2026-04-07T19:18:58.348073+09:00",
       "error": null
     },
     {
@@ -2953,7 +2953,7 @@
       "dividend_yield": 3.18,
       "sector": "素材",
       "market_cap": 217533743104,
-      "last_updated": "2026-04-07T16:00:51.914679+09:00",
+      "last_updated": "2026-04-07T19:18:58.662964+09:00",
       "error": null
     },
     {
@@ -2966,7 +2966,7 @@
       "dividend_yield": 4.88,
       "sector": "一般消費財",
       "market_cap": 81301110784,
-      "last_updated": "2026-04-07T16:00:52.119792+09:00",
+      "last_updated": "2026-04-07T19:18:58.966297+09:00",
       "error": null
     },
     {
@@ -2979,7 +2979,7 @@
       "dividend_yield": 2.86,
       "sector": "一般消費財",
       "market_cap": 25726289920,
-      "last_updated": "2026-04-07T16:00:52.323520+09:00",
+      "last_updated": "2026-04-07T19:18:59.285208+09:00",
       "error": null
     },
     {
@@ -2992,7 +2992,7 @@
       "dividend_yield": 1.91,
       "sector": "産業",
       "market_cap": 6363166015488,
-      "last_updated": "2026-04-07T16:00:52.499336+09:00",
+      "last_updated": "2026-04-07T19:18:59.602833+09:00",
       "error": null
     },
     {
@@ -3005,7 +3005,7 @@
       "dividend_yield": 3.22,
       "sector": "金融",
       "market_cap": 184638390272,
-      "last_updated": "2026-04-07T16:00:52.706170+09:00",
+      "last_updated": "2026-04-07T19:18:59.923076+09:00",
       "error": null
     },
     {
@@ -3018,7 +3018,7 @@
       "dividend_yield": 1.84,
       "sector": "通信",
       "market_cap": 311400235008,
-      "last_updated": "2026-04-07T16:00:52.888458+09:00",
+      "last_updated": "2026-04-07T19:19:00.240233+09:00",
       "error": null
     },
     {
@@ -3031,7 +3031,7 @@
       "dividend_yield": 3.19,
       "sector": "テクノロジー",
       "market_cap": 25544429568,
-      "last_updated": "2026-04-07T16:00:53.089739+09:00",
+      "last_updated": "2026-04-07T19:19:00.555363+09:00",
       "error": null
     },
     {
@@ -3044,7 +3044,7 @@
       "dividend_yield": 3.45,
       "sector": "テクノロジー",
       "market_cap": 46755913728,
-      "last_updated": "2026-04-07T16:00:53.301459+09:00",
+      "last_updated": "2026-04-07T19:19:00.871974+09:00",
       "error": null
     },
     {
@@ -3057,7 +3057,7 @@
       "dividend_yield": 3.14,
       "sector": "産業",
       "market_cap": 38252769280,
-      "last_updated": "2026-04-07T16:00:53.506351+09:00",
+      "last_updated": "2026-04-07T19:19:01.238679+09:00",
       "error": null
     },
     {
@@ -3070,7 +3070,7 @@
       "dividend_yield": 1.86,
       "sector": "ヘルスケア",
       "market_cap": 3078831996928,
-      "last_updated": "2026-04-07T16:00:53.709302+09:00",
+      "last_updated": "2026-04-07T19:19:01.619946+09:00",
       "error": null
     },
     {
@@ -3083,7 +3083,7 @@
       "dividend_yield": 1.92,
       "sector": "産業",
       "market_cap": 550817234944,
-      "last_updated": "2026-04-07T16:00:54.020672+09:00",
+      "last_updated": "2026-04-07T19:19:01.930979+09:00",
       "error": null
     },
     {
@@ -3096,7 +3096,7 @@
       "dividend_yield": 1.69,
       "sector": "産業",
       "market_cap": 5773120241664,
-      "last_updated": "2026-04-07T16:00:54.223759+09:00",
+      "last_updated": "2026-04-07T19:19:02.231887+09:00",
       "error": null
     },
     {
@@ -3109,7 +3109,7 @@
       "dividend_yield": 2.94,
       "sector": "一般消費財",
       "market_cap": 106163838976,
-      "last_updated": "2026-04-07T16:00:54.413895+09:00",
+      "last_updated": "2026-04-07T19:19:02.534560+09:00",
       "error": null
     },
     {
@@ -3122,7 +3122,7 @@
       "dividend_yield": 3.27,
       "sector": "金融",
       "market_cap": 1958168363008,
-      "last_updated": "2026-04-07T16:00:54.832954+09:00",
+      "last_updated": "2026-04-07T19:19:02.853045+09:00",
       "error": null
     },
     {
@@ -3135,7 +3135,7 @@
       "dividend_yield": 3.77,
       "sector": "産業",
       "market_cap": 25859160064,
-      "last_updated": "2026-04-07T16:00:56.038788+09:00",
+      "last_updated": "2026-04-07T19:19:04.166865+09:00",
       "error": null
     },
     {
@@ -3148,7 +3148,7 @@
       "dividend_yield": 3.91,
       "sector": "一般消費財",
       "market_cap": 133627273216,
-      "last_updated": "2026-04-07T16:00:56.219488+09:00",
+      "last_updated": "2026-04-07T19:19:04.515988+09:00",
       "error": null
     },
     {
@@ -3161,7 +3161,7 @@
       "dividend_yield": 4.61,
       "sector": "一般消費財",
       "market_cap": 54228385792,
-      "last_updated": "2026-04-07T16:00:56.391930+09:00",
+      "last_updated": "2026-04-07T19:19:04.826727+09:00",
       "error": null
     },
     {
@@ -3174,7 +3174,7 @@
       "dividend_yield": 4.13,
       "sector": "テクノロジー",
       "market_cap": 59629129728,
-      "last_updated": "2026-04-07T16:00:56.705187+09:00",
+      "last_updated": "2026-04-07T19:19:05.138189+09:00",
       "error": null
     },
     {
@@ -3187,7 +3187,7 @@
       "dividend_yield": 3.8,
       "sector": "産業",
       "market_cap": 15697566720,
-      "last_updated": "2026-04-07T16:00:56.915459+09:00",
+      "last_updated": "2026-04-07T19:19:05.448530+09:00",
       "error": null
     },
     {
@@ -3200,7 +3200,7 @@
       "dividend_yield": 1.84,
       "sector": "一般消費財",
       "market_cap": 203039604736,
-      "last_updated": "2026-04-07T16:00:57.123051+09:00",
+      "last_updated": "2026-04-07T19:19:05.747468+09:00",
       "error": null
     },
     {
@@ -3213,7 +3213,7 @@
       "dividend_yield": 3.41,
       "sector": "一般消費財",
       "market_cap": 85848367104,
-      "last_updated": "2026-04-07T16:00:57.332195+09:00",
+      "last_updated": "2026-04-07T19:19:06.047013+09:00",
       "error": null
     },
     {
@@ -3226,7 +3226,7 @@
       "dividend_yield": 4.64,
       "sector": "不動産",
       "market_cap": 265553969152,
-      "last_updated": "2026-04-07T16:00:57.544341+09:00",
+      "last_updated": "2026-04-07T19:19:06.352123+09:00",
       "error": null
     },
     {
@@ -3239,7 +3239,7 @@
       "dividend_yield": 4.43,
       "sector": "不動産",
       "market_cap": 731530133504,
-      "last_updated": "2026-04-07T16:00:57.864884+09:00",
+      "last_updated": "2026-04-07T19:19:06.721271+09:00",
       "error": null
     },
     {
@@ -3252,7 +3252,7 @@
       "dividend_yield": 5.09,
       "sector": "不動産",
       "market_cap": 370587369472,
-      "last_updated": "2026-04-07T16:00:58.069409+09:00",
+      "last_updated": "2026-04-07T19:19:07.068646+09:00",
       "error": null
     },
     {
@@ -3265,7 +3265,7 @@
       "dividend_yield": 4.31,
       "sector": "不動産",
       "market_cap": 856564105216,
-      "last_updated": "2026-04-07T16:00:58.273897+09:00",
+      "last_updated": "2026-04-07T19:19:07.375599+09:00",
       "error": null
     },
     {
@@ -3278,7 +3278,7 @@
       "dividend_yield": 3.53,
       "sector": "不動産",
       "market_cap": 340598816768,
-      "last_updated": "2026-04-07T16:00:58.531513+09:00",
+      "last_updated": "2026-04-07T19:19:07.702059+09:00",
       "error": null
     },
     {
@@ -3291,7 +3291,7 @@
       "dividend_yield": 3.92,
       "sector": "不動産",
       "market_cap": 472055971840,
-      "last_updated": "2026-04-07T16:00:58.736858+09:00",
+      "last_updated": "2026-04-07T19:19:08.083023+09:00",
       "error": null
     },
     {
@@ -3304,7 +3304,7 @@
       "dividend_yield": 3.69,
       "sector": "不動産",
       "market_cap": 261394219008,
-      "last_updated": "2026-04-07T16:00:58.944040+09:00",
+      "last_updated": "2026-04-07T19:19:08.456685+09:00",
       "error": null
     },
     {
@@ -3317,7 +3317,7 @@
       "dividend_yield": 4.22,
       "sector": "不動産",
       "market_cap": 751317090304,
-      "last_updated": "2026-04-07T16:00:59.151157+09:00",
+      "last_updated": "2026-04-07T19:19:08.755480+09:00",
       "error": null
     },
     {
@@ -3330,7 +3330,7 @@
       "dividend_yield": 5.14,
       "sector": "不動産",
       "market_cap": 841558654976,
-      "last_updated": "2026-04-07T16:00:59.360156+09:00",
+      "last_updated": "2026-04-07T19:19:09.057476+09:00",
       "error": null
     },
     {
@@ -3343,7 +3343,7 @@
       "dividend_yield": 5.92,
       "sector": "不動産",
       "market_cap": 368512172032,
-      "last_updated": "2026-04-07T16:00:59.561264+09:00",
+      "last_updated": "2026-04-07T19:19:09.373370+09:00",
       "error": null
     }
   ]
