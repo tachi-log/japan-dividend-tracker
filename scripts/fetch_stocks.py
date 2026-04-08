@@ -1,8 +1,12 @@
 #!/usr/bin/env python3
 import yfinance as yf
-import json, os, time, requests, math
+import json, os, time, requests, math, sys
 from datetime import datetime
+from pathlib import Path
 import pytz
+
+sys.path.insert(0, str(Path(__file__).parent))
+from translate_names import NAME_JA
 
 STOCK_CODES = [
     9986,3076,8130,2659,3333,4008,4042,4097,8309,8725,8593,8584,6785,7723,3231,
@@ -199,19 +203,23 @@ def fetch_financial_data(ticker):
 # ============================================================
 
 def get_japanese_names(codes):
-    name_map = {}
-    for i in range(0, len(codes), 50):
-        batch = codes[i:i+50]
-        symbols = ','.join(f"{c}.T" for c in batch)
-        try:
-            url = f"https://query1.finance.yahoo.com/v7/finance/quote?symbols={symbols}&lang=ja&region=JP"
-            r = requests.get(url, headers=HEADERS, timeout=15)
-            for item in r.json().get('quoteResponse', {}).get('result', []):
-                sym = item.get('symbol', '').replace('.T', '')
-                name_map[sym] = item.get('longName') or item.get('shortName') or sym
-        except Exception as e:
-            print(f"[WARN] name fetch: {e}")
-        time.sleep(0.5)
+    # 辞書に登録済みのコードは直接使用
+    name_map = {str(c): NAME_JA[str(c)] for c in codes if str(c) in NAME_JA}
+    missing = [c for c in codes if str(c) not in NAME_JA]
+    if missing:
+        # 辞書にないコードのみAPIで取得試行
+        for i in range(0, len(missing), 50):
+            batch = missing[i:i+50]
+            symbols = ','.join(f"{c}.T" for c in batch)
+            try:
+                url = f"https://query1.finance.yahoo.com/v7/finance/quote?symbols={symbols}&lang=ja&region=JP"
+                r = requests.get(url, headers=HEADERS, timeout=15)
+                for item in r.json().get('quoteResponse', {}).get('result', []):
+                    sym = item.get('symbol', '').replace('.T', '')
+                    name_map[sym] = item.get('longName') or item.get('shortName') or sym
+            except Exception as e:
+                print(f"[WARN] name fetch: {e}")
+            time.sleep(0.5)
     return name_map
 
 
