@@ -136,7 +136,8 @@
     .tab-btn.high-tab.active  { background: #ffb347; border-color: #ffb347; color: #000; }
     .tab-btn.tag-hold.active  { background: #4cd9a0; border-color: #4cd9a0; color: #000; }
     .tab-btn.tag-watch.active { background: #a78bfa; border-color: #a78bfa; color: #fff; }
-    .tab-btn.tag-cand.active  { background: #60a5fa; border-color: #60a5fa; color: #fff; }
+    .tab-btn.tag-cand.active   { background: #60a5fa; border-color: #60a5fa; color: #fff; }
+    .tab-btn.tag-top30.active  { background: #ffd700; border-color: #ffd700; color: #000; }
 
     /* ===== カード ===== */
     .cards {
@@ -651,6 +652,7 @@
   <button class="tab-btn tag-hold"   onclick="setTab('hold')"   id="tab-hold">💚 保有中</button>
   <button class="tab-btn tag-watch"  onclick="setTab('watch')"  id="tab-watch">👀 ウォッチ</button>
   <button class="tab-btn tag-cand"   onclick="setTab('cand')"   id="tab-cand">⭐ 候補</button>
+  <button class="tab-btn tag-top30"  onclick="setTab('top30')"  id="tab-top30">★ トップ30</button>
   <button class="tab-btn"            onclick="setTab('err')"    id="tab-err">⚠ エラー</button>
 </div>
 
@@ -727,6 +729,12 @@
         </div>
         <div class="week52-zone" id="week52-zone">データ未入力</div>
       </div>
+    </div>
+
+    <!-- 割安指標 -->
+    <div class="modal-section">
+      <div class="modal-section-title">割安指標</div>
+      <div class="judgment-panel" id="modal-valuation"></div>
     </div>
 
     <!-- レーダーチャート -->
@@ -1002,6 +1010,43 @@ function calcScore(sd) {
   return score;
 }
 
+/// ============================================================
+// 総合ランクスコア計算 (0〜100点)
+// 利回り40 + 財務35 + PBR15 + PER10
+// ============================================================
+function calcRankScore(stock) {
+  if (!stock || stock.dividend_yield == null) return null;
+  let score = 0;
+
+  // 利回りポイント（最大40点）
+  score += Math.min(stock.dividend_yield * 8, 40);
+
+  // 財務ポイント（最大35点）
+  const sd = getMergedData(stock);
+  const q  = calcScore(sd);
+  if (q != null) score += (q / 8) * 35;
+
+  // PBRポイント（最大15点）
+  const pbr = stock.pbr;
+  if (pbr != null && pbr > 0) {
+    if      (pbr < 0.8) score += 15;
+    else if (pbr < 1.0) score += 12;
+    else if (pbr < 1.5) score += 8;
+    else if (pbr < 2.0) score += 4;
+  }
+
+  // PERポイント（最大10点）
+  const per = stock.per;
+  if (per != null && per > 0) {
+    if      (per < 10) score += 10;
+    else if (per < 15) score += 8;
+    else if (per < 20) score += 5;
+    else if (per < 25) score += 2;
+  }
+
+  return Math.round(score * 10) / 10;
+}
+
 // レーダーチャート用: 各項目を 0〜2 でスコア化
 function getRadarValues(sd) {
   if (!sd) sd = {};
@@ -1077,6 +1122,13 @@ function applyFilters() {
     stocks = stocks.filter(s => (allSD[s.code]?.tag || '') === '候補');
   } else if (currentTab === 'err') {
     stocks = stocks.filter(s => s.error);
+  } else if (currentTab === 'top30') {
+    stocks = stocks
+      .filter(s => s.dividend_yield != null)
+      .map(s => ({ ...s, _rankScore: calcRankScore(s) }))
+      .filter(s => s._rankScore != null)
+      .sort((a, b) => b._rankScore - a._rankScore)
+      .slice(0, 30);
   }
 
   // セクターフィルタ
@@ -1188,11 +1240,22 @@ function cardHTML(s) {
       : oku.toFixed(0) + '億';
   }
 
+  // PER・PBR
+  const perStr = s.per != null ? s.per.toFixed(1) + '倍' : null;
+  const pbrStr = s.pbr != null ? s.pbr.toFixed(2) + '倍' : null;
+
   // [新機能] スコアバッジ
   let scoreBadgeHTML = '';
   if (score != null) {
     const cls = score >= 6 ? 's-high' : score >= 4 ? 's-mid' : 's-low';
     scoreBadgeHTML = `<span class="score-badge ${cls}">★ ${score}/8</span>`;
+  }
+
+  // トップ30 総合スコアチップ
+  let rankChipHTML = '';
+  if (currentTab === 'top30' && s._rankScore != null) {
+    const rc = s._rankScore >= 70 ? '#ffd700' : s._rankScore >= 50 ? '#ffb347' : '#8892a4';
+    rankChipHTML = `<span class="detail-chip" style="border:1px solid ${rc}44; color:${rc}; font-weight:700">総合 ${s._rankScore.toFixed(1)}点</span>`;
   }
 
   // [新機能] タグバッジ
@@ -1230,7 +1293,10 @@ function cardHTML(s) {
     <div class="card-details">
       <span class="detail-chip"><span class="label">セクター</span>${escHtml(s.sector || '不明')}</span>
       <span class="detail-chip"><span class="label">時価総額</span>${mcapStr}</span>
+      ${perStr ? `<span class="detail-chip"><span class="label">PER</span>${perStr}</span>` : ''}
+      ${pbrStr ? `<span class="detail-chip"><span class="label">PBR</span>${pbrStr}</span>` : ''}
       ${s.annual_dividend ? `<span class="detail-chip"><span class="label">年配当</span>¥${s.annual_dividend}</span>` : ''}
+      ${rankChipHTML}
       ${scoreBadgeHTML}
       ${tagBadgeHTML}
       ${buyChipHTML}
@@ -1286,6 +1352,9 @@ function openModal(code) {
 
   // 52週ポジション
   updateWeek52(stock, sd);
+
+  // 割安指標
+  updateValuation(stock);
 
   // レーダーチャート
   renderRadarChart(sd);
@@ -1463,6 +1532,47 @@ function updateWeek52(stock, sd) {
   }
   document.getElementById('week52-zone').textContent = zone;
   document.getElementById('week52-zone').style.color = color;
+}
+
+// 割安指標表示
+function updateValuation(stock) {
+  const panel = document.getElementById('modal-valuation');
+  const per = stock.per;
+  const pbr = stock.pbr;
+
+  let perColor = '#e0e0e0';
+  let perNote  = '';
+  if (per != null) {
+    if (per < 10)       { perColor = '#4cd9a0'; perNote = '割安'; }
+    else if (per < 15)  { perColor = '#4cd9a0'; perNote = '適正'; }
+    else if (per < 25)  { perColor = '#ffb347'; perNote = 'やや割高'; }
+    else                { perColor = '#ff6b6b'; perNote = '割高'; }
+  }
+
+  let pbrColor = '#e0e0e0';
+  let pbrNote  = '';
+  if (pbr != null) {
+    if (pbr < 1.0)      { pbrColor = '#4cd9a0'; pbrNote = '資産割安'; }
+    else if (pbr < 1.5) { pbrColor = '#4cd9a0'; pbrNote = '適正'; }
+    else if (pbr < 3.0) { pbrColor = '#ffb347'; pbrNote = 'やや割高'; }
+    else                { pbrColor = '#ff6b6b'; pbrNote = '割高'; }
+  }
+
+  panel.innerHTML = `
+    <div class="judgment-item">
+      <div class="judgment-label">PER（株価収益率）</div>
+      <div class="judgment-value" style="color:${perColor}">
+        ${per != null ? per.toFixed(1) + '倍' : '-'}
+        ${perNote ? `<span style="font-size:0.75rem; margin-left:6px; opacity:0.8">${perNote}</span>` : ''}
+      </div>
+    </div>
+    <div class="judgment-item">
+      <div class="judgment-label">PBR（株価純資産倍率）</div>
+      <div class="judgment-value" style="color:${pbrColor}">
+        ${pbr != null ? pbr.toFixed(2) + '倍' : '-'}
+        ${pbrNote ? `<span style="font-size:0.75rem; margin-left:6px; opacity:0.8">${pbrNote}</span>` : ''}
+      </div>
+    </div>`;
 }
 
 // レーダーチャート描画
