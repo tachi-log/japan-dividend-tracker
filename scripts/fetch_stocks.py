@@ -238,6 +238,8 @@ def fetch_stock(code, name_map):
         # ── スクリーニング項目（自動取得） ──
         'operating_margin': None,   # 営業利益率 (%)
         'payout_ratio': None,       # 配当性向 (%)
+        'per': None,                # PER (株価収益率)
+        'pbr': None,                # PBR (株価純資産倍率)
         'week52_high': None,        # 52週高値
         'week52_low': None,         # 52週安値
         'revenue_trend': None,      # 売上推移: 'up'/'flat'/'down'
@@ -281,6 +283,8 @@ def fetch_stock(code, name_map):
             'market_cap': info.get('marketCap'),
             'operating_margin': round(op_m * 100, 1) if op_m is not None else None,
             'payout_ratio':     round(pay * 100, 1) if pay is not None else None,
+            'per': safe_float(info.get('trailingPE')),
+            'pbr': safe_float(info.get('priceToBook')),
             'week52_high': safe_float(info.get('fiftyTwoWeekHigh')),
             'week52_low':  safe_float(info.get('fiftyTwoWeekLow')),
         })
