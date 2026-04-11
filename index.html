@@ -168,6 +168,15 @@
       margin-top: 8px; padding-top: 8px; border-top: 1px solid #2a2d3e;
       font-size: 0.78rem; color: #8892a4; text-align: right; font-weight: 600;
     }
+    .hold-table { width: 100%; border-collapse: collapse; font-size: 0.78rem; }
+    .hold-table th {
+      text-align: left; color: #454a5a; font-weight: 600; font-size: 0.7rem;
+      padding: 0 6px 6px; border-bottom: 1px solid #2a2d3e;
+    }
+    .hold-table th.right, .hold-table td.right { text-align: right; }
+    .hold-table td { padding: 6px 6px; border-bottom: 1px solid #1e2130; color: #c0c4d0; vertical-align: middle; }
+    .hold-table tr:last-child td { border-bottom: none; }
+    .hold-td-sector { color: #5a6070; font-size: 0.72rem; }
 
     /* ===== カード ===== */
     .cards {
@@ -1611,19 +1620,30 @@ function updateHoldingBreakdown(stocks) {
     amount: parseFloat(allSD[s.code]?.investment) || 0,
   }));
 
-  // 銘柄行（input付き）を構築 — inputは一度だけ生成
-  document.getElementById('stockBreakdown').innerHTML =
-    _holdingItems.map(item => `
-      <div class="breakdown-row">
-        <div class="breakdown-label">
-          ${escHtml(item.name)}<span class="breakdown-sector">${escHtml(item.sector)}</span>
-        </div>
-        <input type="number" class="invest-input" data-code="${item.code}"
-               value="${item.amount || ''}" placeholder="万円"
-               oninput="onInvestmentInput(this)" min="0" step="1">
-        <div class="breakdown-pct" id="inv-pct-${item.code}">-</div>
-      </div>`).join('') +
-    '<div class="inv-total" id="inv-total"></div>';
+  // 銘柄テーブル（inputは一度だけ生成）
+  document.getElementById('stockBreakdown').innerHTML = `
+    <table class="hold-table">
+      <thead><tr>
+        <th>銘柄名</th>
+        <th>セクター</th>
+        <th class="right">金額（万円）</th>
+        <th class="right">割合</th>
+      </tr></thead>
+      <tbody>
+        ${_holdingItems.map(item => `
+          <tr>
+            <td>${escHtml(item.name)}</td>
+            <td class="hold-td-sector">${escHtml(item.sector)}</td>
+            <td class="right">
+              <input type="number" class="invest-input" data-code="${item.code}"
+                     value="${item.amount || ''}" placeholder="-"
+                     oninput="onInvestmentInput(this)" min="0" step="1">
+            </td>
+            <td class="right" id="inv-pct-${item.code}">-</td>
+          </tr>`).join('')}
+      </tbody>
+    </table>
+    <div class="inv-total" id="inv-total"></div>`;
 
   renderSectorBreakdown(_holdingItems);
   refreshInvestBars(_holdingItems);
