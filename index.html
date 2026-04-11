@@ -139,6 +139,19 @@
     .tab-btn.tag-cand.active   { background: #60a5fa; border-color: #60a5fa; color: #fff; }
     .tab-btn.tag-top30.active  { background: #ffd700; border-color: #ffd700; color: #000; }
 
+    /* ===== 保有内訳バー ===== */
+    .breakdown-row {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      margin-bottom: 6px;
+      font-size: 0.75rem;
+    }
+    .breakdown-label { color: #c0c4d0; flex: 1; min-width: 0; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+    .breakdown-bar-bg { flex: 2; height: 6px; background: #12141f; border-radius: 3px; }
+    .breakdown-bar-fill { height: 100%; border-radius: 3px; background: #4a9eff; }
+    .breakdown-pct { color: #6a7288; width: 36px; text-align: right; flex-shrink: 0; }
+
     /* ===== カード ===== */
     .cards {
       max-width: 900px;
@@ -659,6 +672,20 @@
 <!-- 件数 -->
 <div class="result-count" id="resultCount"></div>
 
+<!-- 保有中 内訳パネル -->
+<div id="holdingBreakdown" style="display:none; max-width:900px; margin:0 auto 8px; padding:0 12px;">
+  <div style="display:grid; grid-template-columns:1fr 1fr; gap:10px;">
+    <div style="background:#1a1d2e; border:1px solid #2a2d3e; border-radius:12px; padding:14px;">
+      <div style="font-size:0.72rem; font-weight:700; color:#5a6070; text-transform:uppercase; letter-spacing:0.06em; margin-bottom:10px;">セクター割合</div>
+      <div id="sectorBreakdown"></div>
+    </div>
+    <div style="background:#1a1d2e; border:1px solid #2a2d3e; border-radius:12px; padding:14px;">
+      <div style="font-size:0.72rem; font-weight:700; color:#5a6070; text-transform:uppercase; letter-spacing:0.06em; margin-bottom:10px;">銘柄割合</div>
+      <div id="stockBreakdown"></div>
+    </div>
+  </div>
+</div>
+
 <!-- カード -->
 <main>
   <div class="cards" id="cards">
@@ -1173,9 +1200,15 @@ function applyFilters() {
     return (av - bv) * currentSortDir;
   });
 
+  const yields = stocks.map(s => s.dividend_yield).filter(v => v != null);
+  const avgYield = yields.length > 0
+    ? (yields.reduce((a, b) => a + b, 0) / yields.length).toFixed(2)
+    : null;
+  const avgStr = avgYield != null ? ` ／ 平均利回り ${avgYield}%` : '';
   document.getElementById('resultCount').textContent =
-    `${stocks.length} 件表示 / 全 ${allStocks.length} 銘柄`;
+    `${stocks.length} 件表示 / 全 ${allStocks.length} 銘柄${avgStr}`;
 
+  updateHoldingBreakdown(stocks);
   renderCards(stocks);
 }
 
@@ -1532,6 +1565,44 @@ function updateWeek52(stock, sd) {
   }
   document.getElementById('week52-zone').textContent = zone;
   document.getElementById('week52-zone').style.color = color;
+}
+
+// 保有中 内訳パネル
+function updateHoldingBreakdown(stocks) {
+  const panel = document.getElementById('holdingBreakdown');
+  if (currentTab !== 'hold' || stocks.length === 0) {
+    panel.style.display = 'none';
+    return;
+  }
+  panel.style.display = 'block';
+
+  const total = stocks.length;
+
+  // セクター集計
+  const sectorCount = {};
+  stocks.forEach(s => {
+    const sec = s.sector || '不明';
+    sectorCount[sec] = (sectorCount[sec] || 0) + 1;
+  });
+  const sectorSorted = Object.entries(sectorCount).sort((a, b) => b[1] - a[1]);
+  document.getElementById('sectorBreakdown').innerHTML = sectorSorted.map(([label, count]) => {
+    const pct = (count / total * 100).toFixed(0);
+    return `<div class="breakdown-row">
+      <div class="breakdown-label">${escHtml(label)}</div>
+      <div class="breakdown-bar-bg"><div class="breakdown-bar-fill" style="width:${pct}%"></div></div>
+      <div class="breakdown-pct">${pct}%</div>
+    </div>`;
+  }).join('');
+
+  // 銘柄集計（均等割り）
+  document.getElementById('stockBreakdown').innerHTML = stocks.map(s => {
+    const pct = (1 / total * 100).toFixed(0);
+    return `<div class="breakdown-row">
+      <div class="breakdown-label">${escHtml(s.name || s.code)}</div>
+      <div class="breakdown-bar-bg"><div class="breakdown-bar-fill" style="width:${pct}%"></div></div>
+      <div class="breakdown-pct">${pct}%</div>
+    </div>`;
+  }).join('');
 }
 
 // 割安指標表示
