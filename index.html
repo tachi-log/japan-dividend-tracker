@@ -916,7 +916,7 @@ async function loadData() {
     document.getElementById('lastUpdated').textContent = lastUpd;
     document.getElementById('footer').textContent = '最終更新: ' + lastUpd;
 
-    const valid  = allStocks.filter(s => s.dividend_yield != null);
+    const valid  = allStocks.filter(s => s.dividend_yield != null && s.dividend_yield < 20);
     const cnt40  = valid.filter(s => s.dividend_yield >= 4.0).length;
     const cnt37  = valid.filter(s => s.dividend_yield >= 3.7 && s.dividend_yield < 4.0).length;
     const avgYield = valid.length
@@ -1042,7 +1042,7 @@ function calcScore(sd) {
 // 利回り40 + 財務35 + PBR15 + PER10
 // ============================================================
 function calcRankScore(stock) {
-  if (!stock || stock.dividend_yield == null) return null;
+  if (!stock || stock.dividend_yield == null || stock.dividend_yield >= 20) return null;
   let score = 0;
 
   // 利回りポイント（最大40点）
@@ -1138,9 +1138,9 @@ function applyFilters() {
 
   // タブフィルタ
   if (currentTab === 'alert') {
-    stocks = stocks.filter(s => s.dividend_yield != null && s.dividend_yield >= 4.0);
+    stocks = stocks.filter(s => s.dividend_yield != null && s.dividend_yield < 20 && s.dividend_yield >= 4.0);
   } else if (currentTab === 'high') {
-    stocks = stocks.filter(s => s.dividend_yield != null && s.dividend_yield >= 3.7);
+    stocks = stocks.filter(s => s.dividend_yield != null && s.dividend_yield < 20 && s.dividend_yield >= 3.7);
   } else if (currentTab === 'hold') {
     stocks = stocks.filter(s => (allSD[s.code]?.tag || '') === '保有中');
   } else if (currentTab === 'watch') {
@@ -1200,7 +1200,7 @@ function applyFilters() {
     return (av - bv) * currentSortDir;
   });
 
-  const yields = stocks.map(s => s.dividend_yield).filter(v => v != null);
+  const yields = stocks.map(s => s.dividend_yield).filter(v => v != null && v < 20);
   const avgYield = yields.length > 0
     ? (yields.reduce((a, b) => a + b, 0) / yields.length).toFixed(2)
     : null;
@@ -1236,7 +1236,7 @@ function cardHTML(s) {
   let cardClass  = '';
   let banner     = '';
 
-  if (dy != null) {
+  if (dy != null && dy < 20) {
     yieldLabel = dy.toFixed(2) + '%';
     if (dy >= 4.0) {
       yieldClass = 'alert';
