@@ -1289,7 +1289,7 @@ function cardHTML(s) {
   }
 
   // 安値圏チェック
-  const w52h = s.week52_high, w52l = s.week52_low, price = s.current_price;
+  const w52h = s.week52_high, w52l = s.week52_low;
   let in52Low = false;
   if (w52h != null && w52l != null && price != null && w52h > w52l) {
     in52Low = ((price - w52l) / (w52h - w52l) * 100) <= 33;
