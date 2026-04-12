@@ -357,6 +357,39 @@
     .stat-card.alert .stat-value { color: #ff6b6b; }
     .stat-card.high  .stat-value { color: #ffb347; }
 
+    /* ===== 市場環境パネル ===== */
+    .market-panel {
+      max-width: 900px;
+      margin: 8px auto;
+      padding: 0 12px;
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+    .market-card {
+      flex: 1;
+      min-width: 160px;
+      background: #1a1d2e;
+      border: 1px solid #2a2d3e;
+      border-radius: 12px;
+      padding: 12px 14px;
+      transition: border-color 0.2s;
+    }
+    .market-card-label {
+      font-size: 0.72rem; font-weight: 700; color: #5a6070;
+      text-transform: uppercase; letter-spacing: 0.06em; margin-bottom: 6px;
+    }
+    .market-card-sub { font-weight: 400; text-transform: none; color: #454a5a; }
+    .market-card-value { font-size: 1.6rem; font-weight: 800; color: #e0e0e0; line-height: 1; }
+    .market-card-status { font-size: 0.78rem; font-weight: 600; margin-top: 5px; }
+    .market-card-time { font-size: 0.68rem; color: #454a5a; margin-top: 3px; }
+    .market-num-input {
+      width: 100%; padding: 4px 8px; margin-top: 4px;
+      background: #12141f; border: 1px solid #2a2d3e; border-radius: 7px;
+      color: #e0e0e0; font-size: 1.3rem; font-weight: 700; outline: none;
+    }
+    .market-num-input:focus { border-color: #4a9eff; }
+
     /* ===== ソートボタン ===== */
     .sort-btn {
       display: flex;
@@ -660,6 +693,22 @@
   </div>
 </div>
 
+<!-- 市場環境パネル -->
+<div class="market-panel">
+  <div class="market-card" id="vixCard">
+    <div class="market-card-label">VIX <span class="market-card-sub">恐怖指数</span></div>
+    <div class="market-card-value" id="vixValue">-</div>
+    <div class="market-card-status" id="vixStatus"></div>
+    <div class="market-card-time" id="vixTime"></div>
+  </div>
+  <div class="market-card" id="tdrCard">
+    <div class="market-card-label">騰落レシオ <span class="market-card-sub">手動入力</span></div>
+    <input type="number" class="market-num-input" id="tdrInput"
+           placeholder="例: 95" min="0" max="300" oninput="onTdrInput(this)">
+    <div class="market-card-status" id="tdrStatus"></div>
+  </div>
+</div>
+
 <!-- コントロール -->
 <div class="controls">
   <div class="search-wrap">
@@ -786,6 +835,12 @@
     <div class="modal-section">
       <div class="modal-section-title">割安指標</div>
       <div class="judgment-panel" id="modal-valuation"></div>
+    </div>
+
+    <!-- 移動平均乖離率 -->
+    <div class="modal-section">
+      <div class="modal-section-title">移動平均乖離率</div>
+      <div class="judgment-panel" id="modal-ma"></div>
     </div>
 
     <!-- レーダーチャート -->
@@ -958,6 +1013,7 @@ async function loadData() {
 
     buildSectorFilter();
     applyFilters();
+    initMarketPanel(json);
   } catch (e) {
     document.getElementById('cards').innerHTML = `
       <div class="status-box">
@@ -1422,6 +1478,9 @@ function openModal(code) {
   // 割安指標
   updateValuation(stock);
 
+  // 移動平均乖離率
+  updateMA(stock);
+
   // レーダーチャート
   renderRadarChart(sd);
 
@@ -1689,6 +1748,107 @@ function onInvestmentInput(el) {
   if (item) item.amount = val || 0;
   refreshInvestBars(_holdingItems);
   renderSectorBreakdown(_holdingItems);
+}
+
+// ============================================================
+// 市場環境パネル
+// ============================================================
+function vixMeta(v) {
+  if (v <= 20) return { color: '#4cd9a0', text: '安定' };
+  if (v <= 30) return { color: '#ffb347', text: '警戒' };
+  return { color: '#ff6b6b', text: '🔴 恐怖 — 買いチャンスの可能性' };
+}
+function tdrMeta(v) {
+  if (v >= 120) return { color: '#ff6b6b', text: '🔴 過熱' };
+  if (v >= 80)  return { color: '#4cd9a0', text: '中立' };
+  return { color: '#4a9eff', text: '🔵 売られすぎ — 買いチャンスの可能性' };
+}
+
+async function fetchVIXLive() {
+  const url = 'https://query1.finance.yahoo.com/v8/finance/chart/%5EVIX?interval=1d&range=1d';
+  try {
+    const r = await fetch('https://api.allorigins.win/raw?url=' + encodeURIComponent(url), { signal: AbortSignal.timeout(6000) });
+    const d = await r.json();
+    return parseFloat(d?.chart?.result?.[0]?.meta?.regularMarketPrice) || null;
+  } catch { return null; }
+}
+
+function renderVix(val, isoTime) {
+  const valEl    = document.getElementById('vixValue');
+  const statusEl = document.getElementById('vixStatus');
+  const timeEl   = document.getElementById('vixTime');
+  const card     = document.getElementById('vixCard');
+  if (val == null) {
+    valEl.textContent    = '-';
+    statusEl.textContent = '取得不可';
+    statusEl.style.color = '#454a5a';
+    return;
+  }
+  const { color, text } = vixMeta(val);
+  valEl.textContent    = val.toFixed(2);
+  valEl.style.color    = color;
+  statusEl.textContent = text;
+  statusEl.style.color = color;
+  card.style.borderColor = color + '55';
+  if (isoTime) {
+    const d = new Date(isoTime);
+    timeEl.textContent = '更新: ' + d.toLocaleTimeString('ja-JP', { hour: '2-digit', minute: '2-digit' });
+  }
+}
+
+function onTdrInput(el) {
+  const val = parseFloat(el.value);
+  localStorage.setItem('tdr_value', el.value);
+  const statusEl = document.getElementById('tdrStatus');
+  const card     = document.getElementById('tdrCard');
+  if (!val || isNaN(val)) { statusEl.textContent = ''; card.style.borderColor = ''; return; }
+  const { color, text } = tdrMeta(val);
+  statusEl.textContent = text;
+  statusEl.style.color = color;
+  card.style.borderColor = color + '55';
+}
+
+async function initMarketPanel(data) {
+  // VIX: まずJSONの値で表示してからライブ取得を試みる
+  renderVix(data.vix ?? null, data.vix_updated ?? null);
+  const liveVix = await fetchVIXLive();
+  if (liveVix != null) renderVix(liveVix, new Date().toISOString());
+
+  // 騰落レシオ: localStorageから復元
+  const saved = localStorage.getItem('tdr_value');
+  if (saved) {
+    document.getElementById('tdrInput').value = saved;
+    onTdrInput(document.getElementById('tdrInput'));
+  }
+}
+
+// 移動平均乖離率表示
+function updateMA(stock) {
+  const panel = document.getElementById('modal-ma');
+  const price = stock.current_price;
+
+  function maRow(label, ma) {
+    if (price == null || ma == null) {
+      return `<div class="judgment-item">
+        <div class="judgment-label">${label}</div>
+        <div class="judgment-value" style="color:#454a5a">データなし</div>
+      </div>`;
+    }
+    const dev = (price - ma) / ma * 100;
+    let color = '#4cd9a0', note = '中立';
+    if (dev <= -5) { color = '#4a9eff'; note = '割安サイン'; }
+    else if (dev >= 5) { color = '#ff6b6b'; note = '過熱サイン'; }
+    const sign = dev >= 0 ? '+' : '';
+    return `<div class="judgment-item">
+      <div class="judgment-label">${label}（¥${ma.toLocaleString('ja-JP')}）</div>
+      <div class="judgment-value" style="color:${color}">
+        ${sign}${dev.toFixed(1)}%
+        <span style="font-size:0.75rem; margin-left:6px; opacity:0.8">${note}</span>
+      </div>
+    </div>`;
+  }
+
+  panel.innerHTML = maRow('25日移動平均', stock.ma25) + maRow('75日移動平均', stock.ma75);
 }
 
 // 割安指標表示

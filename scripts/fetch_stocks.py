@@ -177,6 +177,18 @@ def fetch_financial_data(ticker):
     except Exception as e:
         print(f"  [WARN] balance_sheet: {e}")
 
+    # ── 移動平均 ──
+    try:
+        hist = ticker.history(period='4mo')
+        if hist is not None and len(hist) >= 25:
+            closes = hist['Close'].tolist()
+            if len(closes) >= 25:
+                result['ma25'] = round(sum(closes[-25:]) / 25, 1)
+            if len(closes) >= 75:
+                result['ma75'] = round(sum(closes[-75:]) / 75, 1)
+    except Exception as e:
+        print(f"  [WARN] history/MA: {e}")
+
     # ── 配当履歴 ──
     try:
         divs = ticker.dividends
@@ -248,6 +260,8 @@ def fetch_stock(code, name_map):
         'payout_ratio': None,       # 配当性向 (%)
         'per': None,                # PER (株価収益率)
         'pbr': None,                # PBR (株価純資産倍率)
+        'ma25': None,               # 25日移動平均
+        'ma75': None,               # 75日移動平均
         'week52_high': None,        # 52週高値
         'week52_low': None,         # 52週安値
         'revenue_trend': None,      # 売上推移: 'up'/'flat'/'down'
@@ -311,6 +325,16 @@ def fetch_stock(code, name_map):
 # メイン
 # ============================================================
 
+def fetch_vix():
+    try:
+        vix = yf.Ticker('^VIX')
+        price = vix.info.get('regularMarketPrice') or vix.info.get('currentPrice')
+        return safe_float(price)
+    except Exception as e:
+        print(f"[WARN] VIX: {e}")
+        return None
+
+
 def main():
     print(f"開始: {datetime.now(JST).strftime('%Y-%m-%d %H:%M:%S JST')} / {len(STOCK_CODES)}銘柄")
     name_map = get_japanese_names(STOCK_CODES)
@@ -330,6 +354,9 @@ def main():
         else:
             time.sleep(0.3)
 
+    vix = fetch_vix()
+    print(f"VIX: {vix}")
+
     valid = [s for s in results if s['dividend_yield']]
     os.makedirs('data', exist_ok=True)
     with open('data/stocks.json', 'w', encoding='utf-8') as f:
@@ -339,6 +366,8 @@ def main():
             'valid_count': len(valid),
             'alert_40_count': len([s for s in valid if s['dividend_yield'] >= 4.0]),
             'alert_37_count': len([s for s in valid if 3.7 <= s['dividend_yield'] < 4.0]),
+            'vix': vix,
+            'vix_updated': datetime.now(JST).isoformat() if vix else None,
             'stocks': results,
         }, f, ensure_ascii=False, indent=2)
     print("✓ data/stocks.json 保存完了")
