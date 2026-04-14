@@ -640,6 +640,41 @@
       backdrop-filter: blur(8px);
     }
 
+    /* ===== 配当カレンダー ===== */
+    .calendar-card { flex: 2; min-width: 260px; }
+    .cal-header {
+      display: flex; align-items: center; justify-content: space-between; margin-bottom: 8px;
+    }
+    .cal-month { font-size: 0.88rem; font-weight: 700; color: #e0e0e0; }
+    .cal-nav {
+      background: none; border: 1px solid #2a2d3e; color: #6a7288;
+      border-radius: 5px; padding: 2px 8px; cursor: pointer; font-size: 0.72rem;
+    }
+    .cal-nav:hover { color: #fff; border-color: #4a9eff; }
+    .cal-grid {
+      display: grid; grid-template-columns: repeat(7, 1fr); gap: 2px;
+    }
+    .cal-day-header {
+      text-align: center; font-size: 0.6rem; color: #3a3f50; padding: 2px 0; font-weight: 700;
+    }
+    .cal-day {
+      text-align: center; font-size: 0.68rem; padding: 3px 1px;
+      border-radius: 4px; min-height: 22px; color: #5a6070; position: relative;
+    }
+    .cal-day.today { color: #4a9eff; font-weight: 700; }
+    .cal-day.has-div {
+      background: #4cd9a01a; border: 1px solid #4cd9a055;
+      color: #4cd9a0; font-weight: 700; cursor: default;
+    }
+    .cal-dot { width: 4px; height: 4px; border-radius: 50%; background: #4cd9a0; margin: 1px auto 0; }
+    .cal-legend {
+      margin-top: 8px; padding-top: 8px; border-top: 1px solid #1e2130;
+      font-size: 0.68rem; color: #5a6070; display: flex; flex-direction: column; gap: 3px;
+    }
+    .cal-legend-item { display: flex; gap: 5px; }
+    .cal-legend-date { color: #4cd9a0; font-weight: 700; white-space: nowrap; }
+    .cal-empty { color: #2a2d3e; font-size: 0.68rem; margin-top: 6px; }
+
     /* ===== 件数 ===== */
     .result-count {
       max-width: 900px;
@@ -706,6 +741,16 @@
     <input type="number" class="market-num-input" id="tdrInput"
            placeholder="例: 95" min="0" max="300" oninput="onTdrInput(this)">
     <div class="market-card-status" id="tdrStatus"></div>
+  </div>
+  <div class="market-card calendar-card" id="calendarCard">
+    <div class="market-card-label">配当カレンダー <span class="market-card-sub">保有中・権利確定日</span></div>
+    <div class="cal-header">
+      <button class="cal-nav" onclick="calPrev()">◀</button>
+      <span class="cal-month" id="calMonthLabel"></span>
+      <button class="cal-nav" onclick="calNext()">▶</button>
+    </div>
+    <div class="cal-grid" id="calGrid"></div>
+    <div class="cal-legend" id="calLegend"></div>
   </div>
 </div>
 
@@ -1014,6 +1059,7 @@ async function loadData() {
     buildSectorFilter();
     applyFilters();
     initMarketPanel(json);
+    renderCalendar();
   } catch (e) {
     document.getElementById('cards').innerHTML = `
       <div class="status-box">
@@ -1541,7 +1587,8 @@ function setModalTag(tag) {
   setStockData(modalStock.code, { tag });
   updateTagButtons(tag);
   updateModalTagBadge(tag);
-  applyFilters(); // カード側も更新
+  applyFilters();
+  renderCalendar();
 }
 
 // スコア表示更新
@@ -2037,8 +2084,87 @@ function saveManualData(e) {
 }
 
 // ============================================================
+// 配当カレンダー
+// ============================================================
+let calYear  = new Date().getFullYear();
+let calMonth = new Date().getMonth(); // 0-indexed
+
+function getHoldingDividendMap() {
+  const map   = {};
+  const allSD = loadAllStockData();
+  allStocks.forEach(s => {
+    if ((allSD[s.code]?.tag) !== '保有中') return;
+    const date = s.ex_dividend_date;
+    if (!date) return;
+    if (!map[date]) map[date] = [];
+    map[date].push(s.name || s.code);
+  });
+  return map;
+}
+
+function renderCalendar() {
+  const labelEl  = document.getElementById('calMonthLabel');
+  const gridEl   = document.getElementById('calGrid');
+  const legendEl = document.getElementById('calLegend');
+  if (!labelEl || !gridEl) return;
+
+  const divMap = getHoldingDividendMap();
+  const today  = new Date();
+  const y = calYear, m = calMonth;
+
+  labelEl.textContent = `${y}年${m + 1}月`;
+
+  const DAY_NAMES = ['月','火','水','木','金','土','日'];
+  let html = DAY_NAMES.map(d => `<div class="cal-day-header">${d}</div>`).join('');
+
+  // 月曜始まりのオフセット
+  const firstDow = new Date(y, m, 1).getDay(); // 0=Sun
+  const offset   = (firstDow + 6) % 7;
+  const daysInMonth = new Date(y, m + 1, 0).getDate();
+
+  for (let i = 0; i < offset; i++) html += '<div class="cal-day"></div>';
+
+  const hits = [];
+  for (let d = 1; d <= daysInMonth; d++) {
+    const ds  = `${y}-${String(m+1).padStart(2,'0')}-${String(d).padStart(2,'0')}`;
+    const stocks = divMap[ds];
+    const isToday = today.getFullYear()===y && today.getMonth()===m && today.getDate()===d;
+    if (stocks && stocks.length > 0) {
+      hits.push({ d, ds, stocks });
+      html += `<div class="cal-day has-div" title="${stocks.join(', ')}">${d}<div class="cal-dot"></div></div>`;
+    } else {
+      html += `<div class="cal-day${isToday ? ' today' : ''}">${d}</div>`;
+    }
+  }
+  gridEl.innerHTML = html;
+
+  if (hits.length > 0) {
+    legendEl.innerHTML = hits.map(({ d, stocks }) =>
+      `<div class="cal-legend-item">
+        <span class="cal-legend-date">${m+1}/${d}</span>
+        <span>${escHtml(stocks.join(' / '))}</span>
+      </div>`
+    ).join('');
+  } else {
+    legendEl.innerHTML = '<div class="cal-empty">この月に権利確定日はありません</div>';
+  }
+}
+
+function calPrev() {
+  calMonth--;
+  if (calMonth < 0) { calMonth = 11; calYear--; }
+  renderCalendar();
+}
+function calNext() {
+  calMonth++;
+  if (calMonth > 11) { calMonth = 0; calYear++; }
+  renderCalendar();
+}
+
+// ============================================================
 // 起動
 // ============================================================
+renderCalendar(); // データ読み込み前でも月ラベルを表示
 loadData();
 
 // 5分ごとに自動リロード
