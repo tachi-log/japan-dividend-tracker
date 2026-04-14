@@ -1724,6 +1724,7 @@ function updateHoldingBreakdown(stocks) {
     name: s.name || s.code,
     sector: s.sector || '不明',
     amount: parseFloat(allSD[s.code]?.investment) || 0,
+    yield: (s.dividend_yield != null && s.dividend_yield < 20) ? s.dividend_yield : null,
   }));
 
   // 銘柄テーブル（inputは一度だけ生成）
@@ -1734,6 +1735,7 @@ function updateHoldingBreakdown(stocks) {
         <th>セクター</th>
         <th class="right">金額（万円）</th>
         <th class="right">割合</th>
+        <th class="right">年間配当</th>
       </tr></thead>
       <tbody>
         ${_holdingItems.map(item => `
@@ -1746,6 +1748,7 @@ function updateHoldingBreakdown(stocks) {
                      oninput="onInvestmentInput(this)" min="0" step="1">
             </td>
             <td class="right" id="inv-pct-${item.code}">-</td>
+            <td class="right" id="div-amt-${item.code}" style="color:#4cd9a0; font-size:0.72rem">-</td>
           </tr>`).join('')}
       </tbody>
     </table>
@@ -1757,14 +1760,24 @@ function updateHoldingBreakdown(stocks) {
 
 function refreshInvestBars(items) {
   const total = items.reduce((sum, it) => sum + it.amount, 0);
+  let totalDiv = 0;
   items.forEach(item => {
-    const el = document.getElementById('inv-pct-' + item.code);
-    if (!el) return;
-    el.textContent = total > 0 && item.amount > 0
+    const pctEl = document.getElementById('inv-pct-' + item.code);
+    if (pctEl) pctEl.textContent = total > 0 && item.amount > 0
       ? (item.amount / total * 100).toFixed(1) + '%' : '-';
+
+    const divAmt = item.amount > 0 && item.yield != null
+      ? item.amount * item.yield / 100 : null;
+    if (divAmt != null) totalDiv += divAmt;
+    const divEl = document.getElementById('div-amt-' + item.code);
+    if (divEl) divEl.textContent = divAmt != null ? `約${divAmt.toFixed(1)}万円` : '-';
   });
   const totalEl = document.getElementById('inv-total');
-  if (totalEl) totalEl.textContent = total > 0 ? '合計: ' + total.toLocaleString() + '万円' : '';
+  if (totalEl) {
+    let text = total > 0 ? `合計: ${total.toLocaleString()}万円` : '';
+    if (totalDiv > 0) text += `　／　年間配当合計: 約${totalDiv.toFixed(1)}万円`;
+    totalEl.textContent = text;
+  }
 }
 
 function renderSectorBreakdown(items) {
