@@ -270,6 +270,8 @@ def fetch_stock(code, name_map):
         'equity_ratio': None,       # 自己資本比率 (%)
         'cash_trend': None,         # 現金推移: 'up'/'flat'/'down'
         'dividend_hist': None,      # 配当履歴: 'increase'/'stable'/'cut'
+        'ex_dividend_date': None,   # 権利確定日 (YYYY-MM-DD)
+        'dividend_date': None,      # 配当支払日 (YYYY-MM-DD)
     }
 
     try:
@@ -310,6 +312,18 @@ def fetch_stock(code, name_map):
             'week52_high': safe_float(info.get('fiftyTwoWeekHigh')),
             'week52_low':  safe_float(info.get('fiftyTwoWeekLow')),
         })
+
+        # ── 配当日 ──
+        def ts_to_date(ts):
+            if ts is None:
+                return None
+            try:
+                return datetime.fromtimestamp(int(ts), tz=JST).strftime('%Y-%m-%d')
+            except Exception:
+                return None
+
+        rec['ex_dividend_date'] = ts_to_date(info.get('exDividendDate'))
+        rec['dividend_date']    = ts_to_date(info.get('dividendDate'))
 
         # ── 財務諸表からトレンドデータを取得 ──
         fin_data = fetch_financial_data(ticker)
