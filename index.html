@@ -138,6 +138,7 @@
     .tab-btn.tag-watch.active { background: #a78bfa; border-color: #a78bfa; color: #fff; }
     .tab-btn.tag-cand.active   { background: #60a5fa; border-color: #60a5fa; color: #fff; }
     .tab-btn.tag-top30.active  { background: #ffd700; border-color: #ffd700; color: #000; }
+    .tab-btn.tag-gakucho.active { background: #a78bfa; border-color: #a78bfa; color: #fff; font-weight: 700; }
 
     /* ===== 安値圏カード ===== */
     .card.week52-low:not(.yield-alert):not(.yield-high) {
@@ -786,6 +787,7 @@
   <button class="tab-btn tag-watch"  onclick="setTab('watch')"  id="tab-watch">👀 ウォッチ</button>
   <button class="tab-btn tag-cand"   onclick="setTab('cand')"   id="tab-cand">⭐ 候補</button>
   <button class="tab-btn tag-top30"  onclick="setTab('top30')"  id="tab-top30">★ トップ30</button>
+  <button class="tab-btn tag-gakucho" onclick="setTab('gakucho')" id="tab-gakucho">🎓 学長株</button>
   <button class="tab-btn"            onclick="setTab('err')"    id="tab-err">⚠ エラー</button>
 </div>
 
@@ -1018,6 +1020,13 @@
 // データ読み込み
 // ============================================================
 const DATA_URL = './data/stocks.json';
+
+const GAKUCHO_CODES = new Set([
+  '9986','3076','8130','2659','3333','4008','4042','4097','4958','8309',
+  '8725','8584','6785','7723','3231','3003','2169','9757','9769','4641',
+  '3817','3901','4674','4746','2003','1928','6345','9364','9381','7989',
+  '7820','7994','4540','1343'
+]);
 
 let allStocks = [];
 let currentTab      = 'all';
@@ -1275,6 +1284,8 @@ function applyFilters() {
     stocks = stocks.filter(s => (allSD[s.code]?.tag || '') === '候補');
   } else if (currentTab === 'err') {
     stocks = stocks.filter(s => s.error);
+  } else if (currentTab === 'gakucho') {
+    stocks = stocks.filter(s => GAKUCHO_CODES.has(s.code));
   } else if (currentTab === 'top30') {
     stocks = stocks
       .filter(s => s.dividend_yield != null)
