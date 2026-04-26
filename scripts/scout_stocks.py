@@ -126,64 +126,58 @@ def fetch_all_tse_codes():
 
 
 # ─────────────────────────────────────────────
-# Step 3: 一括利回りスキャン（v7 quote API）
+# Step 3: 一括利回りスキャン（yf.download 方式）
 # ─────────────────────────────────────────────
 
-def bulk_fetch_yields(codes, batch_size=50):
+def bulk_fetch_yields(codes, batch_size=100):
     """
-    Yahoo Finance v7 quote APIで50銘柄ずつ一括取得。
-    trailingAnnualDividendRate / regularMarketPrice で利回りを計算。
+    yf.download() で価格＋配当履歴を一括取得し、利回りを自前計算。
+    v7 APIが日本株の配当を返さない問題を回避する確実な方法。
     """
     yield_map = {}
     batches = [codes[i:i + batch_size] for i in range(0, len(codes), batch_size)]
     total = len(batches)
-    debug_done = False  # 最初の1回だけレスポンスを確認
 
     for i, batch in enumerate(batches):
-        symbols = ','.join(f"{c}.T" for c in batch)
-        url = (
-            "https://query1.finance.yahoo.com/v7/finance/quote"
-            f"?symbols={symbols}"
-            "&fields=regularMarketPrice,trailingAnnualDividendRate,"
-            "trailingAnnualDividendYield,dividendYield,dividendRate"
-        )
+        symbols = [f"{c}.T" for c in batch]
         try:
-            r = requests.get(url, headers=HEADERS, timeout=20)
-            items = r.json().get('quoteResponse', {}).get('result', [])
+            data = yf.download(
+                symbols,
+                period='1y',
+                actions=True,
+                group_by='ticker',
+                progress=False,
+                auto_adjust=False,
+            )
+            if data.empty:
+                continue
 
-            # 最初のバッチでフィールド確認
-            if not debug_done and items:
-                sample = items[0]
-                div_fields = {k: v for k, v in sample.items()
-                              if 'div' in k.lower() or 'Div' in k}
-                print(f"  [DEBUG] 配当関連フィールド例: {div_fields}")
-                debug_done = True
+            for sym in symbols:
+                code = sym.replace('.T', '')
+                try:
+                    if len(symbols) == 1:
+                        close = data['Close']
+                        divs = data['Dividends']
+                    else:
+                        close = data[sym]['Close']
+                        divs = data[sym]['Dividends']
 
-            for item in items:
-                sym = item.get('symbol', '').replace('.T', '')
-                price = safe_float(item.get('regularMarketPrice'))
+                    price = safe_float(close.dropna().iloc[-1]) if not close.dropna().empty else None
+                    annual_div = float(divs.sum()) if divs is not None else 0.0
 
-                # 利回りを複数フィールドから取得（None チェックを明示的に）
-                dy = safe_float(item.get('trailingAnnualDividendYield'))
-                ann = safe_float(item.get('trailingAnnualDividendRate')) or \
-                      safe_float(item.get('dividendRate'))
-
-                if dy is not None and dy > 0:
-                    yield_pct = dy * 100 if dy < 1 else dy
-                elif ann is not None and ann > 0 and price and price > 0:
-                    yield_pct = ann / price * 100
-                else:
-                    continue  # 配当なし or データなし → スキップ
-
-                if yield_pct >= MIN_YIELD:
-                    yield_map[sym] = round(yield_pct, 2)
+                    if price and price > 0 and annual_div > 0:
+                        yield_pct = annual_div / price * 100
+                        if yield_pct >= MIN_YIELD:
+                            yield_map[code] = round(yield_pct, 2)
+                except Exception:
+                    pass
 
         except Exception as e:
             print(f"[WARN] batch {i + 1}/{total}: {e}")
 
-        if (i + 1) % 20 == 0:
+        if (i + 1) % 10 == 0:
             print(f"  一括スキャン: {i + 1}/{total} バッチ完了 (候補: {len(yield_map)} 銘柄)")
-        time.sleep(0.3)
+        time.sleep(1)
 
     return yield_map
 
