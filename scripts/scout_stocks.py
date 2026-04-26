@@ -15,10 +15,8 @@ import time
 from datetime import datetime
 from email.mime.multipart import MIMEMultipart
 from email.mime.text import MIMEText
-from io import BytesIO
 from pathlib import Path
 
-import pandas as pd
 import pytz
 import requests
 import yfinance as yf
@@ -80,42 +78,82 @@ def get_series(df, *names):
 
 
 # ─────────────────────────────────────────────
-# Step 1: 東証全銘柄リスト取得
+# Step 1: Yahoo Finance スクリーナーで高配当日本株を取得
 # ─────────────────────────────────────────────
 
-def fetch_all_tse_codes():
-    """JPXから東証全上場銘柄コードを取得"""
-    url = 'https://www.jpx.co.jp/markets/statistics-equities/misc/tvdivq0000001vg2-att/data_j.xls'
-    print(f"JPX銘柄リスト取得中...")
-    try:
-        resp = requests.get(url, headers=HEADERS, timeout=30)
-        resp.raise_for_status()
-        df = pd.read_excel(BytesIO(resp.content), header=0)
-        print(f"  カラム: {df.columns.tolist()[:8]}")
+def fetch_high_yield_candidates(min_yield_pct=3.7):
+    """
+    Yahoo Finance スクリーナーAPIで利回りmin_yield_pct%以上の日本株を直接取得。
+    JPX全銘柄スキャン不要、確実に配当利回りデータが取れる銘柄のみ返す。
+    """
+    url = "https://query2.finance.yahoo.com/v1/finance/screener"
+    headers = {**HEADERS, 'Content-Type': 'application/json'}
 
-        # コード列を探す
-        code_col = None
-        for col in df.columns:
-            if 'コード' in str(col):
-                code_col = col
-                break
-        if code_col is None:
-            for col in df.columns:
-                if df[col].dtype in ['int64', 'float64']:
-                    code_col = col
-                    break
-        if code_col is None:
-            print("[ERROR] コード列が見つかりません")
-            return []
+    yield_map = {}
+    offset = 0
+    size = 100
 
-        codes_raw = df[code_col].dropna().astype(str).str.strip().tolist()
-        # 4文字で先頭が数字のコードのみ（130A等の新形式も含む）
-        codes = [c for c in codes_raw if len(c) == 4 and c[0].isdigit()]
-        print(f"  東証全銘柄数: {len(codes)}")
-        return codes
-    except Exception as e:
-        print(f"[ERROR] JPX取得失敗: {e}")
-        return []
+    print(f"Yahoo Financeスクリーナーで利回り{min_yield_pct}%以上の日本株を検索中...")
+
+    while True:
+        payload = {
+            "size": size,
+            "offset": offset,
+            "sortField": "dividendyield",
+            "sortType": "DESC",
+            "quoteType": "EQUITY",
+            "topOperator": "AND",
+            "query": {
+                "operator": "AND",
+                "operands": [
+                    {"operator": "eq",  "operands": ["region", "jp"]},
+                    {"operator": "gte", "operands": ["dividendyield", min_yield_pct / 100]},
+                ]
+            }
+        }
+        try:
+            r = requests.post(url, json=payload, headers=headers, timeout=20)
+            r.raise_for_status()
+            quotes = (
+                r.json()
+                .get('finance', {})
+                .get('result', [{}])[0]
+                .get('quotes', [])
+            )
+        except Exception as e:
+            print(f"[WARN] スクリーナー取得失敗 offset={offset}: {e}")
+            break
+
+        if not quotes:
+            break
+
+        for item in quotes:
+            sym = item.get('symbol', '').replace('.T', '')
+            if not sym:
+                continue
+            dy = item.get('trailingAnnualDividendYield') or item.get('dividendYield')
+            price = item.get('regularMarketPrice')
+            ann = item.get('trailingAnnualDividendRate') or item.get('dividendRate')
+
+            if dy is not None:
+                dy_pct = dy * 100 if dy < 1 else dy
+            elif ann and price:
+                dy_pct = ann / price * 100
+            else:
+                continue
+
+            if dy_pct >= min_yield_pct:
+                yield_map[sym] = round(dy_pct, 2)
+
+        print(f"  取得済み: {len(yield_map)} 銘柄 (offset={offset})")
+
+        if len(quotes) < size:
+            break
+        offset += size
+        time.sleep(1)
+
+    print(f"スクリーナー完了: 計 {len(yield_map)} 銘柄")
+    return yield_map
 
 
 # ─────────────────────────────────────────────
@@ -130,49 +168,6 @@ def load_existing_codes():
     with open(path, encoding='utf-8') as f:
         data = json.load(f)
     return {str(s['code']) for s in data.get('stocks', [])}
-
-
-# ─────────────────────────────────────────────
-# Step 3: 一括配当利回りスキャン
-# ─────────────────────────────────────────────
-
-def bulk_fetch_yields(codes, batch_size=50):
-    """Yahoo Finance v7 APIで配当利回りを一括取得"""
-    results = {}
-    batches = [codes[i:i + batch_size] for i in range(0, len(codes), batch_size)]
-    total = len(batches)
-
-    for i, batch in enumerate(batches):
-        symbols = ','.join(f"{c}.T" for c in batch)
-        url = (
-            f"https://query1.finance.yahoo.com/v7/finance/quote"
-            f"?symbols={symbols}&lang=ja&region=JP"
-        )
-        try:
-            r = requests.get(url, headers=HEADERS, timeout=15)
-            for item in r.json().get('quoteResponse', {}).get('result', []):
-                sym = item.get('symbol', '').replace('.T', '')
-                dy = item.get('dividendYield') or item.get('trailingAnnualDividendYield')
-                price = item.get('regularMarketPrice')
-                ann_div = item.get('dividendRate') or item.get('trailingAnnualDividendRate')
-
-                if dy is not None:
-                    yield_pct = dy * 100 if dy < 1 else dy
-                elif ann_div and price:
-                    yield_pct = ann_div / price * 100
-                else:
-                    yield_pct = None
-
-                if yield_pct is not None:
-                    results[sym] = round(yield_pct, 2)
-        except Exception as e:
-            print(f"[WARN] batch {i + 1}/{total}: {e}")
-
-        if (i + 1) % 20 == 0:
-            print(f"  利回りスキャン進捗: {i + 1}/{total} バッチ ({len(results)} 銘柄取得済み)")
-        time.sleep(0.5)
-
-    return results
 
 
 # ─────────────────────────────────────────────
@@ -532,27 +527,18 @@ def main():
 
     # 既存登録銘柄
     existing = load_existing_codes()
-    print(f"既存登録銘柄: {len(existing)} 銘柄")
+    print(f"既存登録銘柄: {len(existing)} 銘柄\n")
 
-    # 全銘柄コード取得
-    all_codes = fetch_all_tse_codes()
-    if not all_codes:
-        print("[ERROR] 銘柄リスト取得失敗。終了します。")
-        sys.exit(1)
+    # ─── Phase 1: スクリーナーで高配当株を直接取得 ───
+    print("--- Phase 1: Yahoo Financeスクリーナー ---")
+    yield_map = fetch_high_yield_candidates(MIN_YIELD)
 
-    # 未登録銘柄のみ対象
-    new_codes = [c for c in all_codes if str(c) not in existing]
-    print(f"スキャン対象: {len(new_codes)} 銘柄（既存 {len(existing)} 銘柄を除外）\n")
-
-    # ─── Phase 1: 一括利回りスキャン ───
-    print("--- Phase 1: 一括利回りスキャン ---")
-    yield_map = bulk_fetch_yields(new_codes)
-
+    # 既存登録済みを除外
     candidates_codes = [
-        code for code, dy in yield_map.items()
-        if dy is not None and dy >= MIN_YIELD
+        code for code in yield_map
+        if code not in existing
     ]
-    print(f"\n利回り{MIN_YIELD}%以上: {len(candidates_codes)} 銘柄\n")
+    print(f"\n未登録の候補銘柄: {len(candidates_codes)} 銘柄\n")
 
     if not candidates_codes:
         print("候補銘柄なし。メール送信をスキップします。")
