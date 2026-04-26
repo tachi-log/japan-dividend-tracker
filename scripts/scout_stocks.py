@@ -36,7 +36,7 @@ except ImportError:
 JST          = pytz.timezone('Asia/Tokyo')
 HEADERS      = {'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36'}
 MIN_YIELD    = 4.0   # 配当利回り下限(%)
-MIN_SCORE    = 12    # メール通知するスコア下限（最大19点）
+MIN_SCORE    = 17    # メール通知するスコア下限（最大23点）
 MAX_MAIL     = 9999  # 上限なし（該当全銘柄をメール）
 
 # ETF・ファンド系を除外するキーワード
@@ -260,6 +260,8 @@ def fetch_full_data(code, name_ja=None):
         'market_cap': None,
         'operating_margin': None,
         'payout_ratio': None,
+        'pbr': None,
+        'per': None,
         'revenue_trend': None,
         'eps_trend': None,
         'ocf_status': None,
@@ -294,6 +296,8 @@ def fetch_full_data(code, name_ja=None):
             'market_cap':       info.get('marketCap'),
             'operating_margin': round(op_m * 100, 1) if op_m is not None else None,
             'payout_ratio':     round(pay * 100, 1)  if pay is not None else None,
+            'pbr':              safe_float(info.get('priceToBook')),
+            'per':              safe_float(info.get('trailingPE')),
         })
 
         try:
@@ -463,6 +467,30 @@ def score_stock(s):
         score += 1; details.append('⑩ 連続増配：確認済み ✓ (+1)')
     else:
         details.append('⑩ 連続増配：確認できず (0)')
+
+    # ⑪ PBR（最大2点）
+    pbr = s.get('pbr')
+    if pbr is not None:
+        if pbr < 1.0:
+            score += 2; details.append(f'⑪ PBR：{pbr:.2f}倍（1倍未満） ✓ (+2)')
+        elif pbr < 1.5:
+            score += 1; details.append(f'⑪ PBR：{pbr:.2f}倍 (+1)')
+        else:
+            details.append(f'⑪ PBR：{pbr:.2f}倍 (-)')
+    else:
+        details.append('⑪ PBR：データなし')
+
+    # ⑫ PER（最大2点）
+    per = s.get('per')
+    if per is not None and per > 0:
+        if per < 10:
+            score += 2; details.append(f'⑫ PER：{per:.1f}倍（10倍未満） ✓ (+2)')
+        elif per < 15:
+            score += 1; details.append(f'⑫ PER：{per:.1f}倍 (+1)')
+        else:
+            details.append(f'⑫ PER：{per:.1f}倍 (-)')
+    else:
+        details.append('⑫ PER：データなし')
 
     return score, details
 
