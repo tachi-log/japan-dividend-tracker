@@ -1,0 +1,28 @@
+name: scout-stocks
+
+on:
+  schedule:
+    - cron: '0 12 * * 0'   # 毎週日曜 21:00 JST (= 12:00 UTC)
+  workflow_dispatch:         # 手動実行も可能
+
+jobs:
+  scout-stocks:
+    runs-on: ubuntu-latest
+    steps:
+      - name: checkout
+        uses: actions/checkout@v4
+
+      - name: setup-python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: install-deps
+        run: pip install yfinance pytz requests pandas openpyxl
+
+      - name: scout
+        env:
+          GMAIL_ADDRESS: ${{ secrets.GMAIL_ADDRESS }}
+          GMAIL_APP_PASSWORD: ${{ secrets.GMAIL_APP_PASSWORD }}
+          NOTIFY_EMAIL: ${{ secrets.NOTIFY_EMAIL }}
+        run: python scripts/scout_stocks.py
