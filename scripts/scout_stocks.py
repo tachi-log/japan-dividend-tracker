@@ -108,8 +108,9 @@ def fetch_all_tse_codes():
             print("[ERROR] コード列が見つかりません")
             return []
 
-        codes = df[code_col].dropna().astype(int).tolist()
-        codes = [c for c in codes if 1000 <= c <= 9999]
+        codes_raw = df[code_col].dropna().astype(str).str.strip().tolist()
+        # 4文字で先頭が数字のコードのみ（130A等の新形式も含む）
+        codes = [c for c in codes_raw if len(c) == 4 and c[0].isdigit()]
         print(f"  東証全銘柄数: {len(codes)}")
         return codes
     except Exception as e:
@@ -180,9 +181,10 @@ def bulk_fetch_yields(codes, batch_size=50):
 
 def fetch_full_data(code):
     """候補銘柄の12基準データをすべて取得"""
+    code = str(code)
     sym = f"{code}.T"
     data = {
-        'code': str(code),
+        'code': code,
         'name': str(code),
         'dividend_yield': None,
         'current_price': None,
@@ -547,7 +549,7 @@ def main():
     yield_map = bulk_fetch_yields(new_codes)
 
     candidates_codes = [
-        int(code) for code, dy in yield_map.items()
+        code for code, dy in yield_map.items()
         if dy is not None and dy >= MIN_YIELD
     ]
     print(f"\n利回り{MIN_YIELD}%以上: {len(candidates_codes)} 銘柄\n")
