@@ -36,8 +36,8 @@ except ImportError:
 JST          = pytz.timezone('Asia/Tokyo')
 HEADERS      = {'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36'}
 MIN_YIELD    = 4.0   # 配当利回り下限(%)
-MIN_SCORE    = 10    # メール通知するスコア下限（最大19点）
-MAX_MAIL     = 30    # 1日あたりのメール上限銘柄数
+MIN_SCORE    = 14    # メール通知するスコア下限（最大19点）
+MAX_MAIL     = 9999  # 上限なし（該当全銘柄をメール）
 
 # ETF・ファンド系を除外するキーワード
 ETF_KEYWORDS = [
@@ -542,7 +542,7 @@ def main():
     existing       = load_existing_codes()
     scouted        = load_scouted_this_month()
     skip_codes     = existing | scouted
-    print(f"既存登録銘柄: {len(existing)} 銘柄")
+    print(f"既存登録銘柄: {len(existing)} 銘柄（除外）")
     print(f"今月メール済み: {len(scouted)} 銘柄")
 
     # ─── Phase 1: JPXリスト取得（ETF除外・日本語名つき） ───
