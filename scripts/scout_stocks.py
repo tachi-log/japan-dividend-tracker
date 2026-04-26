@@ -36,7 +36,7 @@ except ImportError:
 JST          = pytz.timezone('Asia/Tokyo')
 HEADERS      = {'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36'}
 MIN_YIELD    = 4.0   # 配当利回り下限(%)
-MIN_SCORE    = 15    # メール通知するスコア下限（最大19点）
+MIN_SCORE    = 12    # メール通知するスコア下限（最大19点）
 MAX_MAIL     = 9999  # 上限なし（該当全銘柄をメール）
 
 # ETF・ファンド系を除外するキーワード
