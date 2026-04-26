@@ -43,6 +43,8 @@ MAX_MAIL     = 9999  # 上限なし（該当全銘柄をメール）
 ETF_KEYWORDS = [
     'ETF', 'REIT', 'リート', 'ファンド', 'インデックス', '上場投信',
     'Fund', 'Index', 'Trust', 'J-REIT',
+    'iFree', 'iシェアーズ', 'ｉシェアーズ', 'One ETF', 'NEXT FUNDS',
+    'eMAXIS', 'たわら', 'ニッセイ', '野村', 'シェアーズ',
 ]
 
 DATA_DIR     = Path(__file__).parent.parent / 'data'
@@ -572,9 +574,8 @@ def main():
         s              = fetch_full_data(code, name_ja)
         score, details = score_stock(s)
 
-        # 失格（減配）または0点以下はスキップ
+        # 失格（減配）または1点未満はスキップ（ログにも出さない）
         if score <= 0:
-            print(f"[{i:3d}/{len(candidates_codes)}] {code} {name_ja or ''} → スキップ（{score}点）")
             time.sleep(0.5)
             continue
 
