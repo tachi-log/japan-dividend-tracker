@@ -569,14 +569,19 @@ def main():
     results = []
     for i, code in enumerate(candidates_codes, 1):
         name_ja = new_stocks.get(code)
-        print(f"[{i:3d}/{len(candidates_codes)}] {code} {name_ja or ''} 分析中...")
         s              = fetch_full_data(code, name_ja)
         score, details = score_stock(s)
-        dy             = s.get('dividend_yield')
-        dy_str         = f"{dy:.2f}%" if dy else "N/A"
-        print(f"  → {score:2d}/19点  {dy_str}")
-        if score >= 0:
-            results.append((s, score, details))
+
+        # 失格（減配）または0点以下はスキップ
+        if score <= 0:
+            print(f"[{i:3d}/{len(candidates_codes)}] {code} {name_ja or ''} → スキップ（{score}点）")
+            time.sleep(0.5)
+            continue
+
+        dy     = s.get('dividend_yield')
+        dy_str = f"{dy:.2f}%" if dy else "N/A"
+        print(f"[{i:3d}/{len(candidates_codes)}] {code} {name_ja or ''} → {score:2d}/19点  {dy_str}")
+        results.append((s, score, details))
         time.sleep(0.5)
 
     results.sort(key=lambda x: x[1], reverse=True)
