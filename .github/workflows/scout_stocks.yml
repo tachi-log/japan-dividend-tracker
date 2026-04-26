@@ -8,6 +8,8 @@ on:
 jobs:
   scout-stocks:
     runs-on: ubuntu-latest
+    permissions:
+      contents: write
     steps:
       - name: checkout
         uses: actions/checkout@v4
@@ -26,3 +28,11 @@ jobs:
           GMAIL_APP_PASSWORD: ${{ secrets.GMAIL_APP_PASSWORD }}
           NOTIFY_EMAIL: ${{ secrets.NOTIFY_EMAIL }}
         run: python scripts/scout_stocks.py
+
+      - name: save-scouted
+        run: |
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git config user.name "github-actions[bot]"
+          git add data/scouted.json || true
+          git diff --staged --quiet || git commit -m "update scouted $(TZ='Asia/Tokyo' date '+%Y-%m-%d') JST"
+          git push || true
