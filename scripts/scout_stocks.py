@@ -36,7 +36,7 @@ except ImportError:
 JST          = pytz.timezone('Asia/Tokyo')
 HEADERS      = {'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36'}
 MIN_YIELD    = 4.0   # 配当利回り下限(%)
-MIN_SCORE    = 15    # メール通知するスコア下限（最大23点）
+MIN_SCORE    = 14    # メール通知するスコア下限（最大23点）
 MAX_MAIL     = 9999  # 上限なし（該当全銘柄をメール）
 
 # ETF・ファンド系を除外するキーワード
@@ -161,9 +161,10 @@ def fetch_all_tse_stocks():
         resp.raise_for_status()
         df = pd.read_excel(BytesIO(resp.content), header=0)
 
-        # コード列・銘柄名列を特定
-        code_col = next((c for c in df.columns if 'コード' in str(c)), None)
-        name_col = next((c for c in df.columns if '銘柄名' in str(c) or '名称' in str(c)), None)
+        # コード列・銘柄名列・市場区分列を特定
+        code_col   = next((c for c in df.columns if 'コード' in str(c)), None)
+        name_col   = next((c for c in df.columns if '銘柄名' in str(c) or '名称' in str(c)), None)
+        market_col = next((c for c in df.columns if '市場' in str(c) or '区分' in str(c)), None)
 
         if code_col is None:
             code_col = next((c for c in df.columns if df[c].dtype in ['int64', 'float64']), None)
@@ -172,17 +173,24 @@ def fetch_all_tse_stocks():
             print("[ERROR] コード列が見つかりません")
             return {}
 
-        codes = df[code_col].dropna().astype(str).str.strip()
-        names = df[name_col].astype(str).str.strip() if name_col is not None else codes
+        codes   = df[code_col].dropna().astype(str).str.strip()
+        names   = df[name_col].astype(str).str.strip()   if name_col   is not None else codes
+        markets = df[market_col].astype(str).str.strip() if market_col is not None else None
 
         stocks = {}
-        for code, name in zip(codes, names):
-            if len(code) == 4 and code[0].isdigit():
-                if not is_etf(name):        # ETF系を除外
-                    stocks[code] = name
+        for idx, (code, name) in enumerate(zip(codes, names)):
+            if not (len(code) == 4 and code[0].isdigit()):
+                continue
+            # 東証プライム限定
+            if markets is not None:
+                market = markets.iloc[idx]
+                if 'プライム' not in market:
+                    continue
+            if not is_etf(name):
+                stocks[code] = name
 
         total_raw = sum(1 for c in codes if len(c) == 4 and c[0].isdigit())
-        print(f"  東証全銘柄: {total_raw} → ETF等除外後: {len(stocks)}")
+        print(f"  東証全銘柄: {total_raw} → プライム・ETF等除外後: {len(stocks)}")
         return stocks
     except Exception as e:
         print(f"[ERROR] JPX取得失敗: {e}")
