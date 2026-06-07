@@ -1,8 +1,6 @@
 name: news-digest
 
 on:
-  schedule:
-    - cron: '0 10 * * *'    # 毎日 19:00 JST (= 10:00 UTC)
   workflow_dispatch:          # 手動実行も可能
 
 jobs:

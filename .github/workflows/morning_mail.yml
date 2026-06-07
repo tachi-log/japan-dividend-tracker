@@ -1,8 +1,6 @@
 name: morning-mail
 
 on:
-  schedule:
-    - cron: '30 21 * * *'   # 毎日 6:30 JST (= 前日 21:30 UTC)
   workflow_dispatch:          # 手動実行も可能
 
 jobs:
