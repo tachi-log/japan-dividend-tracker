@@ -10,6 +10,7 @@ morning_mail.py
 ・クロコちゃんからひと言
 """
 
+import json
 import os
 import smtplib
 from datetime import datetime
@@ -282,7 +283,85 @@ def fetch_market():
 
 
 # ─────────────────────────────────────────────
-# 朝礼ネタ生成
+# Gemini APIで本文生成
+# ─────────────────────────────────────────────
+
+GEMINI_MODEL = 'gemini-2.5-flash'
+
+
+def call_gemini(prompt):
+    """Gemini APIで文章を生成。キー未設定・失敗時は None を返す"""
+    api_key = os.environ.get('GEMINI_API_KEY')
+    if not api_key:
+        print("[INFO] GEMINI_API_KEY 未設定。固定文面を使います。")
+        return None
+    try:
+        url = f"https://generativelanguage.googleapis.com/v1beta/models/{GEMINI_MODEL}:generateContent"
+        payload = {
+            'contents': [{'parts': [{'text': prompt}]}],
+            'generationConfig': {
+                'temperature': 1.0,
+                'responseMimeType': 'application/json',
+            },
+        }
+        r = requests.post(url, json=payload,
+                          headers={'x-goog-api-key': api_key}, timeout=60)
+        r.raise_for_status()
+        return r.json()['candidates'][0]['content']['parts'][0]['text']
+    except Exception as e:
+        print(f"[WARN] Gemini生成に失敗: {e}")
+        return None
+
+
+def generate_ai_morning(now, weather, market):
+    """Geminiで朝礼ネタ3つとクロコちゃんのひと言を生成。失敗時は None"""
+    weekday = ['月', '火', '水', '木', '金', '土', '日'][now.weekday()]
+
+    # 登録済みの記念日があれば事実情報として渡す（AIの記念日でっち上げ防止）
+    kinenbi = TODAY_NETA.get((now.month, now.day))
+    kinenbi_line = f"- 今日の記念日（確定情報）: {kinenbi}" if kinenbi else \
+        "- 今日の記念日情報はなし（「今日は何の日」のような事実の主張はしないこと）"
+
+    prompt = f"""あなたは「クロコちゃん」。毎朝のメールで読者を元気づける、明るくて親しみやすいキャラクターです。
+読者は「たっちん」。長距離通勤をしながら、ウォーキングなどの健康習慣と
+コツコツ投資による経済的自立を目指しているビジネスパーソンです。
+
+今日の情報:
+- 日付: {now.strftime('%Y年%m月%d日')}（{weekday}曜日）
+- 天気: {weather}
+- 日経平均: {market.get('nikkei', '不明')} / ドル円: {market.get('usdjpy', '不明')}
+{kinenbi_line}
+
+次のJSON形式だけで出力してください:
+{{
+  "kuro": "クロコちゃんからの今日のひと言（60〜90字。天気や曜日に軽く触れて元気づける）",
+  "neta": [
+    {{"title": "ネタのタイトル（10字以内）", "body": "職場の朝礼でそのまま話せる内容（80〜120字）"}},
+    {{"title": "...", "body": "..."}},
+    {{"title": "...", "body": "..."}}
+  ]
+}}
+
+ネタ3つの方向性: ①仕事がうまくいく気づき・工夫 ②{weekday}曜日に合った話題 ③いまの季節（{now.month}月）の話題
+注意: 確実でない事実は書かないこと。説教くさくならず、前向きで具体的に。毎回新鮮な内容にすること。"""
+
+    text = call_gemini(prompt)
+    if not text:
+        return None
+    try:
+        data = json.loads(text)
+        neta = [(str(n['title']), str(n['body'])) for n in data['neta'][:3]]
+        kuro = str(data['kuro'])
+        if len(neta) < 3 or not kuro:
+            raise ValueError('項目が足りません')
+        return {'neta': neta, 'kuro': kuro}
+    except Exception as e:
+        print(f"[WARN] Gemini応答の解析に失敗: {e}")
+        return None
+
+
+# ─────────────────────────────────────────────
+# 朝礼ネタ生成（固定文面・Gemini失敗時の予備）
 # ─────────────────────────────────────────────
 
 def get_chorei_neta(now):
@@ -435,9 +514,18 @@ def main():
     market = fetch_market()
     print(f"  → 日経: {market.get('nikkei')}  ドル円: {market.get('usdjpy')}")
 
-    neta     = get_chorei_neta(now)
-    quote    = get_quote(now)
-    kuro_msg = get_kuro_message(now)
+    print("Geminiで本文生成中...")
+    ai = generate_ai_morning(now, weather, market)
+    if ai:
+        neta     = ai['neta']
+        kuro_msg = ai['kuro']
+        print("  → Gemini生成を使用")
+    else:
+        neta     = get_chorei_neta(now)
+        kuro_msg = get_kuro_message(now)
+        print("  → 固定文面を使用（予備）")
+
+    quote = get_quote(now)
 
     send_email(now, weather, market, neta, quote, kuro_msg)
     print(f"=== 完了 {now.strftime('%H:%M')} ===")
